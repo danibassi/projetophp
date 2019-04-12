@@ -1,6 +1,7 @@
 <?php 
 	
-	include'Classes/Usuarios.php';
+	require_once'Classes/UsuarioDAO.php';
+	require_once'Classes/Usuarios.php';
 
 	$email=$_POST['email'];
 	$senha=$_POST['senha'];
@@ -8,7 +9,7 @@
 	$autenticar_email=0;
 	$autenticar_senha;
 
-	$autenticar = new Usuarios();
+	$autenticar = new UsuarioDAO(new Usuarios());
 
 	foreach($autenticar->findAll() as $key => $value):
 		if($email == $value->email){

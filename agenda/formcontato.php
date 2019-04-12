@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php 
     include "Classes/Contato.php";
-    include "Classes/TipoContato.php"
+    include "Classes/TipoContato.php";
+    require_once 'Classes/ContatoDAO.php';
 ?>
 <html> 
     <head>
@@ -45,7 +46,8 @@
             <hr>
         </form>
         <?php
-            $meu_contato = new Contatos();
+            $contato = new Contatos();
+            $meu_contato = new ContatoDAO($contato);
         ?>
         <table id="stusuarios">
             <thead>

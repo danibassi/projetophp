@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-include 'Classes/Usuarios.php'
+require_once 'Classes/Usuarios.php';
+require_once 'Classes/UsuarioDAO.php';
 ?>
 <html>
     <head>
@@ -13,8 +14,9 @@ include 'Classes/Usuarios.php'
 			$usu->setNome($_POST['nome']);
 			$usu->setEmail($_POST['email']);
 			$usu->setSenha($_POST['senha']);
+			$usuDAO = new UsuarioDAO($usu);
 
-			if($usu->insert()){
+			if($usuDAO->insert()){
 				header("Location:formcontato.php");
 			}else{
 				header("Location:errousuario.php");

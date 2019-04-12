@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php 
     include"Classes/Contato.php";
+    require_once 'Classes/TipoContato.php';
+    require_once 'Classes/ContatoDAO.php';
 ?>
 <html> 
     <head>
@@ -12,7 +14,8 @@
         <?php 
             $id = $_GET['id'];
             $contato_edit = new Contatos();
-            $contato_edit = $contato_edit->select($id);
+            $contatodao = new ContatoDAO($contato_edit);
+            $contato_edit = $contatodao->select($id);
         ?>
 
       	<form action="updatecontato.php" method="POST" name="form1" >
@@ -33,6 +36,17 @@
             <input type="hidden" name="id" value=<?php echo $id ?>>
           	Data de Nascimento:
             <input type="date" name="dtnasc" value=<?php $contato_edit->getDtnasc();?>>
+            Tipo de Contato:
+            <?php
+                $tipoContato = new TipoContato();
+            ?>
+            <select name="tipo">
+                <?php
+                    foreach($tipoContato->findAll() as $key => $value):
+                        echo "<option value=$value->id>$value->tipo</option>";
+                    endforeach;
+                ?>
+            </select>
             <input type="submit" name="Editar">
             <!--<?php echo "<a href='updatecontato.php?id=".$id."'>Editar</a>";?>-->
             <input type="reset" value="Limpar" />
