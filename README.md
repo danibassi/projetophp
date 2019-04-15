@@ -1,2 +1,2 @@
 # projetophp
-Projeto das aulas de php
+Projeto das aulas de php.
