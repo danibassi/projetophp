@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once 'Config.php';
 class DB{
 	private static $instance;
 	public static function getInstance(){

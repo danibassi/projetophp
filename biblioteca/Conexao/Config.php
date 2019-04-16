@@ -1,6 +1,6 @@
 <?php
 	define('DB_HOST', 'localhost');
 	define('DB_NAME', 'biblioteca');
-	define('DB_USER', 'Biblioteca');
-	define('DB_PASS', 'bookswap');
+	define('DB_USER', 'usuario');
+	define('DB_PASS', 'aula123');
 ?>
