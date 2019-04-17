@@ -130,3 +130,5 @@ ALTER TABLE tb_endereco
 ON DELETE NO ACTION 
     ON UPDATE no action;
 
+INSERT INTO tb_tipo_tel (tip_tel_tipo) VALUES ("Residencial"),("Celular"),("comercial");
+
