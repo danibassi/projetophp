@@ -1,21 +1,23 @@
 <?php
 
+require_once 'TipoTelefone.php';
+
 class Telefone{
-    private $telefone;
+    private $numero;
     private $tipoTelefone;
 
-    public function setTelefone($telefone){
-        $this->telefone = $telefone;
+    public function setNumero($numero){
+        $this->numero = $numero;
     }
-    public function getTelefone(){
-        return $this->telefone;
+    public function getNumero(){
+        return $this->numero;
     }
 
     public function setTipoTelefone($tipoTelefone){
-        $this->tipotelefone = $tipoTelefone;
+        $this->tipoTelefone = $tipoTelefone;
     }
     public function getTipoTelefone(){
-        return $this->tipotelefone;
+        return $this->tipoTelefone;
     }
 }
 

@@ -20,7 +20,7 @@ class Leitor{
         $this->email = $email;
     }
     public function getEmail(){
-        return $this-email;
+        return $this->email;
     }
 
     public function setDtnasc($dtnasc){

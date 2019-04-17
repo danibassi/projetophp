@@ -27,7 +27,8 @@ CREATE TABLE tb_endereco (
     end_bairro   VARCHAR(100) NOT NULL,
     end_cidade   VARCHAR(50) NOT NULL,
     end_estado   VARCHAR(50) NOT NULL,
-    end_cep      VARCHAR(10) NOT NULL
+    end_cep      VARCHAR(10) NOT NULL,
+    tb_lei_id    INT NOT NULL
 );
 
 CREATE TABLE tb_funcionario (
@@ -48,9 +49,7 @@ CREATE TABLE tb_leitor (
     lei_nome             VARCHAR(70) NOT NULL,
     lei_email            VARCHAR(100) NOT NULL,
     lei_dtnasc           DATE NOT NULL,
-    lei_sexo             CHAR(1) NOT NULL,
-    tb_end_id            INT NOT NULL,
-    tb_tel_id            INT NOT NULL
+    lei_sexo             CHAR(1) NOT NULL
 );
 
 CREATE TABLE tb_livro (
@@ -68,7 +67,8 @@ CREATE TABLE tb_livro (
 CREATE TABLE tb_telefone (
     tel_id                   INT PRIMARY KEY auto_increment,
     tel_numero               VARCHAR(15) NOT NULL,
-    tb_tip_tel_id            INT(28) NOT NULL
+    tb_tip_tel_id            INT NOT NULL,
+    tb_lei_id                INT NOT NULL
 );
 
 CREATE TABLE tb_tipo_tel (
@@ -113,20 +113,20 @@ ON DELETE NO ACTION
     ON UPDATE no action;
 
 ALTER TABLE tb_telefone
-    ADD CONSTRAINT tb_tel_tb_tip_tel_fk FOREIGN KEY ( tb_tip_tel_id )
+    ADD CONSTRAINT tb_tel_tb_tip_fk FOREIGN KEY ( tb_lei_id )
+        REFERENCES tb_leitor ( lei_id )
+ON DELETE NO ACTION 
+    ON UPDATE no action;
+
+ALTER TABLE tb_telefone
+    ADD CONSTRAINT tb_tel_tel_fk FOREIGN KEY ( tb_tip_tel_id )
         REFERENCES tb_tipo_tel ( tip_tel_id )
 ON DELETE NO ACTION 
     ON UPDATE no action;
 
-ALTER TABLE tb_leitor
-    ADD CONSTRAINT tb_usu_tb_end_fk FOREIGN KEY ( tb_end_id )
-        REFERENCES tb_endereco ( end_id )
-ON DELETE NO ACTION 
-    ON UPDATE no action;
-
-ALTER TABLE tb_leitor
-    ADD CONSTRAINT tb_usu_tb_tel_fk FOREIGN KEY ( tb_tel_id )
-        REFERENCES tb_telefone ( tel_id )
+ALTER TABLE tb_endereco
+    ADD CONSTRAINT tb_usu_tb_end_fk FOREIGN KEY ( tb_lei_id )
+        REFERENCES tb_leitor ( lei_id )
 ON DELETE NO ACTION 
     ON UPDATE no action;
 

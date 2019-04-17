@@ -1,105 +1,108 @@
-<html lang="pt-br">    
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Pagina Inicial</title>        
-    </head>
-    
-    <body> 
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <title>Pagina Inicial</title>
+</head>
+
+<body>
     <header>
-        <nav><ul class="ul">                
-            <li class="li"><a href="MenuFuncionario.html">Menu do Funcionario</a></li>
-            <li class="li"><a href="Login.html">Login</a></li>
-            <li class="li"><a href="Index.html">Home</a></li>
-        </ul></nav>
-    </header> 
-        
+        <nav>
+            <ul class="ul">
+                <li class="li"><a href="MenuFuncionario.html">Menu do Funcionario</a></li>
+                <li class="li"><a href="Login.html">Login</a></li>
+                <li class="li"><a href="Index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div>
-        <form action="#" method="post">
-      
+        <form action="../Control/cadLeitor.php" method="post">
+
             <label>Nome: </label>
             <input type="text" id="nome" name="nome" required><br>
-       
+
             <label>E-mail: </label>
-            <input type="text" id="email" name="email" required><br>
-                   
+            <input type="email" id="email" name="email" required><br>
+
             <label>Data de nascimento: </label>
-            <input type="date" id="dataNascimento" name="dataNascimento" required><br>
-            
+            <input type="date" id="dtnasc" name="dtnasc" required><br>
+
             <label>Sexo: </label>
-            <label><input type="radio" name="sexo" value="Feminino"> Feminino </label>
-            <label><input type="radio" name="sexo" value="Masculino"> Masculino</label><br><br>    
-            
-            <label>Endereço: </label><br>            
-            <label for="rua">Rua:</label>         
-            <input type="text" name="rua"> 
-            
+            <label><input type="radio" name="sexo" value="F"> Feminino </label>
+            <label><input type="radio" name="sexo" value="M"> Masculino</label><br><br>
+
+            <label>Endereço: </label><br>
+            <label for="rua">Rua:</label>
+            <input type="text" name="rua">
+
             <label for="numero">Numero:</label>
-            <input type="text" name="numero" size="4"><br>  
-            
+            <input type="text" id="numero" name="numero" size="4"><br>
+
             <label for="bairro">Bairro: </label>
-            <input type="text" name="bairro"> 
-            
+            <input type="text" name="bairro">
+
             <label for="cidade">Cidade: </label>
-            <input type="text" name="cidade"><br> 
-            
+            <input type="text" name="cidade"><br>
+
             <tr>
-            <td>
-                <label for="estado">Estado:</label>               
-                <select name="estado"> 
-                    <option value="null"></option> 
-                    <option value="ac">Acre</option> 
-                    <option value="al">Alagoas</option> 
-                    <option value="am">Amazonas</option> 
-                    <option value="ap">Amapá</option> 
-                    <option value="ba">Bahia</option> 
-                    <option value="ce">Ceará</option> 
-                    <option value="df">Distrito Federal</option> 
-                    <option value="es">Espírito Santo</option> 
-                    <option value="go">Goiás</option> 
-                    <option value="ma">Maranhão</option> 
-                    <option value="mt">Mato Grosso</option> 
-                    <option value="ms">Mato Grosso do Sul</option> 
-                    <option value="mg">Minas Gerais</option> 
-                    <option value="pa">Pará</option> 
-                    <option value="pb">Paraíba</option> 
-                    <option value="pr">Paraná</option> 
-                    <option value="pe">Pernambuco</option> 
-                    <option value="pi">Piauí</option> 
-                    <option value="rj">Rio de Janeiro</option> 
-                    <option value="rn">Rio Grande do Norte</option> 
-                    <option value="ro">Rondônia</option> 
-                    <option value="rs">Rio Grande do Sul</option> 
-                    <option value="rr">Roraima</option> 
-                    <option value="sc">Santa Catarina</option> 
-                    <option value="se">Sergipe</option> 
-                    <option value="sp">São Paulo</option> 
-                    <option value="to">Tocantins</option> 
-               </select>
-            </td>
+                <td>
+                    <label for="estado">Estado:</label>
+                    <select name="estado"> 
+                        <option value="null"></option> 
+                        <option value="ac">Acre</option> 
+                        <option value="al">Alagoas</option> 
+                        <option value="am">Amazonas</option> 
+                        <option value="ap">Amapá</option> 
+                        <option value="ba">Bahia</option> 
+                        <option value="ce">Ceará</option> 
+                        <option value="df">Distrito Federal</option> 
+                        <option value="es">Espírito Santo</option> 
+                        <option value="go">Goiás</option> 
+                        <option value="ma">Maranhão</option> 
+                        <option value="mt">Mato Grosso</option> 
+                        <option value="ms">Mato Grosso do Sul</option> 
+                        <option value="mg">Minas Gerais</option> 
+                        <option value="pa">Pará</option> 
+                        <option value="pb">Paraíba</option> 
+                        <option value="pr">Paraná</option> 
+                        <option value="pe">Pernambuco</option> 
+                        <option value="pi">Piauí</option> 
+                        <option value="rj">Rio de Janeiro</option> 
+                        <option value="rn">Rio Grande do Norte</option> 
+                        <option value="ro">Rondônia</option> 
+                        <option value="rs">Rio Grande do Sul</option> 
+                        <option value="rr">Roraima</option> 
+                        <option value="sc">Santa Catarina</option> 
+                        <option value="se">Sergipe</option> 
+                        <option value="sp">São Paulo</option> 
+                        <option value="to">Tocantins</option> 
+                    </select>
+                </td>
             </tr>
-            
+
             <label>CEP: </label>
             <input type="text" name="cep" size="5" maxlength="5"> - <input type="text" name="cep2" size="3" maxlength="3"><br><br>
-            
+
             <tr>
-            <td>
-                <label>Tipo de telefone:</label>               
-                <select name="tipoTelefone" required> 
-                    <option value="null"></option> 
-                    <option value="cel">Celular</option>  
-                    <option value="com">Comercial</option> 
-                    <option value="res">Residencial</option>
-                </select>
-            </td>
-            </tr>   
-            <label>Número:</label>     
-            <input type="text" name="telefone" size="8" maxlength="13" required><br>            
-            
+                <td>
+                    <label>Tipo de telefone:</label>
+                    <select name="tipo" id="tipo" required> 
+                        <option value="null"></option>
+                        <option value=1>Residencial</option>
+                        <option value=2>Celular</option>  
+                        <option value=3>Comercial</option> 
+                    </select>
+                </td>
+            </tr>
+            <label for="telefone">Número:</label>
+            <input type="text" name="telefone" size="8" maxlength="13" required><br>
+
             <button type="submit" name="submit">Enviar</button>
-   
+
         </form>
-    </div>    
-    </body>
+    </div>
+</body>
+
 </html>
-        
