@@ -47,12 +47,13 @@
                 </tr>
             </thead>
             <?php $value = $autorDAO->select(0);?>
-              <tbody>
-                  <tr>
-                      <td><?php echo $value[0];?></td>
-                      <td><?php echo $value['aut_dt_nascimento'];?></td>
-                      <td><?php echo $value['aut_sexo'];?></td>
-                  </tr>
-              </tbody>
+            <tbody>
+                <tr>
+                    <td><?php echo $value[0];?></td>
+                    <td><?php echo $value['aut_dt_nascimento'];?></td>
+                    <td><?php echo $value['aut_sexo'];?></td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
