@@ -40,7 +40,7 @@
 
     
     if($leitorDAO->insert()){
-        header("Location:../View/CadastroLeitorFinalizado.html");
+        header("Location:../View/ListarLeitor.php");
     }else{
         
     }

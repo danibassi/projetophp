@@ -31,7 +31,7 @@
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id',$id);
             $stmt->execute();
-            return $stmt->fecth();
+            return $stmt->fecth(PDO::FETCH_ASSOC);
         }
     }
 

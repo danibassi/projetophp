@@ -73,7 +73,7 @@
             $stmt->bindParam(':cep',$this->leitor->getEndereco()->getCep());
         }
         public function select($id){
-            $sql = "SELECT l.lei_nome,l.lei_email, l.lei_dtnasc, l.lei_sexo, e.end_rua, e.end_numero, e.end_bairro,
+            $sql = "SELECT l.lei_id,l.lei_nome,l.lei_email, l.lei_dtnasc, l.lei_sexo, e.end_rua, e.end_numero, e.end_bairro,
             e.end_cidade, e.end_estado, e.end_cep, t.tel_numero,tp.tip_tel_tipo
             FROM $this->table as l
             INNER JOIN tb_endereco as e
@@ -87,7 +87,22 @@
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id',$id);
             $stmt->execute();
-            return $stmt->fetch();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        public function selectAll(){
+            $sql = "SELECT l.lei_id,l.lei_nome,l.lei_email, l.lei_dtnasc, l.lei_sexo, e.end_rua, e.end_numero, e.end_bairro,
+            e.end_cidade, e.end_estado, e.end_cep, t.tel_numero,tp.tip_tel_tipo
+            FROM $this->table as l
+            INNER JOIN tb_endereco as e
+            ON l.lei_id = e.tb_lei_id
+            INNER JOIN tb_telefone as t
+            ON l.lei_id = t.tb_lei_id
+            INNER JOIN tb_tipo_tel as tp
+            ON t.tb_tip_tel_id = tp.tip_tel_id;";
+            
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
         }
     }
 ?>
