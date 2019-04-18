@@ -4,7 +4,7 @@ class Livro{
     private $nome;
     private $anoPublicacao;
     private $edicao;
-    private $estado;
+    private $estadoLivro;
     private $editora;
     private $autor;
     private $genero;
@@ -33,6 +33,14 @@ class Livro{
 
     public function getEdicao(){
         return $this->edicao;
+    }
+
+    public function setEstadoLivro($estadoLivro){
+        $this->estadoLivro = $estadoLivro;
+    }
+
+    public function getEstadoLivro(){
+        return $this->estadoLivro;
     }
 
     public function setEditoria($editora){

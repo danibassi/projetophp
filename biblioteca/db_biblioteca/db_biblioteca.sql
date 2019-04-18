@@ -1,3 +1,5 @@
+CREATE DATABASE db_biblioteca;
+
 CREATE TABLE tb_autor (
     aut_id              INT PRIMARY KEY auto_increment,
     aut_dtnasc          DATE NOT NULL,
@@ -57,11 +59,17 @@ CREATE TABLE tb_livro (
     liv_nome            VARCHAR(100) NOT NULL,
     liv_ano_publicao    DATE NOT NULL,
     liv_edicao          VARCHAR(3) NOT NULL,
-    liv_estado          VARCHAR(50) NOT NULL,
+    tb_est_liv_id       INT NOT NULL,
     tb_edi_id           INT NOT NULL,
     tb_aut_id           INT NOT NULL,
     tb_gen_id           INT NOT NULL,
-    liv_isbd            VARCHAR(13) NOT NULL
+    liv_isbd            VARCHAR(13) NOT NULL,
+    liv_capa            MEDIUMBLOB
+);
+
+CREATE TABLE tb_estado_livro(
+    est_liv_id        INT PRIMARY KEY auto_increment,
+    est_liv_estado    VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE tb_telefone (
@@ -112,6 +120,12 @@ ALTER TABLE tb_livro
 ON DELETE NO ACTION 
     ON UPDATE no action;
 
+ALTER TABLE tb_livro 
+    ADD CONSTRAINT tb_est_liv_fk FOREIGN KEY (tb_est_liv_id) 
+        REFERENCES tb_estado_livro(est_liv_id) 
+ON DELETE NO ACTION 
+    ON UPDATE NO ACTION;
+
 ALTER TABLE tb_telefone
     ADD CONSTRAINT tb_tel_tb_tip_fk FOREIGN KEY ( tb_lei_id )
         REFERENCES tb_leitor ( lei_id )
@@ -130,5 +144,15 @@ ALTER TABLE tb_endereco
 ON DELETE NO ACTION 
     ON UPDATE no action;
 
-INSERT INTO tb_tipo_tel (tip_tel_tipo) VALUES ("Residencial"),("Celular"),("comercial");
+INSERT INTO tb_tipo_tel (tip_tel_tipo) VALUES ("Residencial"),("Celular"),("Comercial");
+
+INSERT INTO tb_genero (gen_genero) VALUES ("Ação"),("Fantasia"),("Ficção Cientifica"),("Terror"),("Aventura"),("Drama"),("Infantil");
+
+INSERT INTO tb_estado_livro (est_liv_estado) VALUES ("Conservado"),("Pouco Danificado"),("Danificado");
+
+# Privileges for `biblioteca`@`localhost`
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, FILE, INDEX, ALTER, CREATE TEMPORARY TABLES, 
+EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER ON *.*
+TO 'biblioteca'@'localhost' IDENTIFIED BY PASSWORD '*16FD9BF32A5234F54550BC8610345466FF246243';
 

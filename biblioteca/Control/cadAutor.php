@@ -11,7 +11,7 @@
     $autorDAO = new AutorDAO($autor);
 
     if($autorDAO->insert()){
-        header("Location:../View/viewcadautor.php");
+        header("Location:../View/CadastroLeitorFinalizado.html");
     }else{
         
     }

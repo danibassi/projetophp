@@ -2,8 +2,8 @@
     require_once '../Classes/Livro.php';
     require_once '../Conexao/Crud.php';
     class LivroDAO extends Crud{
-        $livro;
-        $table = "tb_livro";
+        private $livro;
+        protected $table = "tb_livro";
 
         function __construct($livro){
             $this->livro = $livro;
@@ -18,11 +18,11 @@
             $stmt->bindParam(':nome',$this->livro->getNome());
             $stmt->bindParam(':ano_publicacao',$this->livro->getAnoPublicaco());
             $stmt->bindParam(':edicao',$this->livro->getEdicao());
-            $stmt->bindParam(':estado',$this->livro->getEstado());
+            $stmt->bindParam(':estado',$this->livro->getEstadoLivro()->getEstado());
             $stmt->bindParam(':isbd',$this->livro->getIsbd());
-            $stmt->bindParam('',$this->livro->getEditora()->getNome());
-            $stmt->bindParam('',$this->livro->getAutor()->getNome());
-            $stmt->bindParam('',$this->livro->getGenero()->getGenero());
+            $stmt->bindParam(':editora',$this->livro->getEditora()->getNome());
+            $stmt->bindParam(':autor',$this->livro->getAutor()->getNome());
+            $stmt->bindParam(':genero',$this->livro->getGenero()->getGenero());
             return $stmt->execute();
         }
 
