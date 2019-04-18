@@ -2,7 +2,7 @@
 
 class Livro{
     private $nome;
-    private $anopublicacao;
+    private $anoPublicacao;
     private $edicao;
     private $estado;
     private $editora;
@@ -19,12 +19,12 @@ class Livro{
         return $this->nome;
     }
 
-    public function setAnopublicacao($anopublicacao){
-        $this->anopublicacao = $anopublicacao;
+    public function setAnoPublicacao($anoPublicacao){
+        $this->anoPublicacao = $anoPublicacao;
     }
 
-    public function getAnopublicacao(){
-        return $this->anopublicacao;
+    public function getAnoPublicacao(){
+        return $this->anoPublicacao;
     }
 
     public function setEdicao($edicao){
