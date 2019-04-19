@@ -10,42 +10,44 @@
         }
         
         
-        public function insert(){
+        public function insert(){  
             $sql = "INSERT INTO $this->table (liv_nome,liv_ano_publicacao, liv_edicao,
-            liv_estado, liv_isbd, tb_edi_id, tb_aut_id, tb_gen_id) 
+            tb_est_liv_id, liv_isbd, tb_edi_id, tb_aut_id, tb_gen_id) 
             VALUES (:nome, :ano_publicacao, :edicao, :estado, :isbd, :editora, :autor, :genero);";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome',$this->livro->getNome());
-            $stmt->bindParam(':ano_publicacao',$this->livro->getAnoPublicaco());
+            $stmt->bindParam(':ano_publicacao',$this->livro->getAnoPublicacao());
             $stmt->bindParam(':edicao',$this->livro->getEdicao());
             $stmt->bindParam(':estado',$this->livro->getEstadoLivro()->getEstado());
             $stmt->bindParam(':isbd',$this->livro->getIsbd());
-            $stmt->bindParam(':editora',$this->livro->getEditora()->getNome());
+            $stmt->bindParam(':editora',$this->livro->getEditora()->getEditoraNome());
             $stmt->bindParam(':autor',$this->livro->getAutor()->getNome());
             $stmt->bindParam(':genero',$this->livro->getGenero()->getGenero());
             return $stmt->execute();
         }
 
-        public function update(){
+        public function update($id){
             $sql = "UPDATE $this->table (liv_nome,liv_ano_publicacao, liv_edicao,
             liv_estado, liv_isbd, tb_edi_id, tb_aut_id, tb_gen_id) 
-            SET (:nome, :ano_publicacao, :edicao, :estado, :isbd, :editora, :autor, :genero);";
+            SET (:nome, :ano_publicacao, :edicao, :estadoLivro, :isbd, :editora, :autor, :genero);";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome',$this->livro->getNome());
-            $stmt->bindParam(':ano_publicacao',$this->livro->getAnoPublicaco());
+            $stmt->bindParam(':ano_publicacao',$this->livro->getAnoPublicacao());
             $stmt->bindParam(':edicao',$this->livro->getEdicao());
-            $stmt->bindParam(':estado',$this->livro->getEstado());
+            $stmt->bindParam(':estadoLivro',$this->livro->getEstadoLivro()->getEstado());
             $stmt->bindParam(':isbd',$this->livro->getIsbd());
-            $stmt->bindParam('',$this->livro->getEditora()->getNome());
-            $stmt->bindParam('',$this->livro->getAutor()->getNome());
-            $stmt->bindParam('',$this->livro->getGenero()->getGenero());
+            $stmt->bindParam(':editora',$this->livro->getEditora()->getEditoraNome());
+            $stmt->bindParam(':autor',$this->livro->getAutor()->getNome());
+            $stmt->bindParam(':genero',$this->livro->getGenero()->getGenero());
             return $stmt->execute();
         }
 
         public function select($id){
             $sql = "SELECT l.liv_nome,l.liv_ano_publicacao, l.liv_edicao,
-            l.liv_estado, l.liv_isbd, e.edi_nome, a.aut_nome, g.gen_genero
+            l.liv_isbd, el.est_liv_estado, e.edi_nome, a.aut_nome, g.gen_genero
             FROM $this->table as l
+            INNER JOIN tb_estado_livro as el
+            ON l.tb_est_liv_id = el.est_liv_id
             INNER JOIN tb_editora as e
             ON l.tb_edi_id = e.edt_id
             INNER JOIN tb_autor as a
