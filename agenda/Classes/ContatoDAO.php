@@ -12,7 +12,8 @@
         }
 
         public function insert(){
-            $sql  = "INSERT INTO $this->table (nome, email, celular, apelido, dtnasc, fk_tipocontato) VALUES (:nome, :email, :celular, :apelido, :dtnasc, :tipo)";
+            $sql  = "INSERT INTO $this->table (nome, email, celular, apelido, dtnasc, fk_tipocontato)
+            VALUES (:nome, :email, :celular, :apelido, :dtnasc, :tipo, :usuario)";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome', $this->contato->getNome());
             $stmt->bindParam(':email', $this->contato->getEmail());
@@ -20,6 +21,20 @@
             $stmt->bindParam(':apelido', $this->contato->getApelido());
             $stmt->bindParam(':dtnasc', $this->contato->getDtnasc());
             $stmt->bindParam(':tipo', $this->contato->getTipo()->getTipo());
+            return $stmt->execute();
+        }
+
+        public function insertCompleto($id){
+            $sql  = "INSERT INTO $this->table (nome, email, celular, apelido, dtnasc, fk_tipocontato, fk_usuario)
+            VALUES (:nome, :email, :celular, :apelido, :dtnasc, :tipo, :usuario)";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':nome', $this->contato->getNome());
+            $stmt->bindParam(':email', $this->contato->getEmail());
+            $stmt->bindParam(':celular', $this->contato->getCelular());
+            $stmt->bindParam(':apelido', $this->contato->getApelido());
+            $stmt->bindParam(':dtnasc', $this->contato->getDtnasc());
+            $stmt->bindParam(':tipo', $this->contato->getTipo()->getTipo());
+            $stmt->bindParam(':usuario', $id);
             return $stmt->execute();
         }
     
@@ -52,12 +67,14 @@
             return $contato_escolhido;
         }
     
-        public function findAllCompleto(){
+        public function findAllCompleto($id){
             $sql  = "SELECT c.id, c.nome, c.apelido, c.email, c.celular, c.dtnasc, t.tipo 
                      FROM $this->table as c 
                      INNER JOIN TipoContato as t 
-                     ON c.fk_tipocontato = t.id";
+                     ON c.fk_tipocontato = t.id
+                     WHERE c.fk_usuario = :id";
             $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id',$id);
             $stmt->execute();
             return $stmt->fetchAll();
         }

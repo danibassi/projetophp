@@ -12,6 +12,9 @@ require_once 'Classes/ContatoDAO.php';
     </head>
     <body>
 		<?php
+			session_start();
+
+
 			$contato = new Contatos();
 			$contato->setNome($_POST['nome']);
 			$contato->setEmail($_POST['email']);
@@ -22,7 +25,7 @@ require_once 'Classes/ContatoDAO.php';
 			$tipo->setTipo($_POST['tipo']);
 			$contato->setTipo($tipo);
 			$contatodao = new ContatoDAO($contato);
-			if($contatodao->insert()){
+			if($contatodao->insertCompleto($_SESSION['id'])){
 				header("Location:formcontato.php");
 			}elseif ($usu->update()) {
 				header("Location: formcontato.php");

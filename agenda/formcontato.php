@@ -11,6 +11,16 @@
         <link rel="stylesheet" href="css/estilo.css" type="text/css">
     </head>
     <body>
+    <?php
+        session_start();
+        if(!isset($_SESSION['login']) || !isset($_SESSION['senha'])){
+            unset($_SESSION['login']);
+            unset($_SESSION['senha']);
+            
+            header("Location: index.php");
+            exit;
+        }
+        ?>
       	<form action="cadcontato.php" method="POST" name="form1" >
           	<h1>Contatos</h1>
           	<hr>
@@ -62,7 +72,7 @@
                     <td>Deletar</td>
                 </tr>
             </thead>
-            <?php foreach($meu_contato->findAllCompleto() as $key => $value):?>
+            <?php foreach($meu_contato->findAllCompleto($_SESSION['id']) as $key => $value):?>
               <tbody>
                   <tr>
                       <td><?php echo $value->nome;?></td>
@@ -78,5 +88,8 @@
               </tbody>
             <?php endforeach; ?>
           </table>
+          <form action="index.php">
+                    <input type="submit" value="Sair">
+          </form> 
     </body>
 </html>
