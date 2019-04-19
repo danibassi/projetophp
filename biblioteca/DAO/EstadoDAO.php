@@ -1,33 +1,19 @@
 <?php
 
     require_once '../Conexao/Crud.php';
-    require_once '../Classes/Editora.php';
+    require_once '../Classes/Estado.php';
 
     class EstadoDAO extends Crud{
         
-        private $editora;
+        private $estado;
         protected $table = "tb_estado";
 
-        function __construct($editora){
-            $this->editora = $editora;
-        }
-        
-        public function insert(){
-            $sql = "INSERT INTO $this->table (edi_nome) VALUES (:nome)";
-            $stmt = DB::prepare($sql);
-            $stmt->bindParam(':nome',$this->editora->getNome());
-            return $stmt->execute();
-        }
-
-        public function update($id){
-            $sql = "UPDATE $this->table (edi_nome) SET (:nome);";
-            $stmt = DB::prepare($sql);
-            $stmt->bindParam(':nome',$this->editora->getNome());
-            return $stmt->execute();
+        function __construct($estado){
+            $this->estado = $estado;
         }
 
         public function select(){
-            $sql = "SELECT edi_nome FROM $this->table WHERE edi_id = :id;";
+            $sql = "SELECT est_estado FROM $this->table WHERE est_id = :id;";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id',$id);
             $stmt->execute();

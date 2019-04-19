@@ -43,8 +43,8 @@ class Livro{
         return $this->estadoLivro;
     }
 
-    public function setEditoria($editora){
-        $this->editoria = $editora;
+    public function setEditora($editora){
+        $this->editora = $editora;
     }
 
     public function getEditora(){

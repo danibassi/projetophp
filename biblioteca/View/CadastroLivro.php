@@ -2,9 +2,11 @@
     require_once '../Classes/Autor.php';
     require_once '../Classes/Editora.php';
     require_once '../Classes/Genero.php';
+    require_once '../Classes/EstadoLivro.php';
     require_once '../DAO/AutorDAO.php';
     require_once '../DAO/EditoraDAO.php';
     require_once '../DAO/GeneroDAO.php';
+    require_once '../DAO/EstadoLivroDAO.php';
 ?>
 <html lang="pt-br">    
     <head>
@@ -22,7 +24,7 @@
         </ul></nav>
     </header> 
     <div>
-        <form action="#" method="post">
+        <form action="../Control/cadLivro.php" method="post">
       
             <label>Livro: </label>
             <input type="text" id="nomeLivro" name="nomeLivro" required><br> 
@@ -30,6 +32,7 @@
                 $autorDAO = new autorDAO(new Autor());
                 $editoraDAO = new EditoraDAO(new Editora());
                 $generoDAO = new GeneroDAO(new Genero());
+                $estadoLivroDAO = new EstadoLivroDAO(new EstadoLivro());
             ?>
             <label>Autor: </label>
             <select name="cbAutor">
@@ -42,7 +45,7 @@
             </select><br>
             
             <label>Editora:</label>
-            <select name="cbAutor">
+            <select name="cbEditora">
                 <option value="null">Selecione...</option>
                 <?php
                     foreach($editoraDAO->findAll() as $key => $value):
@@ -52,7 +55,7 @@
             </select><br>
 
             <label>Genero: </label>
-            <select name="cbAutor">
+            <select name="cbGenero">
                 <option value="null">Selecione...</option>
                 <?php
                     foreach($generoDAO->findAll() as $key => $value):
@@ -65,10 +68,19 @@
             <input type="date" id="AnoPublicacao" name="AnoPublicacao"><br>
         
             <label>Estado do livro: </label>
-            <input type="text" id="cidade" name="cidade" value=1 required><br>
-            
+            <select name="cbEstadoLivro">
+                <option value="null">Selecione...</option>
+                <?php
+                    foreach($estadoLivroDAO->findAll() as $key => $value):
+                        echo "<option value=$value->est_liv_id>$value->est_liv_estado</option>";
+                    endforeach;
+                ?>
+            </select><br>
             <label>Edição: </label>
             <input type="number" id="edicao" name="edicao" min="1" required><br>
+            
+            <label>Isbd: </label>
+            <input type="text" id="isbd" name="isbd" maxlength="10" required><br>
             
             <button type="submit" name="submit">Enviar</button>
    
