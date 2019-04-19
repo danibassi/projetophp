@@ -56,7 +56,7 @@
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id',$id);
             $stmt->execute();
-            return $stmt->fetch();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }
 ?>

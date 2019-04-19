@@ -3,10 +3,10 @@
     require_once '../Conexao/Crud.php';
     require_once '../Classes/Editora.php';
 
-    class EditoraDAO extends Crud{
+    class EstadoDAO extends Crud{
         
         private $editora;
-        protected $table = "tb_editora";
+        protected $table = "tb_estado";
 
         function __construct($editora){
             $this->editora = $editora;
@@ -26,7 +26,7 @@
             return $stmt->execute();
         }
 
-        public function select($id){
+        public function select(){
             $sql = "SELECT edi_nome FROM $this->table WHERE edi_id = :id;";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id',$id);

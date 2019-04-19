@@ -79,6 +79,23 @@ CREATE TABLE tb_telefone (
     tb_lei_id                INT NOT NULL
 );
 
+CREATE TABLE tb_estado(
+
+	est_id INT(11)           PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	est_sigla                VARCHAR(2) COLLATE utf8_unicode_ci NOT NULL,
+	est_nome                 VARCHAR(72) COLLATE utf8_unicode_ci NOT NULL
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE tb_cidade(
+	cid_id                   INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	cid_nome                 VARCHAR(72) COLLATE utf8_unicode_ci NOT NULL,
+	cid_cep                  VARCHAR(8) COLLATE utf8_unicode_ci NOT NULL,
+	tb_est_id                INT(11) NOT NULL,
+	
+    FOREIGN KEY(tb_est_id) REFERENCES tb_estado(est_id) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE tb_tipo_tel (
     tip_tel_id     INT(28) PRIMARY KEY auto_increment,
     tip_tel_tipo   VARCHAR(20) NOT NULL
@@ -144,11 +161,6 @@ ALTER TABLE tb_endereco
 ON DELETE NO ACTION 
     ON UPDATE no action;
 
-INSERT INTO tb_tipo_tel (tip_tel_tipo) VALUES ("Residencial"),("Celular"),("Comercial");
-
-INSERT INTO tb_genero (gen_genero) VALUES ("Ação"),("Fantasia"),("Ficção Cientifica"),("Terror"),("Aventura"),("Drama"),("Infantil");
-
-INSERT INTO tb_estado_livro (est_liv_estado) VALUES ("Conservado"),("Pouco Danificado"),("Danificado");
 
 # Privileges for `biblioteca`@`localhost`
 

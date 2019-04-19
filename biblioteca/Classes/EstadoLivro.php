@@ -9,5 +9,4 @@
             $this->estado = $estado;
         }
     }
-
 ?>

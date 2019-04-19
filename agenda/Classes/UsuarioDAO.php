@@ -5,10 +5,10 @@
     class UsuarioDAO extends Crud{
         protected $table = 'usuario';
 
-        private $usuDAO;
+        private $usuario;
 
         function __construct($usuario){
-            $this->usuDAO = $usuario; 
+            $this->usuario = $usuario; 
         }
 
         public function insert(){
@@ -26,9 +26,9 @@
     
             $sql  = "UPDATE $this->table SET nome = :nome, email = :email, senha = :senha WHERE id = :id";
             $stmt = DB::prepare($sql);
-            $stmt->bindParam(':nome', $this->nome);
-            $stmt->bindParam(':email', $this->email);
-            $stmt->bindParam(':senha', $this->senha);
+            $stmt->bindParam(':nome', $this->usuario->getNome());
+            $stmt->bindParam(':email', $this->usuario->getEmail());
+            $stmt->bindParam(':senha', $this->usuario->getSenha());
             $stmt->bindParam(':id', $id);
             return $stmt->execute();
     
