@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Pagina Inicial</title>        
+        <title>Login</title>        
     </head>
     
     <body> 
