@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Pagina Inicial</title>
+        <title>Leitores Cadastrados</title>
         <style>
             #stusuarios {
                 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
