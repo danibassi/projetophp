@@ -1,8 +1,6 @@
 <?php
-    require_once '../Classes/Leitor.php';
-    require_once '../Classes/Endereco.php';
-    require_once '../Classes/Telefone.php';
-    require_once '../DAO/LeitorDAO.php';
+    require_once '../Classes/Livro.php';
+    require_once '../DAO/LivroDAO.php';
 ?>
 <html lang="pt-br">    
     <head>
@@ -45,32 +43,32 @@
         </header>
         
         <?php
-            $leitorDAO = new LeitorDAO(new Leitor());
+            $livroDAO = new LivroDAO(new Livro());
         ?>
         <table id="stusuarios">
             <thead>
                 <tr>
                     <td>Nome</td>
-                    <td>E-mail</td>
-                    <td>Sexo</td>
-                    <td>Data de Nascimento</td>
-                    <td>Tipo do Numero</td>
-                    <td>Numero</td>
-                    <td>Endereço</td>
+                    <td>Autor</td>
+                    <td>Editora</td>
+                    <td>Genero</td>
+                    <td>Ano de Publicação</td>
+                    <td>Estado do Livro</td>
+                    <td>Edição</td>
+                    <td>ISBD</td>
                 </tr>
             </thead>
-            <?php foreach($leitorDAO->selectAll() as $key => $value):?>
+            <?php foreach($livroDAO->selectAll() as $key => $value):?>
               <tbody>
                   <tr>
-                      <td><?php echo $value->lei_nome;?></td>
-                      <td><?php echo $value->lei_email;?></td>
-                      <td><?php echo $value->lei_sexo;?></td>
-                      <td><?php echo $value->lei_dtnasc;?></td>
-                      <td><?php echo $value->tip_tel_tipo;?></td>
-                      <td><?php echo $value->tel_numero;?></td>
-                      <td><?php echo $value->end_rua.", ".$value->end_numero.", ".
-                                     $value->end_bairro.", ".$value->end_cidade."-".
-                                     $value->end_estado;?></td>
+                      <td><?php echo $value->liv_nome;?></td>
+                      <td><?php echo $value->aut_nome;?></td>
+                      <td><?php echo $value->edi_nome;?></td>
+                      <td><?php echo $value->gen_genero;?></td>
+                      <td><?php echo $value->liv_ano_publicacao;?></td>
+                      <td><?php echo $value->est_liv_estado;?></td>
+                      <td><?php echo $value->liv_edicao?></td>
+                      <td><?php echo $value->liv_isbd?></td>
                   </tr>
               </tbody>
             <?php endforeach; ?>
