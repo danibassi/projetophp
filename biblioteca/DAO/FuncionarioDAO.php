@@ -15,10 +15,8 @@
 
         public function insert(){
             $sql = "INSERT INTO $this->table (fun_nome,fun_email, fun_password ,fun_sexo) 
-                    VALUES (:nome,:email,:senha,:sexo);";
-                    
+                    VALUES (:nome,:email,:senha,:sexo);";    
             $stmt = DB::prepare($sql);
-
             $stmt->bindParam(':nome', $this->funcionario->getNome());
             $stmt->bindParam(':email',$this->funcionario->getEmail());
             $stmt->bindParam(':senha',$this->funcionario->getPassword());
@@ -31,7 +29,6 @@
             $sql = "INSERT INTO $this->table (fun_nome,fun_email, fun_password ,fun_sexo) 
                     VALUES (:nome,:email,:dtnasc,:sexo);";
             $stmt = DB::prepare($sql);
-
             $stmt->bindParam(':nome', $this->funcionario->getNome());
             $stmt->bindParam(':email',$this->funcionario->getEmail());
             $stmt->bindParam(':password',$this->funcionario->getPassword());
