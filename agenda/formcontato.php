@@ -3,6 +3,8 @@
     include "Classes/Contato.php";
     include "Classes/TipoContato.php";
     require_once 'Classes/ContatoDAO.php';
+    require_once 'Classes/TelefoneDAO.php';
+    require_once 'Classes/Telefone.php';
 ?>
 <html> 
     <head>
@@ -12,7 +14,6 @@
     </head>
     <body>
     <?php
-        session_start();
         if(!isset($_SESSION['login']) || !isset($_SESSION['senha'])){
             unset($_SESSION['login']);
             unset($_SESSION['senha']);
@@ -26,9 +27,6 @@
           	<hr>
           	Nome:
           	<input type="text" name="nome" />
-          	<br/>
-          	Celular:
-          	<input type="text" name="celular" />
           	<br>
           	Apelido:
             <input type="text" name="apelido" />
@@ -58,6 +56,7 @@
         <?php
             $contato = new Contatos();
             $meu_contato = new ContatoDAO($contato);
+            $meu_telefone = new TelefoneDAO(new Telefone());
         ?>
         <table id="stusuarios">
             <thead>
@@ -70,6 +69,7 @@
                     <td>Tipo</td>
                     <td>Ação</td>
                     <td>Deletar</td>
+                    <td>Add Telefone</td>
                 </tr>
             </thead>
             <?php foreach($meu_contato->findAllCompleto($_SESSION['id']) as $key => $value):?>
@@ -78,11 +78,22 @@
                       <td><?php echo $value->nome;?></td>
                       <td><?php echo $value->apelido;?></td>
                       <td><?php echo $value->email;?></td>
-                      <td><?php echo $value->celular;?></td>
+                      <td>
+                        <?php 
+                            foreach($meu_telefone->findAllTelefone($value->id) as $key => $telefone):
+                                echo $telefone->numero. "<br>";
+                            endforeach;
+                        ?>
+                      </td>
                       <td><?php echo $value->dtnasc;?></td>
                       <td><?php echo $value->tipo;?></td>
                       <td><?php echo "<a href='formeditcontato.php?id=".$value->id."'>Editar</a>";?>
                       <td><?php echo "<a href='excluircontato.php?id=".$value->id."'>Deletar</a>";?>
+                      <td>
+                        <form action="formtelefone.php" method="POST">
+                            <input type="hidden" name="id" value = <?php echo $value->id;?>>
+                            <input type="submit" value = "Adicionar">
+                        </form>
                       </td>
                   </tr>
               </tbody>

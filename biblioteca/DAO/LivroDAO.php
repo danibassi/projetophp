@@ -27,9 +27,11 @@
         }
 
         public function update($id){
-            $sql = "UPDATE $this->table (liv_nome,liv_ano_publicacao, liv_edicao,
-            liv_estado, liv_isbd, tb_edi_id, tb_aut_id, tb_gen_id) 
-            SET (:nome, :ano_publicacao, :edicao, :estadoLivro, :isbd, :editora, :autor, :genero);";
+            $sql = "UPDATE $this->table  
+            SET liv_nome = :nome, liv_ano_publicacao = :ano_publicacao, liv_edicao = :edicao,
+            tb_est_liv_id = :estadoLivro, liv_isbd = :isbd, tb_edi_id = :editora,
+            tb_aut_id = :autor, tb_gen_id = :genero
+            WHERE liv_id = :id";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome',$this->livro->getNome());
             $stmt->bindParam(':ano_publicacao',$this->livro->getAnoPublicacao());
@@ -39,6 +41,7 @@
             $stmt->bindParam(':editora',$this->livro->getEditora()->getEditoraNome());
             $stmt->bindParam(':autor',$this->livro->getAutor()->getNome());
             $stmt->bindParam(':genero',$this->livro->getGenero()->getGenero());
+            $stmt->bindParam(':id',$id);
             return $stmt->execute();
         }
 
@@ -72,7 +75,11 @@
             INNER JOIN tb_autor as a
             ON l.tb_aut_id = a.aut_id
             INNER JOIN tb_genero as g
+<<<<<<< HEAD
+            ON l.tb_gen_id = g.gen_id;";
+=======
             ON l.tb_gen_id = g.gen_id";
+>>>>>>> 0f6b4ab36e44401734e438e3560288abf9cb4c72
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id',$id);
             $stmt->execute();

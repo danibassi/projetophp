@@ -12,12 +12,11 @@
         }
 
         public function insert(){
-            $sql  = "INSERT INTO $this->table (nome, email, celular, apelido, dtnasc, fk_tipocontato)
-            VALUES (:nome, :email, :celular, :apelido, :dtnasc, :tipo, :usuario)";
+            $sql  = "INSERT INTO $this->table (nome, email, apelido, dtnasc, fk_tipocontato)
+            VALUES (:nome, :email, :apelido, :dtnasc, :tipo, :usuario)";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome', $this->contato->getNome());
             $stmt->bindParam(':email', $this->contato->getEmail());
-            $stmt->bindParam(':celular', $this->contato->getCelular());
             $stmt->bindParam(':apelido', $this->contato->getApelido());
             $stmt->bindParam(':dtnasc', $this->contato->getDtnasc());
             $stmt->bindParam(':tipo', $this->contato->getTipo()->getTipo());
@@ -25,12 +24,11 @@
         }
 
         public function insertCompleto($id){
-            $sql  = "INSERT INTO $this->table (nome, email, celular, apelido, dtnasc, fk_tipocontato, fk_usuario)
-            VALUES (:nome, :email, :celular, :apelido, :dtnasc, :tipo, :usuario)";
+            $sql  = "INSERT INTO $this->table (nome, email, apelido, dtnasc, fk_tipocontato, fk_usuario)
+            VALUES (:nome, :email, :apelido, :dtnasc, :tipo, :usuario)";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome', $this->contato->getNome());
             $stmt->bindParam(':email', $this->contato->getEmail());
-            $stmt->bindParam(':celular', $this->contato->getCelular());
             $stmt->bindParam(':apelido', $this->contato->getApelido());
             $stmt->bindParam(':dtnasc', $this->contato->getDtnasc());
             $stmt->bindParam(':tipo', $this->contato->getTipo()->getTipo());
@@ -39,11 +37,10 @@
         }
     
         public function update($id){
-            $sql  = "UPDATE $this->table SET nome = :nome, email = :email, celular = :celular, apelido = :apelido, dtnasc = :dtnasc, fk_tipocontato = :tipo WHERE id = :id";
+            $sql  = "UPDATE $this->table SET nome = :nome, email = :email, apelido = :apelido, dtnasc = :dtnasc, fk_tipocontato = :tipo WHERE id = :id";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome', $this->contato->getNome());
             $stmt->bindParam(':email', $this->contato->getEmail());
-            $stmt->bindParam(':celular', $this->contato->getCelular());
             $stmt->bindParam(':apelido', $this->contato->getApelido());
             $stmt->bindParam(':dtnasc', $this->contato->getDtnasc());
             $stmt->bindParam(':id', $id);
@@ -53,7 +50,7 @@
         
         public function select($id){
             $contato_escolhido = new Contatos();
-            $stmt = DB::prepare("SELECT nome,apelido,email,celular,dtnasc FROM $this->table 
+            $stmt = DB::prepare("SELECT nome,apelido,email,dtnasc FROM $this->table 
                                  WHERE id = :id");
             $stmt->bindParam(':id', $id);
             $resultado = $stmt->execute();
@@ -62,13 +59,12 @@
             $contato_escolhido->setNome($linha["nome"]);
             $contato_escolhido->setApelido($linha["apelido"]);
             $contato_escolhido->setEmail($linha["email"]);
-            $contato_escolhido->setCelular($linha["celular"]);
             $contato_escolhido->setDtnasc($linha["dtnasc"]);
             return $contato_escolhido;
         }
     
         public function findAllCompleto($id){
-            $sql  = "SELECT c.id, c.nome, c.apelido, c.email, c.celular, c.dtnasc, t.tipo 
+            $sql  = "SELECT c.id, c.nome, c.apelido, c.email, c.dtnasc, t.tipo 
                      FROM $this->table as c 
                      INNER JOIN TipoContato as t 
                      ON c.fk_tipocontato = t.id
