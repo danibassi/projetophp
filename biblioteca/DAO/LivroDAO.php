@@ -75,11 +75,7 @@
             INNER JOIN tb_autor as a
             ON l.tb_aut_id = a.aut_id
             INNER JOIN tb_genero as g
-<<<<<<< HEAD
             ON l.tb_gen_id = g.gen_id;";
-=======
-            ON l.tb_gen_id = g.gen_id";
->>>>>>> 0f6b4ab36e44401734e438e3560288abf9cb4c72
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id',$id);
             $stmt->execute();

@@ -35,13 +35,11 @@
     
     <body> 
         <header>
-            <nav>
-                <ul class="ul">                
-                    <li class="li"><a href="MenuFuncionario.html">Menu do Funcionario</a></li>
-                    <li class="li"><a href="Login.php">Login</a></li>
-                    <li class="li"><a href="Index.php">Home</a></li>
-                </ul>
-            </nav>
+            <nav><ul class="ul">                
+                <li class="li"><a href="MenuFuncionario.html">Menu do Funcionario</a></li>
+                <li class="li"><a href="Login.html">Login</a></li>
+                <li class="li"><a href="Index.html">Home</a></li>
+            </ul></nav>
         </header>
         
         <?php
