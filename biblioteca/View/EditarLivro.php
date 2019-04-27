@@ -17,15 +17,17 @@
     
     <body> 
     <header>
-        <nav><ul class="ul">                
-            <li class="li"><a href="MenuFuncionario.html">Menu do Funcionario</a></li>
-            <li class="li"><a href="Login.html">Login</a></li>
-            <li class="li"><a href="Index.html">Home</a></li>
-        </ul></nav>
+        <nav>
+            <ul class="ul">
+                <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li>
+            </ul>
+        </nav>
     </header> 
+        
     <div>
         <form action="../Control/ediLivro.php" method="post">
 
+            <label>Id: </label>
             <input type="hidden" name="id" value=<?php echo $_POST['id'];?>>
             <?php echo $_POST['id'];?>
 
@@ -89,7 +91,7 @@
             <input type="search" q="googlesearch">
             
             <button type="submit" name="submit">Enviar</button>
-   
+        
         </form>
     </div>    
              

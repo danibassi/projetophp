@@ -2,26 +2,40 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Menu Funcionario</title>        
+        <title>Home funcionário</title>        
     </head>
     
     <body> 
     <header>
         <nav><ul class="ul">                
-            <li class="li"><a href="MenuFuncionario.html">Menu do Funcionario</a></li>
-            <li class="li"><a href="Login.html">Login</a></li>
-            <li class="li"><a href="Index.html">Home</a></li>
+             <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li>
+             <li class="li"><a href="Index.php">Login(apagar esse btn dps)</a></li>
         </ul></nav>
     </header> 
 
-    <div>
-        <li><a href="CadastroLivro.html">Cadastro de livro</a></li>
-        <li><a href="CadastroLeitor.html">Cadastro de Usuário</a></li>
-        <li><a href="CadastroFuncionario.html">Cadastro de funcionário</a>
-        <li><a href="Emprestimo.html">Empréstimo de livro</a>
-        </li>
-        
+    <div style="float: left; width: 20%">
+        <table border=1>
+            <td>
+                <li><a href="CadastroAutor.php">Cadastrar autor</a></li>
+                <li><a href="CadastroEditora.php">Cadastrar editora</a></li>
+                <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
+                <li><a href="CadastroLeitor.php">Cadastrar Usuário</a></li>
+                <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
+                <li><a href="Emprestimo.php">Empréstimos</a></li>
+                <li><a href="EditarLivro.php">Editar Livro cadastrado</a></li>
+                <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
+                <li><a href="ListarLivro.php">Livros cadastrados</a></li>
+            </td>
+            
+        </table>
+                
     </div>  
+        
+    <div id="divBusca" style="float: left; width: 80%">
+        <input type="text" id="txtBusca" placeholder="Buscar..."/>
+        <button id="btnBusca">Buscar</button>
+        
+    </div>
         
     </body>
     

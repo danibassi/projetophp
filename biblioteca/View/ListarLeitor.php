@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Leitores Cadastrados</title>
+        <title>Leitores cadastrados</title>
         <style>
             #stusuarios {
                 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -35,11 +35,11 @@
     
     <body> 
         <header>
-            <nav><ul class="ul">                
-                <li class="li"><a href="MenuFuncionario.html">Menu do Funcionario</a></li>
-                <li class="li"><a href="Login.html">Login</a></li>
-                <li class="li"><a href="Index.html">Home</a></li>
-            </ul></nav>
+            <nav>
+                <ul class="ul">
+                    <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li>
+                </ul>
+            </nav>
         </header>
         
         <?php

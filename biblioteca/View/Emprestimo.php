@@ -7,12 +7,11 @@
     
     <body> 
     <header>
-        <nav><ul class="ul">                
-            <li class="li"><a href="MenuFuncionario.html">Menu do Funcionario</a></li>
-            <li class="li"><a href="Login.html">Login</a></li>
-            <li class="li"><a href="Index.html">Home</a></li>
-            
-        </ul></nav>
+        <nav>
+            <ul class="ul">
+                <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li>
+            </ul>
+        </nav>
     </header> 
         
     <div>
@@ -22,13 +21,13 @@
             <label>Nome do leitor: </label>
             <input id="formatacaoForm" type="text" id="nomeUsuario" name="nomeUsuario" required><br>
             
-            <label>ID_Livro: </label>
+            <label>Id Livro: </label>
             <input id="formatacaoForm" type="text" id="IdLivro" name="IdLivro" required><br>
             
-            <label>Data da retirada: </label>
+            <label>Data de empréstimo: </label>
             <input id="formatacaoForm" type="date" id="dataRetirada" name="dataRetirada" required><br>
             
-            <label>Data Limite de devolução: </label>
+            <label>Data limite de devolução: </label>
             <input id="formatacaoForm" type="date" id="limiteDevolucao" name="limiteDevolucao" required><br>
             
             <label>Data da devolução: </label>
