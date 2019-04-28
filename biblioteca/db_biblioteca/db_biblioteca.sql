@@ -57,7 +57,7 @@ CREATE TABLE tb_leitor (
 CREATE TABLE tb_livro (
     liv_id              INT PRIMARY KEY auto_increment,
     liv_nome            VARCHAR(100) NOT NULL,
-    liv_ano_publicao    DATE NOT NULL,
+    liv_ano_publicacao  DATE NOT NULL,
     liv_edicao          VARCHAR(3) NOT NULL,
     tb_est_liv_id       INT NOT NULL,
     tb_edi_id           INT NOT NULL,
