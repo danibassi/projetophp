@@ -12,6 +12,14 @@
             $this->estado = $estado;
         }
 
+        public function insert(){
+
+        }
+
+        public function update($id){
+            
+        }
+
         public function select(){
             $sql = "SELECT est_estado FROM $this->table WHERE est_id = :id;";
             $stmt = DB::prepare($sql);
