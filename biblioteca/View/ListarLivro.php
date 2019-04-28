@@ -39,7 +39,25 @@
                 </ul>
             </nav>
         </header>
-        
+        <div style="float: left; width: 20%">
+            <table border=1>
+                <td>
+                    <li><a href="CadastroAutor.php">Cadastrar autor</a></li>
+                    <li><a href="CadastroEditora.php">Cadastrar editora</a></li>
+                    <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
+                    <li><a href="CadastroLeitor.php">Cadastrar Usuário</a></li>
+                    <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
+                    <li><a href="Emprestimo.php">Empréstimos</a></li>
+                    <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
+                    <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
+                    <li><a href="ListarLivro.php">Livros cadastrados</a></li>
+                </td>
+
+            </table>
+
+        </div>  
+
+        <div id="divBusca" style="float: left; width: 80%">
         <?php
             $livroDAO = new LivroDAO(new Livro());
         ?>
@@ -87,6 +105,7 @@
                 </tbody>
             <?php endforeach; ?>
         </table>
+             </div> 
         <form action="CadastroLivro.php">
             <input type="submit" value="Novo Cadastro">
         </form>

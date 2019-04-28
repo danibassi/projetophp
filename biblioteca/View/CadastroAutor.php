@@ -1,36 +1,52 @@
 <html lang="pt-br">
 
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-    <title>Cadastrar autor</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+        <title>Cadastrar autor</title>
+    </head>
 
-<body>
-    <header>
-        <nav>
-            <ul class="ul">
-                <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li> 
-            </ul>
-        </nav>
-    </header>
+    <body>
+        <header>
+            <nav>
+                <ul class="ul">
+                    <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li> 
+                </ul>
+            </nav>
+        </header>
+        
+        
+        <div style="float: left; width: 20%">
+            <table border=1>
+                <td>
+                    <li><a href="CadastroAutor.php">Cadastrar autor</a></li>
+                    <li><a href="CadastroEditora.php">Cadastrar editora</a></li>
+                    <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
+                    <li><a href="CadastroLeitor.php">Cadastrar Usuário</a></li>
+                    <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
+                    <li><a href="Emprestimo.php">Empréstimos</a></li>
+                    <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
+                    <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
+                    <li><a href="ListarLivro.php">Livros cadastrados</a></li>
+                </td>
+            </table>
+        </div>  
 
-    <div>
-        <form action="../Control/cadAutor.php" method="post">
+        <div id="divBusca" style="float: left; width: 80%">
+            <form action="../Control/cadAutor.php" method="post">
 
-            <label>Nome: </label>
-            <input type="text" id="nome" name="nome" required><br>
+                <label>Nome: </label>
+                <input type="text" id="nome" name="nome" required><br>
 
-            <label>Data de nascimento: </label>
-            <input type="date" id="dtnasc" name="dtnasc" required><br>
+                <label>Data de nascimento: </label>
+                <input type="date" id="dtnasc" name="dtnasc" required><br>
 
-            <label>Sexo: </label>
-            <label><input type="radio" name="sexo" value="F"> Feminino </label>
-            <label><input type="radio" name="sexo" value="M"> Masculino</label><br><br>
+                <label>Sexo: </label>
+                <label><input type="radio" name="sexo" value="F"> Feminino </label>
+                <label><input type="radio" name="sexo" value="M"> Masculino</label><br><br>
 
-            <button type="submit" name="submit">Enviar</button>
-        </form>
-    </div>
-</body>
-
+                <button type="submit" name="submit">Enviar</button>
+            </form>
+        </div>
+    </body>
 </html>
