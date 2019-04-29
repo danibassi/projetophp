@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Home funcionário</title>        
+        <title>Página inicial</title>        
     </head>
     
     <body> 
@@ -20,9 +20,10 @@
                     <li><a href="CadastroAutor.php">Cadastrar autor</a></li>
                     <li><a href="CadastroEditora.php">Cadastrar editora</a></li>
                     <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
-                    <li><a href="CadastroLeitor.php">Cadastrar Usuário</a></li>
+                    <li><a href="CadastroLeitor.php">Cadastrar usuário</a></li>
                     <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
-                    <li><a href="Emprestimo.php">Empréstimos</a></li>
+                    <li><a href="RegistrarDevolucao.php">Devolução</a></li>
+                    <li><a href="Emprestimo.php">Empréstimo</a></li>
                     <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
                     <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
                     <li><a href="ListarLivro.php">Livros cadastrados</a></li>

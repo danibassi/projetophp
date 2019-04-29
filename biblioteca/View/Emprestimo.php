@@ -19,9 +19,10 @@
                 <li><a href="CadastroAutor.php">Cadastrar autor</a></li>
                 <li><a href="CadastroEditora.php">Cadastrar editora</a></li>
                 <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
-                <li><a href="CadastroLeitor.php">Cadastrar Usuário</a></li>
+                <li><a href="CadastroLeitor.php">Cadastrar usuário</a></li>
                 <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
-                <li><a href="Emprestimo.php">Empréstimos</a></li>
+                <li><a href="RegistrarDevolucao.php">Devolução</a></li>
+                <li><a href="Emprestimo.php">Empréstimo</a></li>
                 <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
                 <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
                 <li><a href="ListarLivro.php">Livros cadastrados</a></li>
@@ -45,9 +46,6 @@
             
             <label>Data limite de devolução: </label>
             <input id="formatacaoForm" type="date" id="limiteDevolucao" name="limiteDevolucao" required><br>
-            
-            <label>Data da devolução: </label>
-            <input id="formatacaoForm" type="date" id="dataDevolucao" name="dataDevolucao" required><br>
             
             <button type="submit" name="submit">Enviar</button>
         </form>
