@@ -74,5 +74,13 @@
             $stmt->execute();
             return $stmt->fetchAll();
         }
+
+        public function delete($id){
+			$sql  = "DELETE FROM telefone WHERE contato_fk = :id;
+                     DELETE FROM $this->table WHERE id = :id;";
+			$stmt = DB::prepare($sql);
+			$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+			return $stmt->execute(); 
+		}
     }
 ?>

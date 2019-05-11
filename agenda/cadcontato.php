@@ -16,9 +16,10 @@ require_once 'Classes/Telefone.php';
     </head>
     <body>
 		<?php
-			session_start();
+			//session_start();
 
-
+			$quantidadeDeTelefones = $_POST['numeroDeTelefones'];
+			
 			$contato = new Contatos();
 			$contato->setNome($_POST['nome']);
 			$contato->setEmail($_POST['email']);
@@ -28,15 +29,32 @@ require_once 'Classes/Telefone.php';
 			$tipo->setTipo($_POST['tipo']);
 			$contato->setTipo($tipo);
 			$contatodao = new ContatoDAO($contato);
+		
 			if($contatodao->insertCompleto($_SESSION['id'])){
-				header("Location:formcontato.php");
-			}elseif ($usu->update()) {
-				header("Location: formcontato.php");
+					
+			}else{
+				
 			}
 
-			else{
-				header("Location:errocontato.php");
+			$pegarUltimoID = new TelefoneDAO(new Telefone);
+			$ultimoId = $pegarUltimoID->getIdDono();
+			
+			
+			
+			for($indice = 0; $indice<$quantidadeDeTelefones+1; $indice++){
+				
+				$telefone = new Telefone();
+				$telefone->setTelefone($_POST['telefone'.$indice]);
+				$telefoneDAO = new TelefoneDAO($telefone);
+									
+				if($telefoneDAO->insertAll($ultimoId->id)){
+					
+				}else{
+					header("Location:errousuario.php");
+				}	
 			}
+			header("Location:formcontato.php");
+			
 		?>
     </body>
 </html>
