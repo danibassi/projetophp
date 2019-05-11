@@ -24,9 +24,23 @@
           	Nome:
           	<input type="text" name="nome" value=<?php echo $contato_edit->getNome();?> >
           	<br/>
-          	Celular:
-          	<input type="text" name="celular" value=<?php echo $contato_edit->getCelular();?> >
-          	<br>
+          	Telefone:
+            <input type="button" nome="addMaisTelefone" value="+" onclick="adcionarMaisTelefone()">
+            <br>
+            <div id="telefones"></div>
+            <script>
+                var contadorDeTelefone = 0;
+                function adcionarMaisTelefone(){
+                    var codigo = document.getElementById("telefones")
+                    codigo.innerHTML += "<input type='text' name='telefone"+contadorDeTelefone+"'><br>";
+                    pegarContador();
+                    contadorDeTelefone++;
+                }
+                function pegarContador(){
+                    var codigo = document.getElementById("numeroDeTelefones")
+                    codigo.innerHTML = "<input type='hidden' name='numeroDeTelefones' value="+contadorDeTelefone+">";
+                }
+            </script>
           	Apelido:
             <input type="text" name="apelido" value=<?php echo $contato_edit->getApelido();?> >
           	<br>

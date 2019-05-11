@@ -3,6 +3,8 @@
 include 'Classes/Contato.php';
 require_once 'Classes/TipoContato.php';
 require_once 'Classes/ContatoDAO.php';
+require_once 'Classes/TelefoneDAO.php';
+require_once 'Classes/Telefone.php';
 ?>
 <html>
     <head>
@@ -24,10 +26,29 @@ require_once 'Classes/ContatoDAO.php';
 			$contatodao = new ContatoDAO($contato);
 			
 			if($contatodao->update($id)){
-				header("Location:formcontato.php");
 			}else{
 				header("Location:errocontato.php");
 			}
+
+			$pegarUltimoID = new TelefoneDAO(new Telefone);
+			$ultimoId = $pegarUltimoID->getIdDono();
+			
+			
+			
+			for($indice = 0; $indice<$quantidadeDeTelefones+1; $indice++){
+				
+				$telefone = new Telefone();
+				$telefone->setTelefone($_POST['telefone'.$indice]);
+				$telefoneDAO = new TelefoneDAO($telefone);
+									
+				if($telefoneDAO->insertAll($id)){
+					
+				}else{
+					header("Location:errousuario.php");
+				}	
+			}
+			header("Location:formcontato.php");
+			
 
 		?>
     </body>
