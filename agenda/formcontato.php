@@ -31,6 +31,17 @@
                     controlador = true;
                 }
             }
+            var contadorDeTelefone = 0;
+            function adcionarMaisTelefone(){
+                var codigo = document.getElementById("telefones")
+                codigo.innerHTML += "<input type='text' name='telefone"+contadorDeTelefone+"'><br>";
+                pegarContador();
+                contadorDeTelefone++;
+            }
+            function pegarContador(){
+                var codigo = document.getElementById("quantidadeDeTelefones")
+                codigo.innerHTML = "<input type='hidden' name='quantidadeDeTelefones' value="+contadorDeTelefone+">";
+            }
         </script>
     </head>
     <body>
@@ -49,22 +60,9 @@
                 <input type="text" name="email" />
                 <br>
                 Telefone:
-                <input type="button" nome="addMaisTelefone" value="+" onclick="adcionarMaisTelefone()">
+                <input type="button" nome="addMaisTelefone" value="Adcionar" onclick="adcionarMaisTelefone()">
                 <br>
                 <div id="telefones"></div>
-                <script>
-                    var contadorDeTelefone = 0;
-                    function adcionarMaisTelefone(){
-                        var codigo = document.getElementById("telefones")
-                        codigo.innerHTML += "<input type='text' name='telefone"+contadorDeTelefone+"'><br>";
-                        pegarContador();
-                        contadorDeTelefone++;
-                    }
-                    function pegarContador(){
-                        var codigo = document.getElementById("numeroDeTelefones")
-                        codigo.innerHTML = "<input type='hidden' name='numeroDeTelefones' value="+contadorDeTelefone+">";
-                    }
-                </script>
                 Data de Nascimento:
                 <input type="date" name="dtnasc" />
                 <br>
@@ -79,8 +77,8 @@
                         endforeach;
                     ?>
                 </select>
-                <div id="numeroDeTelefones">
-                    <input type='hidden' name='numeroDeTelefones' value="0">
+                <div id="quantidadeDeTelefones">
+                    <input type='hidden' name='quantidadeDeTelefones' value="0">
                 </div>
                 <br>
                 <input type="submit" value="Criar novo" />
@@ -101,10 +99,10 @@
                 <?php echo $value->apelido;?><br>
                 <?php echo $value->email;?><br>
                 <?php 
-                    foreach($meu_telefone->findAllTelefone($value->id) as $key => $telefone):?>
+                    foreach($meu_telefone->findAllTelefone($value->id) as $key => $telefoneDoBanco):?>
                         <form action="excluirTelefone.php" method="POST">
-                            <?echo $telefone->numero;?>
-                            <input type="hidden" name="id" value=<?php echo $telefone->cont_id;?>>
+                            <?echo $telefoneDoBanco->numero;?>
+                            <input type="hidden" name="id" value=<?php echo $telefoneDoBanco->cont_id;?>>
                             <input type="submit" value="Excluir Telefone">
                             <br>
                         </form>
