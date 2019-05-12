@@ -28,13 +28,11 @@
     $endereco->setNumero($_POST['numero']);
     $endereco->setBairro($_POST['bairro']);
     $endereco->setCidade($_POST['cidade']);
-    $endereco->setEstado($_POST['estado']);
-    $endereco->setCep($_POST['cep'].$_POST['cep2']);
+    $endereco->setEstado($_POST['uf']);
+    $endereco->setCep($_POST['cep']);
 
     $leitor->setTelefone($telefone);
     $leitor->setEndereco($endereco);
-
-
     
     $leitorDAO = new LeitorDAO($leitor);
 

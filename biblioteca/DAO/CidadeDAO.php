@@ -30,6 +30,16 @@
             $stmt->execute();
             return $stmt->fecthAll();
         }
+
+        public function insert()
+        {
+            // TODO: Implement insert() method.
+        }
+
+        public function update($id)
+        {
+            // TODO: Implement update() method.
+        }
     }
 
 ?>

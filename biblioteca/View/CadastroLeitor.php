@@ -56,38 +56,28 @@
                 <label><input type="radio" name="sexo" value="F"> Feminino </label>
                 <label><input type="radio" name="sexo" value="M"> Masculino</label><br><br>
 
+                <label for="cep">Cep: </label>
+                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                       onblur="pesquisacep(this.value);" /><br>
+
                 <label>Endereço: </label><br>
                 <label for="rua">Rua:</label>
-                <input type="text" name="rua">
+                <input type="text" name="rua" id="rua" size="36">
 
                 <label for="numero">Numero:</label>
                 <input type="text" id="numero" name="numero" size="4"><br>
 
-                <label for="bairro">Bairro: </label>
-                <input type="text" name="bairro">
+                <label for="bairro">Bairro:</label>
+                <input id="bairro" name="bairro" size="20" type="text">
 
-                <label for="cidade">Cidade: </label>
-                <input type="text" name="cidade"><br>
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade" size="20"><br>
 
-                <?php
-                    $estadoDAO = new EstadoDAO(new Estado());
-                ?>
-                <tr>
-                    <td>
-                        <label for="estado">Estado:</label>
-                        <select name="estado">
-                            <option value = "null"></option>
-                            <?php
-                                foreach($estadoDAO->findAll() as $key => $value):
-                                    echo "<option value=$value->est_id>$value->est_sigla</option>";
-                                endforeach;
-                            ?>
-                        </select>
-                    </td>
-                </tr>
+                <label for="estado">Estado:</label>
+                <input name="uf" type="text" id="uf" size="2" ><br>
 
-                <label>CEP: </label>
-                <input type="text" name="cep" size="5" maxlength="5"> - <input type="text" name="cep2" size="3" maxlength="3"><br><br>
+                <label for="ibge">IBGE</label>
+                <input name="ibge" type="text" id="ibge" size="8"><br>
 
                 <tr>
                     <td>
@@ -104,7 +94,7 @@
                 <input type="text" name="telefone" size="8" maxlength="13" required><br>
 
                 <button type="submit" name="submit">Enviar</button>
-
+                <script src="_js/endereco.js"></script>
             </form>
         </div>
     </body>

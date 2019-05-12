@@ -73,6 +73,7 @@
                     <td>Tipo do Numero</td>
                     <td>Numero</td>
                     <td>Endereço</td>
+                    <td>Opção</td>
                 </tr>
             </thead>
             <?php foreach($leitorDAO->selectAll() as $key => $value):?>
@@ -87,12 +88,18 @@
                       <td><?php echo $value->end_rua.", ".$value->end_numero.", ".
                                      $value->end_bairro.", ".$value->end_cidade."-".
                                      $value->end_estado;?></td>
+                      <td>
+                          <form action="../Control/deletarCadastro.php" method="post">
+                              <input type="hidden" name="id" value="<?php echo $value->lei_id?>">
+                              <input type="submit" value="Deletar">
+                          </form>
+                      </td>
                   </tr>
               </tbody>
             <?php endforeach; ?>
         </table>
         
-        <form action="CadastroLeitor.html">
+        <form action="CadastroLeitor.php">
             <input type="submit" value="Novo Cadastro">
         </form>
         

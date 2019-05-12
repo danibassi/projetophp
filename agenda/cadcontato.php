@@ -18,7 +18,7 @@ require_once 'Classes/Telefone.php';
 		<?php
 			//session_start();
 
-			$quantidadeDeTelefones = $_POST['numeroDeTelefones'];
+			$quantidadeDeTelefones = $_POST['quantidadeDeTelefones'];
 			
 			$contato = new Contatos();
 			$contato->setNome($_POST['nome']);
@@ -30,16 +30,12 @@ require_once 'Classes/Telefone.php';
 			$contato->setTipo($tipo);
 			$contatodao = new ContatoDAO($contato);
 		
-			if($contatodao->insertCompleto($_SESSION['id'])){
-					
-			}else{
-				
+			if(!$contatodao->insertCompleto($_SESSION['id'])){
+
 			}
 
 			$pegarUltimoID = new TelefoneDAO(new Telefone);
 			$ultimoId = $pegarUltimoID->getIdDono();
-			
-			
 			
 			for($indice = 0; $indice<$quantidadeDeTelefones+1; $indice++){
 				
