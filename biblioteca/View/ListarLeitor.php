@@ -90,8 +90,12 @@
                                      $value->end_estado;?></td>
                       <td>
                           <form action="../Control/deletarCadastro.php" method="post">
-                              <input type="hidden" name="id" value="<?php echo $value->lei_id?>">
+                              <input type="hidden" name="idDeletar" value="<?php echo $value->lei_id?>">
                               <input type="submit" value="Deletar">
+                          </form>
+                          <form action="../View/AlterarLeitor.php" method="post">
+                              <input type="hidden" name="idAlterar" value="<?php echo $value->lei_id?>">
+                              <input type="submit" value="Alterar">
                           </form>
                       </td>
                   </tr>

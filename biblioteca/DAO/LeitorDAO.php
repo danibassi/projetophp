@@ -47,12 +47,11 @@
             $sql = "UPDATE $this->table SET lei_nome = :nome, lei_dtnasc = :dtnasc, lei_sexo = :sexo 
                     WHERE lei_id = :id;
 
-                    UPDATE tb_endereco (end_rua, end_numero, end_bairro, end_cidade, end_estado, end_cep, tb_lei_id)
-                    SET (:rua,:numero,:bairro,:cidade,:estado,:cep, @last_id)
+                    UPDATE tb_endereco SET end_rua = :rua, end_numero = :numero, end_bairro = :bairro, end_cidade = :cidade,
+                           end_estado = :estado, end_cep = :cep
                     WHERE tb_lei_id = :id;
 
-                    UPDATE tb_telefone (tel_numero,tb_tip_tel_id, tb_lei_id)
-                    SET (:telefone,:tipo, @last_id)
+                    UPDATE tb_telefone SET tel_numero = :telefone,tb_tip_tel_id = :tipo
                     WHERE tb_lei_id = :id;
                     ";
             $stmt = DB::prepare($sql);
@@ -71,6 +70,10 @@
             $stmt->bindParam(':cidade',$this->leitor->getEndereco()->getCidade());
             $stmt->bindParam(':estado',$this->leitor->getEndereco()->getEstado());
             $stmt->bindParam(':cep',$this->leitor->getEndereco()->getCep());
+
+            $stmt->bindParam(':id',$id);
+
+            return $stmt->execute();
         }
         public function select($id){
             $sql = "SELECT l.lei_id,l.lei_nome,l.lei_email, l.lei_dtnasc, l.lei_sexo, e.end_rua, e.end_numero, e.end_bairro,

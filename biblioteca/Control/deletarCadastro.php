@@ -3,7 +3,7 @@
     require_once '../Classes/Leitor.php';
     require_once '../DAO/LeitorDAO.php';
 
-    $idRecebido = $_POST['id'];
+    $idRecebido = $_POST['idDeletar'];
 
     $leitor = new LeitorDAO(new Leitor);
 
