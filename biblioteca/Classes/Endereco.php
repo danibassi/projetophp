@@ -2,7 +2,7 @@
 
 class Endereco{
     private $rua;
-    private $num;
+    private $numero;
     private $cep;
     private $bairro;
     private $complemento;
@@ -13,8 +13,8 @@ class Endereco{
         $this->rua = $rua;
     }
 
-    public function setNum($num){
-        $this->num = $num;
+    public function setNumero($numero){
+        $this->numero = $numero;
     }
     
     public function setCep($cep){
@@ -41,8 +41,8 @@ class Endereco{
         return $this->rua;
     }
 
-    public function getNum(){
-        return $this->num;
+    public function getNumero(){
+        return $this->numero;
     }
 
     public function getCep(){

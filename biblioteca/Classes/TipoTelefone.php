@@ -1,14 +1,15 @@
 <?php
 
 class TipoTelefone{
-    private $tipoTelefone;
 
-    public function setTipoTelefone($tipoTelefone){
-        $this->tipotelefone = $tipoTelefone;
+    private $tipo;
+
+    public function setTipo($tipo){
+        $this->tipo = $tipo;
     }
 
-    public function getTipoTelefone(){
-        return $this->tipotelefone;
+    public function getTipo(){
+        return $this->tipo;
     }
 
 

@@ -2,13 +2,13 @@
 
 class Editora{
 
-    private $nome;
+    private $editoraNome;
 
-    public function setNome($nome){
-        $this->nome = $nome;
+    public function setEditoraNome($editoraNome){
+        $this->editoraNome = $editoraNome;
     }
-    public function getNome(){
-        return $this->nome;
+    public function getEditoraNome(){
+        return $this->editoraNome;
     }
 }
 

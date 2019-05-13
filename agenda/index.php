@@ -1,3 +1,7 @@
+<?php
+    $_SESSION = array();
+    session_destroy();
+?>
 <!DOCTYPE html>
 <html>
     <head>
