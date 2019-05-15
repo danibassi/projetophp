@@ -90,32 +90,36 @@
             $meu_contato = new ContatoDAO($contato);
             $meu_telefone = new TelefoneDAO(new Telefone());
         ?>
-            <?php foreach($meu_contato->findAllCompleto($_SESSION['id']) as $key => $value):?>    
-                <?php 
-                echo $value->nome;
-                ?>
-                <input type="button" value="Mostrar" onclick="aparecer('<?php echo $value->id;?>')">
-                <div class="contatos" id="<?php echo $value->id;?>">
-                <?php echo $value->apelido;?><br>
-                <?php echo $value->email;?><br>
-                <?php 
-                    foreach($meu_telefone->findAllTelefone($value->id) as $key => $telefoneDoBanco):?>
-                        <form action="excluirTelefone.php" method="POST">
-                            <?echo $telefoneDoBanco->numero;?>
-                            <input type="hidden" name="id" value=<?php echo $telefoneDoBanco->cont_id;?>>
-                            <input type="submit" value="Excluir Telefone">
-                            <br>
-                        </form>
-                <?  endforeach; ?>
-                <?php echo $value->dtnasc;?><br>
-                <?php echo $value->tipo;?><br>
-                <?php echo "<a href='formeditcontato.php?id=".$value->id."'>Editar</a>";?><br>
-                <?php echo "<a href='excluircontato.php?id=".$value->id."'>Apagar</a>";?><br>                        
-                </div>
-                <br>
-            <?php endforeach; ?>
-          <form action="index.php">
-                    <input type="submit" value="Sair">
-          </form> 
+        <?php foreach($meu_contato->findAllCompleto($_SESSION['id']) as $key => $value):?>
+            <?php
+            echo $value->nome;
+            ?>
+            <input type="button" value="Mostrar" onclick="aparecer('<?php echo $value->id;?>')">
+            <div class="contatos" id="<?php echo $value->id;?>">
+            <?php echo $value->apelido;?><br>
+            <?php echo $value->email;?><br>
+            <?php
+                foreach($meu_telefone->findAllTelefone($value->id) as $key => $telefoneDoBanco):?>
+                    <form action="excluirTelefone.php" method="POST">
+                        <?echo $telefoneDoBanco->numero;?>
+                        <input type="hidden" name="id" value=<?php echo $telefoneDoBanco->cont_id;?>>
+                        <input type="submit" value="Excluir Telefone">
+                        <br>
+                    </form>
+            <?  endforeach; ?>
+            <?php echo $value->dtnasc;?><br>
+            <?php echo $value->tipo;?><br>
+            <?php echo "<a href='formeditcontato.php?id=".$value->id."'>Editar</a>";?><br>
+            <?php echo "<a href='excluircontato.php?id=".$value->id."'>Apagar</a>";?><br>
+            </div>
+            <br>
+        <?php endforeach; ?>
+        <form action="gerarRelatorioPDF.php">
+            <input type="submit" value="Gerar Relátorio">
+        </form>
+        <form action="index.php">
+            <input type="submit" value="Sair">
+        </form>
+
     </body>
 </html>

@@ -6,9 +6,9 @@
 	$email=$_POST['email'];
 	$senha=$_POST['senha'];
 
-	$pegar_id;
+	$pegar_id = 0;
 	$autenticar_email=0;
-	$autenticar_senha;
+	$autenticar_senha = 0;
 
 	$autenticar = new UsuarioDAO(new Usuarios());
 

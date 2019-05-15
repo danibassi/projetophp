@@ -52,8 +52,14 @@
                 <input type="date" id="dtnasc" name="dtnasc" value="<?php echo $leitorEncontradoNoBanco['lei_dtnasc'];?>" required><br>
 
                 <label>Sexo: </label>
-                <label><input type="radio" name="sexo" value="F"> Feminino </label>
-                <label><input type="radio" name="sexo" value="M"> Masculino</label><br><br>
+                <?php
+                    if($leitorEncontradoNoBanco['lei_sexo'] == "M"){
+                        echo "<label><input type='radio' name='sexo' value='F'> Feminino </label>
+                              <label><input type='radio' name='sexo' value='M' checked> Masculino</label><br><br>";
+                 }else{
+                        echo "<label><input type='radio' name='sexo' value='F' checked> Feminino </label>
+                              <label><input type='radio' name='sexo' value='M'> Masculino</label><br><br>";
+                 }?>
 
                 <label for="cep">Cep: </label>
                 <input name="cep" type="text" id="cep" value="<?php echo $leitorEncontradoNoBanco['end_cep'];?>" size="10" maxlength="9"
