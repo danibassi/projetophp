@@ -1,0 +1,124 @@
+body{
+    background-image: url("../Imagens/fundo_login.png");
+    font-family: 'Dosis';
+}
+
+h1{
+    font-size: 35px;
+    font-family: 'Dosis';
+    color: #4e1a9a;
+    margin-top: 60px;
+    text-transform: uppercase;
+}
+
+.form-login{
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    width: 400px;
+    height: 380px;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+    background-color: #f7f7f7;
+    
+}
+
+.form-cadastro{
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.campo{
+    border-radius: 10px;    
+    background: #f7f7f7; 
+    border:0.5px solid #4e1a9a;
+    width:250px;
+    color: #4e1a9a;
+    text-align: center;
+    font-family: 'Dosis';
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.entrar{
+    width: 200px;
+    height: 30px;
+    background: #4e1a9a;
+    border: 0.5px solid #4e1a9a;
+    border-radius: 10px; 
+    text-align: center;
+    color: white;
+    margin-bottom: 7.5px;
+    text-transform: uppercase;
+}
+
+
+.salvar{
+    margin-left: -5px;
+    width: 100px;
+    height: 30px;
+    background: #4e1a9a;
+    border: 0.5px solid #4e1a9a;
+    border-radius: 10px; 
+    text-align: center;
+    color: white;
+    margin-bottom: 7.5px;
+    text-transform: uppercase;
+}
+
+.limpar{
+    width: 100px;
+    height: 30px;
+    background: #4e1a9a;
+    border: 0.5px solid #4e1a9a;
+    border-radius: 10px; 
+    text-align: center;
+    color: white;
+    margin-bottom: 7.5px;
+    text-transform: uppercase;
+
+}
+.voltar{
+    width: 100px;
+    height: 30px;
+    background: #4e1a9a;
+    border: 0.5px solid #4e1a9a;
+    border-radius: 10px; 
+    text-align: center;
+    color: white;
+    margin-bottom: 7.5px;
+    text-transform: uppercase;
+}
+
+a{
+    color: #4e1a9a;
+    text-decoration: none;
+}
+
+a:hover{
+    font-size: 18px;
+}
+
+.entrar:hover{
+    background-color: #f7f7f7;
+    color: #4e1a9a;
+}
+.limpar:hover{
+    background-color: #f7f7f7;
+    color: #4e1a9a;
+}
+.salvar:hover{
+    background-color: #f7f7f7;
+    color: #4e1a9a;
+}
+.voltar:hover{
+    background-color: #f7f7f7;
+    color: #4e1a9a;
+}
