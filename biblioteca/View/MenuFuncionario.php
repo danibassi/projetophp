@@ -1,40 +1,26 @@
 <html lang="pt-br">    
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="_css/estilo-inicio.css">
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
         <title>Página inicial</title>        
     </head>
     
     <body> 
-        <header>
-            <nav><ul class="ul">                
-                 <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li>
-                 <li class="li"><a href="Index.php">Login(apagar esse btn dps)</a></li>
-            </ul></nav>
-        </header> 
-
-
-        <div style="float: left; width: 20%">
-            <table border=1>
-                <td>
-                    <li><a href="CadastroAutor.php">Cadastrar autor</a></li>
-                    <li><a href="CadastroEditora.php">Cadastrar editora</a></li>
-                    <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
-                    <li><a href="CadastroLeitor.php">Cadastrar usuário</a></li>
-                    <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
-                    <li><a href="RegistrarDevolucao.php">Devolução</a></li>
-                    <li><a href="Emprestimo.php">Empréstimo</a></li>
-                    <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
-                    <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
-                    <li><a href="ListarLivro.php">Livros cadastrados</a></li>
-                </td>            
-            </table>                
+        <div id="menu">
+            <a href="MenuFuncionario.php">Ínicio</a>
+            <a href="CadastroLeitor.php">Leitores</a>
+            <a href="CadastroLivro.php">Livros</a>
+            <a href="Emprestimo.php">Empréstimos</a>
+            <a href="RegistrarDevolucao.php">Devolução</a>
+            <a href="CadastroFuncionario.php">Funcionários</a>
+            <a href="CadastroEditora.php">Editoras</a>
+            <a href="CadastroAutor.php">Autores</a>             
         </div>  
-
-        
-        <div id="divBusca" style="float: left; width: 80%">
-            <input type="text" id="txtBusca" placeholder="Buscar..."/>
-            <button id="btnBusca">Buscar</button>        
-        </div>        
+        <br>
+        <div class="caixa">
+            <input type="text" id="txtBusca" placeholder="Pesquise aqui..."/>
+            <button id="btnBusca">Buscar</button>            
+        </div>   
     </body> 
 </html>
