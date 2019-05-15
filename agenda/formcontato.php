@@ -18,7 +18,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Cadastrar Contato</title>
-        <link rel="stylesheet" href="css/estilo.css" type="text/css">
+        <link rel="stylesheet" href="css/estilo-contato.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
         <script>
             var controlador = true;
             function aparecer(element){
@@ -34,7 +35,7 @@
             var contadorDeTelefone = 0;
             function adcionarMaisTelefone(){
                 var codigo = document.getElementById("telefones")
-                codigo.innerHTML += "<input type='text' name='telefone"+contadorDeTelefone+"'><br>";
+                codigo.innerHTML += "<input class='telefone' type='text' name='telefone"+contadorDeTelefone+"'><br>";
                 pegarContador();
                 contadorDeTelefone++;
             }
@@ -45,46 +46,42 @@
         </script>
     </head>
     <body>
-        <header>    
-            <h1>Contatos</h1>
-        </header>
-        <section>
-            <form action="cadcontato.php" method="POST" name="form1" >
-                Nome:
-                <input type="text" name="nome" />
-                <br>
-                Apelido:
-                <input type="text" name="apelido" />
-                <br>
-                Email:
-                <input type="text" name="email" />
-                <br>
-                Telefone:
-                <input type="button" nome="addMaisTelefone" value="Adcionar" onclick="adcionarMaisTelefone()">
-                <br>
-                <div id="telefones"></div>
-                Data de Nascimento:
-                <input type="date" name="dtnasc" />
-                <br>
-                Tipo de Contato:
-                <?php
-                    $tipoContato = new TipoContato();
-                ?>
-                <select name="tipo">
+            <div class="caixa-form">
+                <h1>Contatos</h1>
+                <form action="cadcontato.php" method="POST" name="form1" >                
+                    <input class="campo" type="text" name="nome" placeholder="Digite o nome"/>
+                    <br>
+                    <input class="campo" type="text" name="apelido" placeholder="Digite o apelido"/>
+                    <br>
+                    <input class="campo" type="text" name="email" placeholder="Digite o email" />
+                    <br>
+                    <label>Telefone:</label>
+                    <input type="button" nome="addMaisTelefone" value="Adcionar" onclick="adcionarMaisTelefone()">
+                    <div id="telefones"></div>
+                    <br>
+                    <br>
+                    <label class="data">Data de Nascimento: </label><input class="campo" type="date" name="dtnasc"/>
+                    <br>
                     <?php
-                        foreach($tipoContato->findAll() as $key => $value):
-                            echo "<option value=$value->id>$value->tipo</option>";
-                        endforeach;
+                        $tipoContato = new TipoContato();
                     ?>
-                </select>
-                <div id="quantidadeDeTelefones">
-                    <input type='hidden' name='quantidadeDeTelefones' value="0">
-                </div>
-                <br>
-                <input type="submit" value="Criar novo" />
-                <input type="reset" value="Limpar" />
-            </section>
-        </form>
+                    <select name="tipo">
+                        <option value="merda"> </option>
+                        <?php
+                            foreach($tipoContato->findAll() as $key => $value):
+                                echo "<option value=$value->id>$value->tipo</option>";
+                            endforeach;
+                        ?>
+                    </select>
+                    <div id="quantidadeDeTelefones">
+                        <input type='hidden' name='quantidadeDeTelefones' value="0">
+                    </div>
+                    <br>
+                    <input type="submit" value="Criar novo" />
+                    <input type="reset" value="Limpar" />
+            
+                </form>
+            </div>
         <?php
             $contato = new Contatos();
             $meu_contato = new ContatoDAO($contato);
@@ -101,12 +98,12 @@
             <?php
                 foreach($meu_telefone->findAllTelefone($value->id) as $key => $telefoneDoBanco):?>
                     <form action="excluirTelefone.php" method="POST">
-                        <?echo $telefoneDoBanco->numero;?>
+                        <?php echo $telefoneDoBanco->numero;?>
                         <input type="hidden" name="id" value=<?php echo $telefoneDoBanco->cont_id;?>>
                         <input type="submit" value="Excluir Telefone">
                         <br>
                     </form>
-            <?  endforeach; ?>
+            <?php  endforeach; ?>
             <?php echo $value->dtnasc;?><br>
             <?php echo $value->tipo;?><br>
             <?php echo "<a href='formeditcontato.php?id=".$value->id."'>Editar</a>";?><br>
