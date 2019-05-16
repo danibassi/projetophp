@@ -122,3 +122,11 @@ a:hover{
     background-color: #f7f7f7;
     color: #4e1a9a;
 }
+
+.erro{
+    font-size: 20px;
+    font-family: 'Dosis';
+    color: #4e1a9a;
+    margin-top: 20px;
+    text-transform: uppercase; 
+}

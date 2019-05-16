@@ -27,25 +27,26 @@
     $pdf->Cell(40,7,"Nome",1,0,"C");
     $pdf->Cell(60,7,"Email",1,0,"C");
     $pdf->Cell(30,7,"Data de Nasc.",1,0,"C");
-    $pdf->Cell(30,7,"Telefone",1,0,"C");
+    // $pdf->Cell(30,7,"Telefone",1,0,"C");
     $pdf->Cell(30,7,"Tipo",1,0,"C");
     $pdf->Ln();
 
     $pdf->SetFont('Arial',"",10);
-
-    $alturaDaCelula = 0;
+    
     $telefones = "";
 
     foreach($meu_contato->findAllCompleto($_SESSION['id']) as $key => $value):
         foreach($meu_telefone->findAllTelefone($value->id) as $key => $telefoneDoBanco):
-            $telefones = $telefones.$telefoneDoBanco->numero." ";
-            $alturaDaCelula += 7;
-        endforeach;$pdf->Cell(40,$alturaDaCelula,utf8_decode($value->nome),1,0,"C");
-        $pdf->Cell(60,$alturaDaCelula,utf8_decode($value->email),1,0,"C");
-        $pdf->Cell(30,$alturaDaCelula,utf8_decode($value->dtnasc),1,0,"C");
-        $pdf->Cell(30,$alturaDaCelula,utf8_decode($telefones),1,0,"C");
-        $pdf->Cell(30,$alturaDaCelula,utf8_decode($value->tipo),1,0,"C");
+            $telefones = $telefones . $telefoneDoBanco->numero . " / ";
+        endforeach;
+        $pdf->Cell(40,7,utf8_decode($value->nome),1,0,"C");
+        $pdf->Cell(60,7,utf8_decode($value->email),1,0,"C");
+        $pdf->Cell(30,7,utf8_decode($value->dtnasc),1,0,"C");
+        $pdf->Cell(30,7,utf8_decode($value->tipo),1,0,"C");
         $pdf->Ln();
+        $pdf->Cell(160,7,utf8_decode($telefones),1,0,"C");
+        $pdf->Ln();
+        $telefones = "";    
     endforeach;
 
 $pdf->Output();

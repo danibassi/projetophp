@@ -33,7 +33,7 @@ require_once 'Classes/Telefone.php';
 			$pegarUltimoID = new TelefoneDAO(new Telefone);
 			$ultimoId = $pegarUltimoID->getIdDono();
 			
-			
+			$quantidadeDeTelefones = $_POST['quantidadeDeTelefones'];
 			
 			for($indice = 0; $indice<$quantidadeDeTelefones+1; $indice++){
 				
