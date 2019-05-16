@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/estilo-login.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/estilo-login1.css" media="screen">
         <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Dosis:200" rel="stylesheet">
         <title>ENTRAR</title>
