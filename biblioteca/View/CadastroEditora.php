@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: Index.php");
+    exit;
+}
+?>
 <html lang="pt-br">
 
     <head>

@@ -6,6 +6,13 @@
     require_once '../Classes/EstadoLivro.php';
     require_once '../Classes/Editora.php';
 
+    if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+        unset($_SESSION['username']);
+        unset($_SESSION['password']);
+        header("Location: Index.php");
+        exit;
+    }
+
     $livro = new Livro();
     $livro->setNome($_POST['nomeLivro']);
     $livro->setAnoPublicacao($_POST['AnoPublicacao']);

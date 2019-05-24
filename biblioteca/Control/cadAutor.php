@@ -2,6 +2,13 @@
     require_once '../Classes/Autor.php';
     require_once '../DAO/AutorDAO.php';
 
+    if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+        unset($_SESSION['username']);
+        unset($_SESSION['password']);
+        header("Location: Index.php");
+        exit;
+    }
+
     $autor = new Autor();
 
     $autor->setNome($_POST['nome']);
@@ -11,7 +18,7 @@
     $autorDAO = new AutorDAO($autor);
 
     if($autorDAO->insert()){
-        header("Location: ../View/CadastroFinalizado.php?id=AUTOR");
+        header("Location:../View/MenuFuncionario.php");
     }else{
         
     }

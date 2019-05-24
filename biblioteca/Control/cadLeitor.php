@@ -5,6 +5,14 @@
     require_once '../Classes/TipoTelefone.php';
     require_once '../DAO/LeitorDAO.php';
 
+    if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+        unset($_SESSION['username']);
+        unset($_SESSION['password']);
+        header("Location: Index.php");
+        exit;
+    }
+
+
     $leitor = new Leitor();
 
     $leitor->setNome($_POST['nome']);
@@ -38,7 +46,7 @@
 
     
     if($leitorDAO->insert()){
-        header("Location:../View/ListarLeitor.php");
+        header("Location:../View/MenuFuncionario.php");
     }else{
         
     }

@@ -32,7 +32,7 @@
     $livroDAO = new LivroDAO($livro);
     
     if($livroDAO->insert()){
-        header("Location: ../View/CadastroFinalizado.php?id=LIVRO");
+        header("Location:../View/MenuFuncionario.php");
     }else{
 
     }
