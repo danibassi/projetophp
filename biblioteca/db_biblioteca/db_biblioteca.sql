@@ -65,7 +65,8 @@ CREATE TABLE tb_livro (
     tb_gen_id           INT NOT NULL,
     liv_isbd            VARCHAR(13) NOT NULL,
     liv_capa            VARCHAR(200),
-    liv_quantidade      INT NOT NULL;
+    liv_quantidade      INT NOT NULL,
+    liv_qntd_disponivel  INT NOT NULL
 );
 
 CREATE TABLE tb_estado_livro(

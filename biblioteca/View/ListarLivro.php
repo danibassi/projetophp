@@ -84,6 +84,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                     <td>Edição</td>
                     <td>ISBD</td>
                     <td>Qntd</td>
+                    <td>Disponivel</td>
                     <td>Editar</td>
                     <td>Deletar</td>
                 </tr>
@@ -101,6 +102,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                         <td><?php echo $value->liv_edicao;?></td>
                         <td><?php echo $value->liv_isbd;?></td>
                         <td><?php echo $value->liv_quantidade;?></td>
+                        <td><?php echo $value->liv_qntd_disponivel;?></td>
                         <td>
                             <form action="EditarLivro.php" method="POST">
                                 <input type="hidden" value=<?php echo $value->liv_id;?> name="id">
