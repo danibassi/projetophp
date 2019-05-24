@@ -11,6 +11,7 @@
     $livro->setAnoPublicacao($_POST['AnoPublicacao']);
     $livro->setEdicao($_POST['edicao']);
     $livro->setIsbd($_POST['isbd']);
+    $livro->setQuantidade($_POST['quantidade']);
     
     $editora = new Editora();
     $editora->setEditoraNome($_POST['cbEditora']);

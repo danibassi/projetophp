@@ -99,7 +99,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                                      $value->end_bairro.", ".$value->end_cidade."-".
                                      $value->end_estado;?></td>
                       <td>
-                          <form action="../Control/deletarCadastro.php" method="post">
+                          <form action="../Control/delLeitor.php" method="post">
                               <input type="hidden" name="idDeletar" value="<?php echo $value->lei_id?>">
                               <input type="submit" value="Deletar">
                           </form>

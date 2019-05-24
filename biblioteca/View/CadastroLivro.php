@@ -111,6 +111,9 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                 <label>Isbd: </label>
                 <input type="text" id="isbd" name="isbd" maxlength="10" required><br>
 
+                <label for="quantidade">Quantidade de livros: </label>
+                <input type="number" id="quantidade" name="quantidade" maxlength="2" required><br>
+
                 <button type="submit" name="submit">Enviar</button>
 
             </form>
