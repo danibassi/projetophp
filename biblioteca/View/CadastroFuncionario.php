@@ -10,7 +10,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Cadastro de funcionário</title>        
+        <title>Cadastro de Funcionário</title>
     </head>
     
     <body> 

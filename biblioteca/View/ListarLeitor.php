@@ -18,7 +18,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Leitores cadastrados</title>
+        <title>Leitores Cadastrados</title>
         <style>
             #stusuarios {
                 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;

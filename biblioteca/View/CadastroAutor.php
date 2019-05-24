@@ -11,7 +11,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Cadastrar autor</title>
+        <title>Cadastrar Autor</title>
     </head>
 
     <body>
