@@ -12,8 +12,8 @@
         
         public function insert(){  
             $sql = "INSERT INTO $this->table (liv_nome,liv_ano_publicacao, liv_edicao,
-            tb_est_liv_id, liv_isbd, tb_edi_id, tb_aut_id, tb_gen_id, liv_quantidade) 
-            VALUES (:nome, :ano_publicacao, :edicao, :estado, :isbd, :editora, :autor, :genero, :quantidade);";
+            tb_est_liv_id, liv_isbd, tb_edi_id, tb_aut_id, tb_gen_id, liv_quantidade, liv_qntd_disponivel) 
+            VALUES (:nome, :ano_publicacao, :edicao, :estado, :isbd, :editora, :autor, :genero, :quantidade, :quantidade);";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome',$this->livro->getNome());
             $stmt->bindParam(':ano_publicacao',$this->livro->getAnoPublicacao());
@@ -49,7 +49,7 @@
 
         public function select($id){
             $sql = "SELECT l.liv_nome,l.liv_ano_publicacao, l.liv_edicao,
-            l.liv_isbd, l.liv_quantidade, el.est_liv_estado, e.edi_nome, a.aut_nome, g.gen_genero
+            l.liv_isbd, l.liv_quantidade, liv_qntd_disponivel, el.est_liv_estado, e.edi_nome, a.aut_nome, g.gen_genero
             FROM $this->table as l
             INNER JOIN tb_estado_livro as el
             ON l.tb_est_liv_id = el.est_liv_id
@@ -68,7 +68,7 @@
 
         public function selectAll(){
             $sql = "SELECT l.liv_id,l.liv_nome,l.liv_ano_publicacao, l.liv_edicao,
-            l.liv_isbd, l.liv_quantidade, el.est_liv_estado, e.edi_nome, a.aut_nome, g.gen_genero
+            l.liv_isbd, l.liv_quantidade, liv_qntd_disponivel, el.est_liv_estado, e.edi_nome, a.aut_nome, g.gen_genero
             FROM $this->table as l
             INNER JOIN tb_estado_livro as el
             ON l.tb_est_liv_id = el.est_liv_id

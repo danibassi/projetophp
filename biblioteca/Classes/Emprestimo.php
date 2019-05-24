@@ -5,8 +5,8 @@ class Emprestimo{
     private $livro;
     private $funcionario;
     private $data;
-    private $datadevolucao;
-    private $dataentrega;
+    private $dataDevolucao;
+    private $dataEntrega;
 
     public function setLeitor($leitor){
         $this->leitor = $leitor;
@@ -36,18 +36,18 @@ class Emprestimo{
         return $this->data;
     }
 
-    public function setDatadevolucao($datadevolucao){
-        $this->datadevolucao = $datadevolucao;
+    public function setDataDevolucao($dataDevolucao){
+        $this->dataDevolucao = $dataDevolucao;
     }
-    public function getDatadevoluca0(){
-        return $this->datadevolucao;
+    public function getDataDevolucao(){
+        return $this->dataDevolucao;
     }
 
-    public function setDataentrega($dataentrega){
-        $this->dataentrega = $dataentrega;
+    public function setDataEntrega($dataEntrega){
+        $this->dataEntrega = $dataEntrega;
     }
-    public function getDataentrega(){
-        return $this->dataentrega;
+    public function getDataEntrega(){
+        return $this->dataEntrega;
     }
 }
 
