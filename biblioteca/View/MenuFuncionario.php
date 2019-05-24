@@ -11,7 +11,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo-inicio.css">
         <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-        <title>Página inicial</title>        
+        <title>Menu de Funcionário</title>
     </head>
     
     <body> 

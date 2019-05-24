@@ -27,7 +27,7 @@ $livroPegoPeloId = $dao->select($_POST['id']);
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Cadastro de Livro</title>        
+        <title>Editar Livro</title>
     </head>
     
     <body> 

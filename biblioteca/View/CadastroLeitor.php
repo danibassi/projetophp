@@ -2,9 +2,6 @@
 
 require_once '../DAO/EstadoDAO.php';
 require_once '../Classes/Estado.php';
-/*require_once '../DAO/CidadeDAO.php';
-require_once '../Classes/Cidade.php';*/
-
 
 if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     unset($_SESSION['username']);

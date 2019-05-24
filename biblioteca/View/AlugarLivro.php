@@ -19,7 +19,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-    <title>Leitores cadastrados</title>
+    <title>Alugar Livro</title>
     <link rel="stylesheet" href="_css/estilo.css" type="text/css">
 </head>
 
