@@ -1,12 +1,21 @@
 <?php
-    require_once '../Classes/Autor.php';
-    require_once '../Classes/Editora.php';
-    require_once '../Classes/Genero.php';
-    require_once '../Classes/EstadoLivro.php';
-    require_once '../DAO/AutorDAO.php';
-    require_once '../DAO/EditoraDAO.php';
-    require_once '../DAO/GeneroDAO.php';
-    require_once '../DAO/EstadoLivroDAO.php';
+
+require_once '../Classes/Autor.php';
+require_once '../Classes/Editora.php';
+require_once '../Classes/Genero.php';
+require_once '../Classes/EstadoLivro.php';
+require_once '../DAO/AutorDAO.php';
+require_once '../DAO/EditoraDAO.php';
+require_once '../DAO/GeneroDAO.php';
+require_once '../DAO/EstadoLivroDAO.php';
+
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: Index.php");
+    exit;
+}
+
 ?>
 <html lang="pt-br">    
     <head>
