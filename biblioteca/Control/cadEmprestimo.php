@@ -21,4 +21,7 @@ $dao = new EmprestimoDAO($emprestimo);
 
 if($dao->insert()){
     header("Location: ../View/ListarLivro.php");
+}else{
+    $_SESSION['erro'] = "Livro não encontrado";
+    header("Location: ../View/PaginaErro.php");
 }

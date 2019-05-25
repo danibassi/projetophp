@@ -29,6 +29,6 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
         <div class="caixa">
             <input type="text" id="txtBusca" placeholder="Pesquise aqui..."/>
             <button id="btnBusca">Buscar</button>            
-        </div>   
+        </div>
     </body> 
 </html>
