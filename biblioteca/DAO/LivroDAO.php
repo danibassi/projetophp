@@ -85,7 +85,8 @@
         }
 
         public function delete($id){
-            $sql = "DELETE FROM $this->table WHERE liv_id = :id";
+            $sql = "DELETE FROM tb_emprestimo WHERE tb_liv_id = :id;
+                    DELETE FROM $this->table WHERE liv_id = :id;";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id', $id);
             return $stmt->execute();

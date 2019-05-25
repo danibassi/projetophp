@@ -55,8 +55,8 @@ $leitorDAO = new LeitorDAO(new Leitor());
 <!--        <input type="hidden" name="idFuncionario" value=<?php //echo $_SESSION['id']?>-->
 
             <label>Nome do leitor: </label>
-            <input list="leitorEscolhido" id="formatacaoForm" name="leitorEscolhido" required>
-            <datalist id="leitorEscolhido">
+            <input list="leitorEscolhido" id="formatacaoForm" name="leitorEscolhido" autocomplete="off" required>
+            <datalist id="leitorEscolhido" >
                 <?php
                 foreach ($leitorDAO->selectAll() as $key => $value):
                     echo "<option value = '$value->lei_nome'>";
@@ -65,7 +65,7 @@ $leitorDAO = new LeitorDAO(new Leitor());
             </datalist><br>
             
             <label>Livro: </label>
-            <input list="livroEscolhido" id="formatacaoForm" name="livroEscolhido" required>
+            <input list="livroEscolhido" id="formatacaoForm" name="livroEscolhido" autocomplete="off" required>
             <datalist id="livroEscolhido">
                 <?php
                 foreach ($livroDAO->selectAll() as $key => $value):
