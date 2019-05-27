@@ -11,7 +11,7 @@
 
     $editora = new Editora();
 
-    $editora->setNome($_POST['nome']);
+    $editora->setEditoraNome($_POST['nome']);
     
     $editoraDAO = new EditoraDAO($editora);
 

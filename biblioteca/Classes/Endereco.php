@@ -8,6 +8,7 @@ class Endereco{
     private $complemento;
     private $cidade;
     private $estado;
+    private $ibge;
 
     public function setRua($rua){
         $this->rua = $rua;
@@ -37,6 +38,10 @@ class Endereco{
         $this->estado = $estado;
     }
 
+    public function setIbge($ibge){
+        $this->ibge = $ibge;
+    }
+
     public function getRua(){
         return $this->rua;
     }
@@ -63,6 +68,10 @@ class Endereco{
 
     public function getEstado(){
         return $this->estado;
+    }
+
+    public function getIbge(){
+        return $this->ibge;
     }
 }
 

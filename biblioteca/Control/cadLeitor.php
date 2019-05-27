@@ -38,6 +38,7 @@
     $endereco->setCidade($_POST['cidade']);
     $endereco->setEstado($_POST['uf']);
     $endereco->setCep($_POST['cep']);
+    $endereco->setIbge($_POST['ibge']);
 
     $leitor->setTelefone($telefone);
     $leitor->setEndereco($endereco);

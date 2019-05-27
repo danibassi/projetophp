@@ -15,14 +15,14 @@
         public function insert(){
             $sql = "INSERT INTO $this->table (edi_nome) VALUES (:nome)";
             $stmt = DB::prepare($sql);
-            $stmt->bindParam(':nome',$this->editora->getNome());
+            $stmt->bindParam(':nome',$this->editora->getEditoraNome());
             return $stmt->execute();
         }
 
         public function update($id){
             $sql = "UPDATE $this->table (edi_nome) SET (:nome);";
             $stmt = DB::prepare($sql);
-            $stmt->bindParam(':nome',$this->editora->getNome());
+            $stmt->bindParam(':nome',$this->editora->getEditoraNome());
             return $stmt->execute();
         }
 

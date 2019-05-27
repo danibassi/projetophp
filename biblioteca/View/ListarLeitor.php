@@ -59,7 +59,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                     <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
                     <li><a href="CadastroLeitor.php">Cadastrar Usuário</a></li>
                     <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
-                    <li><a href="Emprestimo.php">Empréstimos</a></li>
+                    <li><a href="CadastrarEmprestimo.php">Empréstimos</a></li>
                     <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
                     <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
                     <li><a href="ListarLivro.php">Livros cadastrados</a></li>
@@ -103,7 +103,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                               <input type="hidden" name="idDeletar" value="<?php echo $value->lei_id?>">
                               <input type="submit" value="Deletar">
                           </form>
-                          <form action="../View/AlterarLeitor.php" method="post">
+                          <form action="EditarLeitor.php" method="post">
                               <input type="hidden" name="idAlterar" value="<?php echo $value->lei_id?>">
                               <input type="submit" value="Alterar">
                           </form>

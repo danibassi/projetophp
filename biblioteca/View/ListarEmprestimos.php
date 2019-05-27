@@ -58,7 +58,7 @@ $dao = new EmprestimoDAO(new Emprestimo());
                     <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
                     <li><a href="CadastroLeitor.php">Cadastrar Usuário</a></li>
                     <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
-                    <li><a href="Emprestimo.php">Empréstimos</a></li>
+                    <li><a href="CadastrarEmprestimo.php">Empréstimos</a></li>
                     <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
                     <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
                     <li><a href="ListarLivro.php">Livros cadastrados</a></li>
@@ -102,7 +102,7 @@ $dao = new EmprestimoDAO(new Emprestimo());
             <?php endforeach; ?>
         </table>
         
-        <form action="Emprestimo.php">
+        <form action="CadastrarEmprestimo.php">
             <input type="submit" value="Novo Cadastro">
         </form>
         
