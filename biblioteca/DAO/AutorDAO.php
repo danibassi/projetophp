@@ -7,7 +7,7 @@
         private $autor;
         protected $table = 'tb_autor';
 
-        function __construct($autor){
+        function __construct(Autor $autor){
             $this->autor = $autor;
         }
 

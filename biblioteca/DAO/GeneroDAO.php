@@ -8,7 +8,7 @@
         private $genero;
         protected $table = "tb_genero";
 
-        function __construct($genero){
+        function __construct(Genero $genero){
             $this->genero = $genero;
         }
         

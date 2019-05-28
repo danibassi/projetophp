@@ -7,7 +7,7 @@
         private $emprestimo;
         protected $table = "tb_emprestimo";
 
-        function __construct($emprestimo){
+        function __construct(Emprestimo $emprestimo){
             $this->emprestimo = $emprestimo;
         }
         
@@ -72,6 +72,22 @@
                     INNER JOIN tb_funcionario as fu
                     ON fu.fun_id = em.tb_fun_id
                     WHERE em.emp_data_entregue is null;";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id',$id);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+
+        public function selectDevolucaoFeita(){
+            $sql = "SELECT em.emp_id, le.lei_nome, li.liv_nome, fu.fun_nome, em.emp_data, em.emp_data_devolucao 
+                    FROM $this->table as em
+                    INNER JOIN tb_leitor as le
+                    ON le.lei_id = em.tb_lei_id
+                    INNER JOIN tb_livro as li
+                    ON li.liv_id = em.tb_liv_id
+                    INNER JOIN tb_funcionario as fu
+                    ON fu.fun_id = em.tb_fun_id
+                    WHERE em.emp_data_entregue is not null;";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id',$id);
             $stmt->execute();

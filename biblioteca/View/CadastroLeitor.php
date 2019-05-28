@@ -1,8 +1,5 @@
 <?php
 
-require_once '../DAO/EstadoDAO.php';
-require_once '../Classes/Estado.php';
-
 if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     unset($_SESSION['username']);
     unset($_SESSION['password']);

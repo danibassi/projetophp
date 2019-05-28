@@ -8,7 +8,7 @@
         private $editora;
         protected $table = "tb_editora";
 
-        function __construct($editora){
+        function __construct(Editora $editora){
             $this->editora = $editora;
         }
         

@@ -8,7 +8,7 @@
         private $estadoLivro;
         protected $table = "tb_estado_livro";
 
-        function __construct($estadoLivro){
+        function __construct(EstadoLivro $estadoLivro){
             $this->estadoLivro = $estadoLivro;
         }
 

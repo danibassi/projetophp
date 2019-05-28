@@ -5,7 +5,7 @@
         private $livro;
         protected $table = "tb_livro";
 
-        function __construct($livro){
+        function __construct(Livro $livro){
             $this->livro = $livro;
         }
         

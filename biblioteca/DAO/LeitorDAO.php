@@ -7,7 +7,7 @@
         private $leitor;
         protected $table = 'tb_leitor';
 
-        function __construct($leitor){
+        function __construct(Leitor $leitor){
             $this->leitor = $leitor;
         }
 
