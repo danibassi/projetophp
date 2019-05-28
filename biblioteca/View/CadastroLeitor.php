@@ -15,81 +15,69 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Cadastro de leitor</title>
+        <link rel="stylesheet" type="text/css" href="_css/styleleitor.css">
+        <link rel="stylesheet" type="text/css" href="_css/estilohome.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
+        <title>Leitores</title>
     </head>
 
     <body>
-        <header>
-            <nav>
-                <ul class="ul">
-                    <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li>
-                </ul>
-            </nav>
-        </header>
-        
-        
-        <div style="float: left; width: 20%">
-            <table border=1>
-                <td>
-                    <li><a href="CadastroAutor.php">Cadastrar autor</a></li>
-                    <li><a href="CadastroEditora.php">Cadastrar editora</a></li>
-                    <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
-                    <li><a href="CadastroLeitor.php">Cadastrar usuário</a></li>
-                    <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
-                    <li><a href="RegistrarDevolucao.php">Devolução</a></li>
-                    <li><a href="CadastrarEmprestimo.php">Empréstimo</a></li>
-                    <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
-                    <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
-                    <li><a href="ListarLivro.php">Livros cadastrados</a></li>
-                </td>
-            </table>
-        </div>  
+    <div id="caixamenu"> 
+        <div id="menu">
+            <a href="MenuFuncionario.php">Ínicio</a>
+            <a href="CadastroLeitor.php">Leitores</a>
+            <a href="CadastroLivro.php">Livros</a>
+            <a href="Emprestimo.php">Empréstimos</a>
+            <a href="RegistrarDevolucao.php">Devolução</a>
+            <a href="CadastroFuncionario.php">Funcionários</a>
+            <a href="CadastroEditora.php">Editoras</a>
+            <a href="CadastroAutor.php">Autores</a>             
+        </div>
+    </div>  
 
-        
-        <div id="divBusca" style="float: left; width: 80%">
+        <div class="titulo"> Cadastro de Leitor </div>        
+        <div class="caixaform">
+
             <form action="../Control/cadLeitor.php" method="post">
 
                 <label>Nome: </label>
-                <input type="text" id="nome" name="nome" required><br>
+                <input class="campo" type="text" id="nome" name="nome" size="50" required>
 
-                <label>E-mail: </label>
-                <input type="email" id="email" name="email" required><br>
+                <label style="margin-left:20px;">E-mail: </label>
+                <input class="campo" type="email" id="email" name="email0" size="50" required><br><br>
 
                 <label>Data de nascimento: </label>
-                <input type="date" id="dtnasc" name="dtnasc" required><br>
+                <input class="campo" type="date" id="dtnasc" name="dtnasc" required>
 
-                <label>Sexo: </label>
+                <label style="margin-left:30px;">Sexo: </label>
                 <label><input type="radio" name="sexo" value="F"> Feminino </label>
                 <label><input type="radio" name="sexo" value="M"> Masculino</label><br><br>
 
                 <label for="cep">Cep: </label>
-                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                       onblur="pesquisacep(this.value);" /><br>
+                <input class="campo" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                       onblur="pesquisacep(this.value);" />
+                <label style="margin-left:20px;" for="rua">Rua:</label>
+                <input class="campo" type="text" name="rua" id="rua" size="36">
 
-                <label>Endereço: </label><br>
-                <label for="rua">Rua:</label>
-                <input type="text" name="rua" id="rua" size="36">
+                <label style="margin-left:20px;" for="numero">Número:</label>
+                <input class="campo" type="text" id="numero" name="numero" size="4">
 
-                <label for="numero">Numero:</label>
-                <input type="text" id="numero" name="numero" size="4"><br>
+                <label style="margin-left:20px;" for="ibge">IBGE</label>
+                <input class="campo" name="ibge" type="text" id="ibge" size="8"><br><br>
 
                 <label for="bairro">Bairro:</label>
-                <input id="bairro" name="bairro" size="20" type="text">
+                <input class="campo" id="bairro" name="bairro" size="20" type="text">
 
-                <label for="cidade">Cidade:</label>
-                <input type="text" name="cidade" id="cidade" size="20"><br>
+                <label style="margin-left:20px;" for="cidade">Cidade:</label>
+                <input class="campo" type="text" name="cidade" id="cidade" size="20">
 
-                <label for="estado">Estado:</label>
-                <input name="uf" type="text" id="uf" size="2" ><br>
-
-                <label for="ibge">IBGE</label>
-                <input name="ibge" type="text" id="ibge" size="8"><br>
+                <label style="margin-left:20px;" for="estado">Estado:</label>
+                <input class="campo" name="uf" type="text" id="uf" size="2" ><br><br>              
 
                 <tr>
                     <td>
                         <label>Tipo de telefone:</label>
-                        <select name="tipo" id="tipo" required> 
+                        <select class="campo" name="tipo" id="tipo" required> 
                             <option value="null"></option>
                             <option value=1>Residencial</option>
                             <option value=2>Celular</option>  
@@ -97,10 +85,10 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                         </select>
                     </td>
                 </tr>
-                <label for="telefone">Número:</label>
-                <input type="text" name="telefone" size="8" maxlength="13" required><br>
+                <label style="margin-left:20px;" for="telefone">Telefone:</label>
+                <input class="campo" type="text" name="telefone" size="8" maxlength="13" required><br>
 
-                <button type="submit" name="submit">Enviar</button>
+                <button class="botao" type="submit" name="submit">cadastrar</button>
                 <script src="_js/endereco.js"></script>
             </form>
         </div>
