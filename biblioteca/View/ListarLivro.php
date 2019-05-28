@@ -1,12 +1,21 @@
 <?php
-    require_once '../Classes/Livro.php';
-    require_once '../DAO/LivroDAO.php';
+
+require_once '../Classes/Livro.php';
+require_once '../DAO/LivroDAO.php';
+
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: Index.php");
+    exit;
+}
+
 ?>
 <html lang="pt-br">    
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Livros cadastrados</title>
+        <title>Livros Cadastrados</title>
         <style>
             #stusuarios {
                 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -48,7 +57,7 @@
                     <li><a href="CadastroLeitor.php">Cadastrar usuário</a></li>
                     <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
                     <li><a href="RegistrarDevolucao.php">Devolução</a></li>
-                    <li><a href="Emprestimo.php">Empréstimo</a></li>
+                    <li><a href="CadastrarEmprestimo.php">Empréstimo</a></li>
                     <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
                     <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
                     <li><a href="ListarLivro.php">Livros cadastrados</a></li>
@@ -74,6 +83,8 @@
                     <td>Data de Publicação</td>
                     <td>Edição</td>
                     <td>ISBD</td>
+                    <td>Qntd</td>
+                    <td>Disponivel</td>
                     <td>Editar</td>
                     <td>Deletar</td>
                 </tr>
@@ -90,6 +101,8 @@
                         <td><?php echo $value->liv_ano_publicacao;?></td>
                         <td><?php echo $value->liv_edicao;?></td>
                         <td><?php echo $value->liv_isbd;?></td>
+                        <td><?php echo $value->liv_quantidade;?></td>
+                        <td><?php echo $value->liv_qntd_disponivel;?></td>
                         <td>
                             <form action="EditarLivro.php" method="POST">
                                 <input type="hidden" value=<?php echo $value->liv_id;?> name="id">
@@ -97,8 +110,8 @@
                             </form>
                         </td>
                         <td>
-                            <form action="#" method="POST">
-                                <input type="hidden" value=<?php echo $value->liv_id;?> name="id">
+                            <form action="../Control/delLivro.php" method="POST">
+                                <input type="hidden" value="<?php echo $value->liv_id;?>" name="id">
                                 <input type="submit" value="Deletar">
                             </form>
                         </td>

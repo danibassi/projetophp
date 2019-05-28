@@ -1,4 +1,12 @@
-<html lang="pt-br">    
+<?php
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: Index.php");
+    exit;
+}
+?>
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilohome.css">
@@ -11,7 +19,7 @@
             <a href="MenuFuncionario.php">Ínicio</a>
             <a href="CadastroLeitor.php">Leitores</a>
             <a href="CadastroLivro.php">Livros</a>
-            <a href="Emprestimo.php">Empréstimos</a>
+            <a href="CadastrarEmprestimo.php">Empréstimos</a>
             <a href="RegistrarDevolucao.php">Devolução</a>
             <a href="CadastroFuncionario.php">Funcionários</a>
             <a href="CadastroEditora.php">Editoras</a>

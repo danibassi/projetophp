@@ -1,16 +1,25 @@
 <?php
 
-    require_once '../Classes/Leitor.php';
-    require_once '../Classes/Endereco.php';
-    require_once '../Classes/Telefone.php';
-    require_once '../DAO/LeitorDAO.php';
+require_once '../Classes/Leitor.php';
+require_once '../Classes/Endereco.php';
+require_once '../Classes/Telefone.php';
+require_once '../DAO/LeitorDAO.php';
+
+
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: Index.php");
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-    <title>Leitores cadastrados</title>
+    <title>Alugar Livro</title>
     <link rel="stylesheet" href="_css/estilo.css" type="text/css">
 </head>
 
@@ -30,7 +39,7 @@
             <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
             <li><a href="CadastroLeitor.php">Cadastrar Usuário</a></li>
             <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
-            <li><a href="Emprestimo.php">Empréstimos</a></li>
+            <li><a href="CadastrarEmprestimo.php">Empréstimos</a></li>
             <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
             <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
             <li><a href="ListarLivro.php">Livros cadastrados</a></li>

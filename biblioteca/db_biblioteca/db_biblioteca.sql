@@ -19,7 +19,7 @@ CREATE TABLE tb_emprestimo (
     tb_fun_id               INT NOT NULL,
     emp_data                DATE NOT NULL,
     emp_data_devolucao      DATE NOT NULL,
-    emp_data_entregue       DATE NOT NULL
+    emp_data_entregue       DATE
 );
 
 CREATE TABLE tb_endereco (
@@ -30,6 +30,7 @@ CREATE TABLE tb_endereco (
     end_cidade   VARCHAR(50) NOT NULL,
     end_estado   VARCHAR(50) NOT NULL,
     end_cep      VARCHAR(10) NOT NULL,
+    end_ibge     VARCHAR(10) NOT NULL,
     tb_lei_id    INT NOT NULL
 );
 
@@ -64,7 +65,9 @@ CREATE TABLE tb_livro (
     tb_aut_id           INT NOT NULL,
     tb_gen_id           INT NOT NULL,
     liv_isbd            VARCHAR(13) NOT NULL,
-    liv_capa            MEDIUMBLOB
+    liv_capa            VARCHAR(200),
+    liv_quantidade      INT NOT NULL,
+    liv_qntd_disponivel  INT NOT NULL
 );
 
 CREATE TABLE tb_estado_livro(
@@ -78,23 +81,6 @@ CREATE TABLE tb_telefone (
     tb_tip_tel_id            INT NOT NULL,
     tb_lei_id                INT NOT NULL
 );
-
-CREATE TABLE tb_estado(
-
-	est_id INT(11)           PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	est_sigla                VARCHAR(2) COLLATE utf8_unicode_ci NOT NULL,
-	est_nome                 VARCHAR(72) COLLATE utf8_unicode_ci NOT NULL
-
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE tb_cidade(
-	cid_id                   INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	cid_nome                 VARCHAR(72) COLLATE utf8_unicode_ci NOT NULL,
-	cid_cep                  VARCHAR(8) COLLATE utf8_unicode_ci NOT NULL,
-	tb_est_id                INT(11) NOT NULL,
-	
-    FOREIGN KEY(tb_est_id) REFERENCES tb_estado(est_id) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE tb_tipo_tel (
     tip_tel_id     INT(28) PRIMARY KEY auto_increment,

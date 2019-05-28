@@ -10,6 +10,7 @@ class Livro{
     private $genero;
     private $isbd;
     private $capa;
+    private $quantidade;
 
     public function setNome($nome){
         $this->nome = $nome;
@@ -80,6 +81,13 @@ class Livro{
     }
     public function getCapa(){
         return $this->capa;
+    }
+
+    public function setQuantidade($quantidade){
+        $this->quantidade = $quantidade;
+    }
+    public function getQuantidade(){
+        return $this->quantidade;
     }
 }
 

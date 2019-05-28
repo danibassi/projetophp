@@ -1,4 +1,9 @@
-<html lang="pt-br">    
+<!DOCTYPE html>
+<?php
+    $_SESSION = array();
+    session_destroy();
+?>
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
@@ -15,14 +20,15 @@
         </header> 
 
         <div align="center">
-            <label>Username:</label>
-            <input type="text" placeholder="Enter Username" name="uername" required><br>
+            <form action="../Control/autenticarUsuario.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" placeholder="Enter Username" name="username" id="username" required><br>
 
-            <label>Password:</label>
-            <input type="password" placeholder="Enter Password" name="psw" required><br>
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required><br>
 
-            <button type="submit">Login</button>       
-
+                <input type="submit" value="Login">
+            </form>
         </div>  
     </body>   
 </html>

@@ -5,6 +5,14 @@
     require_once '../Classes/TipoTelefone.php';
     require_once '../DAO/LeitorDAO.php';
 
+    if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+        unset($_SESSION['username']);
+        unset($_SESSION['password']);
+        header("Location: ../View/Index.php");
+        exit;
+    }
+
+
     $leitor = new Leitor();
 
     $leitor->setNome($_POST['nome']);
@@ -30,6 +38,7 @@
     $endereco->setCidade($_POST['cidade']);
     $endereco->setEstado($_POST['uf']);
     $endereco->setCep($_POST['cep']);
+    $endereco->setIbge($_POST['ibge']);
 
     $leitor->setTelefone($telefone);
     $leitor->setEndereco($endereco);
@@ -38,7 +47,7 @@
 
     
     if($leitorDAO->insert()){
-        header("Location:../View/ListarLeitor.php");
+        header("Location:../View/MenuFuncionario.php");
     }else{
         
     }

@@ -20,7 +20,7 @@ class Funcionario{
         $this->email = $email;
     }
     public function getEmail(){
-        return $this-email;
+        return $this->email;
     }
 
     public function setSexo($sexo){

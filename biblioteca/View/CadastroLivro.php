@@ -1,12 +1,22 @@
 <?php
-    require_once '../Classes/Autor.php';
-    require_once '../Classes/Editora.php';
-    require_once '../Classes/Genero.php';
-    require_once '../Classes/EstadoLivro.php';
-    require_once '../DAO/AutorDAO.php';
-    require_once '../DAO/EditoraDAO.php';
-    require_once '../DAO/GeneroDAO.php';
-    require_once '../DAO/EstadoLivroDAO.php';
+
+require_once '../Classes/Autor.php';
+require_once '../Classes/Editora.php';
+require_once '../Classes/Genero.php';
+require_once '../Classes/EstadoLivro.php';
+require_once '../DAO/AutorDAO.php';
+require_once '../DAO/EditoraDAO.php';
+require_once '../DAO/GeneroDAO.php';
+require_once '../DAO/EstadoLivroDAO.php';
+
+
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: Index.php");
+    exit;
+}
+
 ?>
 <html lang="pt-br">    
     <head>
@@ -32,7 +42,7 @@
                     <li><a href="CadastroLeitor.php">Cadastrar usuário</a></li>
                     <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
                     <li><a href="RegistrarDevolucao.php">Devolução</a></li>
-                    <li><a href="Emprestimo.php">Empréstimo</a></li>
+                    <li><a href="CadastrarEmprestimo.php">Empréstimo</a></li>
                     <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
                     <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
                     <li><a href="ListarLivro.php">Livros cadastrados</a></li>
@@ -101,8 +111,10 @@
                 <label>Isbd: </label>
                 <input type="text" id="isbd" name="isbd" maxlength="10" required><br>
 
-                <button type="submit" name="submit">Enviar</button>
+                <label for="quantidade">Quantidade de livros: </label>
+                <input type="number" id="quantidade" name="quantidade" maxlength="2" required><br>
 
+                <button type="submit" name="submit">Enviar</button>
             </form>
         </div>                 
     </body>

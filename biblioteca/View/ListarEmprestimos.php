@@ -1,17 +1,16 @@
 <?php
 
-require_once '../Classes/Leitor.php';
-require_once '../Classes/Endereco.php';
-require_once '../Classes/Telefone.php';
-require_once '../DAO/LeitorDAO.php';
-
-
 if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     unset($_SESSION['username']);
     unset($_SESSION['password']);
     header("Location: Index.php");
     exit;
 }
+
+require_once '../Classes/Emprestimo.php';
+require_once '../DAO/EmprestimoDAO.php';
+
+$dao = new EmprestimoDAO(new Emprestimo());
 
 ?>
 <html lang="pt-br">    
@@ -70,50 +69,40 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
         </div>  
         
         <div id="divBusca" style="float: left; width: 80%">
-        <?php
-            $leitorDAO = new LeitorDAO(new Leitor());
-        ?>
         <table id="stusuarios">
             <thead>
                 <tr>
-                    <td>Nome</td>
-                    <td>E-mail</td>
-                    <td>Sexo</td>
-                    <td>Data de Nascimento</td>
-                    <td>Tipo do Numero</td>
-                    <td>Numero</td>
-                    <td>Endereço</td>
-                    <td>Opção</td>
+                    <td>Leitor</td>
+                    <td>Livro</td>
+                    <td>Funcionario</td>
+                    <td>Data de Saida</td>
+                    <td>Data Limite</td>
+                    <td>Devolução</td>
                 </tr>
             </thead>
-            <?php foreach($leitorDAO->selectAll() as $key => $value):?>
+            <?php foreach($dao->selectEmprestimoPendente() as $key => $value):?>
               <tbody>
                   <tr>
                       <td><?php echo $value->lei_nome;?></td>
-                      <td><?php echo $value->lei_email;?></td>
-                      <td><?php echo $value->lei_sexo;?></td>
-                      <td><?php echo $value->lei_dtnasc;?></td>
-                      <td><?php echo $value->tip_tel_tipo;?></td>
-                      <td><?php echo $value->tel_numero;?></td>
-                      <td><?php echo $value->end_rua.", ".$value->end_numero.", ".
-                                     $value->end_bairro.", ".$value->end_cidade."-".
-                                     $value->end_estado;?></td>
+                      <td><?php echo $value->liv_nome;?></td>
+                      <td><?php echo $value->fun_nome;?></td>
+                      <td><?php echo $value->emp_data;?></td>
+                      <td><?php echo $value->emp_data_devolucao;?></td>
                       <td>
-                          <form action="../Control/delLeitor.php" method="post">
-                              <input type="hidden" name="idDeletar" value="<?php echo $value->lei_id?>">
-                              <input type="submit" value="Deletar">
-                          </form>
-                          <form action="EditarLeitor.php" method="post">
-                              <input type="hidden" name="idAlterar" value="<?php echo $value->lei_id?>">
-                              <input type="submit" value="Alterar">
+                          <form action="../Control/devolucaoLivro.php" method="post">
+                              <input type="hidden" name="idEntrega" value="<?php echo $value->emp_id?>">
+                              <input type="hidden" name="livroEntregue" value="<?php echo $value->liv_nome?>">
+                              <input type="date" name="dataEntrega" required>
+                              <input type="submit" value="Devolução">
                           </form>
                       </td>
+
                   </tr>
               </tbody>
             <?php endforeach; ?>
         </table>
         
-        <form action="CadastroLeitor.php">
+        <form action="CadastrarEmprestimo.php">
             <input type="submit" value="Novo Cadastro">
         </form>
         

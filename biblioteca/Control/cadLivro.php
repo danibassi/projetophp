@@ -1,4 +1,12 @@
 <?php
+
+    if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+        unset($_SESSION['username']);
+        unset($_SESSION['password']);
+        header("Location: ../View/Index.php");
+        exit;
+    }
+
     require_once '../DAO/LivroDAO.php';
     require_once '../Classes/Livro.php';
     require_once '../Classes/Autor.php';
@@ -11,6 +19,7 @@
     $livro->setAnoPublicacao($_POST['AnoPublicacao']);
     $livro->setEdicao($_POST['edicao']);
     $livro->setIsbd($_POST['isbd']);
+    $livro->setQuantidade($_POST['quantidade']);
     
     $editora = new Editora();
     $editora->setEditoraNome($_POST['cbEditora']);
@@ -32,7 +41,7 @@
     $livroDAO = new LivroDAO($livro);
     
     if($livroDAO->insert()){
-        header("Location: ../View/CadastroFinalizado.php?id=LIVRO");
+        header("Location:../View/MenuFuncionario.php");
     }else{
 
     }

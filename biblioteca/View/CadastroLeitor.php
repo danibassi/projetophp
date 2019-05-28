@@ -1,8 +1,15 @@
 <?php
-    require_once '../DAO/EstadoDAO.php';
-    require_once '../Classes/Estado.php';
-    /*require_once '../DAO/CidadeDAO.php';
-    require_once '../Classes/Cidade.php';*/
+
+require_once '../DAO/EstadoDAO.php';
+require_once '../Classes/Estado.php';
+
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: Index.php");
+    exit;
+}
+
 ?>
 <html lang="pt-br">
 
@@ -31,7 +38,7 @@
                     <li><a href="CadastroLeitor.php">Cadastrar usuário</a></li>
                     <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
                     <li><a href="RegistrarDevolucao.php">Devolução</a></li>
-                    <li><a href="Emprestimo.php">Empréstimo</a></li>
+                    <li><a href="CadastrarEmprestimo.php">Empréstimo</a></li>
                     <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
                     <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
                     <li><a href="ListarLivro.php">Livros cadastrados</a></li>
