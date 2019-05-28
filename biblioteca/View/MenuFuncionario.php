@@ -9,9 +9,9 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/estilo-inicio.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-        <title>Menu de Funcionário</title>
+        <link rel="stylesheet" type="text/css" href="_css/estilohome.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap" rel="stylesheet">
+        <title>Página inicial</title>        
     </head>
     
     <body> 
@@ -27,8 +27,9 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
         </div>  
         <br>
         <div class="caixa">
-            <input type="text" id="txtBusca" placeholder="Pesquise aqui..."/>
-            <button id="btnBusca">Buscar</button>            
-        </div>
+            <input class="pesquisa" type="text" id="txtBusca" placeholder="Pesquise aqui..."/>
+            
+            <input id="btnbusca"type="image" src="_img/pesquisar.png"/>            
+        </div>   
     </body> 
 </html>
