@@ -9,51 +9,40 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="_css/styledevolucao.css">
+        <link rel="stylesheet" type="text/css" href="_css/estilohome.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Devolução</title>
     </head>
     
     <body> 
-    <header>
-        <nav>
-            <ul class="ul">
-                <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li>
-            </ul>
-        </nav>
-    </header> 
-    <div style="float: left; width: 20%">
-        <table border=1>
-            <td>
-                <li><a href="CadastroAutor.php">Cadastrar autor</a></li>
-                <li><a href="CadastroEditora.php">Cadastrar editora</a></li>
-                <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
-                <li><a href="CadastroLeitor.php">Cadastrar usuário</a></li>
-                <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
-                <li><a href="RegistrarDevolucao.php">Devolução</a></li>
-                <li><a href="CadastrarEmprestimo.php">Empréstimo</a></li>
-                <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
-                <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
-                <li><a href="ListarLivro.php">Livros cadastrados</a></li>
-                
-            </td>            
-        </table>                
+    <div id="caixamenu"> 
+        <div id="menu">
+            <a href="MenuFuncionario.php">Ínicio</a>
+            <a href="CadastroLeitor.php">Leitores</a>
+            <a href="CadastroLivro.php">Livros</a>
+            <a href="Emprestimo.php">Empréstimos</a>
+            <a href="RegistrarDevolucao.php">Devolução</a>
+            <a href="CadastroFuncionario.php">Funcionários</a>
+            <a href="CadastroEditora.php">Editoras</a>
+            <a href="CadastroAutor.php">Autores</a>             
+        </div>
     </div>  
-    
-        
-    <div id="divBusca" style="float: left; width: 80%">
-        Devolução
+
+    <div class="titulo"> DEVOLUÇÃO </div>        
+        <div class="caixaform">
         <form action="#" method="post">
       
             <label>Nome do leitor: </label>
-            <input id="formatacaoForm" type="text" id="nomeUsuario" name="nomeUsuario" required><br>
+            <input class="campo" id="formatacaoForm" type="text" id="nomeUsuario" name="nomeUsuario" size="50" required><br><br>
             
-            <label>Id Livro: </label>
-            <input id="formatacaoForm" type="text" id="IdLivro" name="IdLivro" required><br>
+            <label>Código do livro: </label>
+            <input class="campo" id="formatacaoForm" type="text" id="IdLivro" name="IdLivro" size="50" required><br><br>
                         
             <label>Data da devolução: </label>
-            <input id="formatacaoForm" type="date" id="dataDevolucao" name="dataDevolucao" required><br>
+            <input class="campo" id="formatacaoForm" type="date" id="dataDevolucao" name="dataDevolucao" size="40" required><br>
             
-            <button type="submit" name="submit">Enviar</button>
+            <button class="botao" type="submit" name="submit">Efetuar Devolução</button>
         </form>
     </div>    
     </body>
