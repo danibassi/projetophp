@@ -1,8 +1,8 @@
 <html lang="pt-br">    
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/estilo-inicio.css">
-        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="_css/estilohome.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap" rel="stylesheet">
         <title>Página inicial</title>        
     </head>
     
@@ -19,8 +19,9 @@
         </div>  
         <br>
         <div class="caixa">
-            <input type="text" id="txtBusca" placeholder="Pesquise aqui..."/>
-            <button id="btnBusca">Buscar</button>            
+            <input class="pesquisa" type="text" id="txtBusca" placeholder="Pesquise aqui..."/>
+            
+            <input id="btnbusca"type="image" src="_img/pesquisar.png"/>            
         </div>   
     </body> 
 </html>
