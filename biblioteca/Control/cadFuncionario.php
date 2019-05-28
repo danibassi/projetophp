@@ -9,17 +9,23 @@
         exit;
     }
 
-    $funcionario = new Funcionario();
-    $funcionario->setNome($_POST['nome']);
-    $funcionario->setEmail($_POST['email']);
-    $funcionario->setPassword($_POST['password']);
-    $funcionario->setSexo($_POST['sexo']);
+    if($_POST['password'] == $_POST['confirmPassword']){
 
-    $funcionarioDAO = new FuncionarioDAO($funcionario);
+        $funcionario = new Funcionario();
+        $funcionario->setNome($_POST['nome']);
+        $funcionario->setEmail($_POST['email']);
+        $funcionario->setPassword($_POST['password']);
+        $funcionario->setSexo($_POST['sexo']);
 
-    if($funcionarioDAO->insert()){
-        header("Location:../View/MenuFuncionario.php");
+        $funcionarioDAO = new FuncionarioDAO($funcionario);
+
+        if($funcionarioDAO->insert()){
+            header("Location:../View/MenuFuncionario.php");
+        }else{
+            header("Location: Location:../View/CadastroFuncionario.php");
+        }
     }else{
-
+        header("Location: Location:../View/CadastroFuncionario.php");
     }
+
 ?>

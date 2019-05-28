@@ -9,7 +9,7 @@
 
         protected $table = 'tb_funcionario';
 
-        function __construct($funcionario){
+        function __construct(Funcionario $funcionario){
             $this->funcionario = $funcionario;
         }
 
