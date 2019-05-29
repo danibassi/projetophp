@@ -13,86 +13,58 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 ?>
 <html lang="pt-br">    
     <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-        <title>Livros Cadastrados</title>
-        <style>
-            #stusuarios {
-                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-            #stusuarios td, #stusuarios th {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-            #stusuarios tr:nth-child(even){background-color: #f2f2f2;}
-
-            #stusuarios tr:hover {background-color: #ddd;}
-
-            #stusuarios th {
-                padding-top: 12px;
-                padding-bottom: 12px;
-                text-align: left;
-                background-color: #4CAF50;
-                color: white;
-            }
-        </style>        
+    <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="_css/estilohome.css">
+        <link rel="stylesheet" type="text/css" href="_css/styletable.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
+        <title>Livros</title>
     </head>
     
-    <body> 
-        <header>
-            <nav>
-                <ul class="ul">
-                    <li class="li"><a href="MenuFuncionario.php">Página inicial</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div style="float: left; width: 20%">
-            <table border=1>
-                <td>
-                    <li><a href="CadastroAutor.php">Cadastrar autor</a></li>
-                    <li><a href="CadastroEditora.php">Cadastrar editora</a></li>
-                    <li><a href="CadastroLivro.php">Cadastrar livro</a></li>
-                    <li><a href="CadastroLeitor.php">Cadastrar usuário</a></li>
-                    <li><a href="CadastroFuncionario.php">Cadastrar funcionário</a></li>
-                    <li><a href="RegistrarDevolucao.php">Devolução</a></li>
-                    <li><a href="CadastrarEmprestimo.php">Empréstimo</a></li>
-                    <li><a href="EditarLivro.php">Editar livro cadastrado</a></li>
-                    <li><a href="ListarLeitor.php">Leitores cadastrados</a></li>
-                    <li><a href="ListarLivro.php">Livros cadastrados</a></li>
-                </td>
+        <body> 
+        <div id="caixamenu"> 
+        <div id="menu">
+            <a href="MenuFuncionario.php">Ínicio</a>
+            <a href="ListarLeitor.php">Leitores</a>
+            <a href="ListarLivro.php">Livros</a>
+            <a href="ListarEmprestimos.php">Empréstimos</a>
+            <a href="RegistrarDevolucao.php">Devolução</a>
+            <a href="CadastroFuncionario.php">Funcionários</a>
+            <a href="CadastroEditora.php">Editoras</a>
+            <a href="CadastroAutor.php">Autores</a>             
+        </div>
+    </div>  
 
-            </table>
-
-        </div>  
-
-        <div id="divBusca" style="float: left; width: 80%">
+    <div class="titulo">Livros</div>
+        <form class="novo" action="CadastroLivro.php">
+            <input class="new" type="submit" value="Novo Livro">
+        </form>
         <?php
             $livroDAO = new LivroDAO(new Livro());
         ?>
-        <table id="stusuarios">
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Nome</td>
-                    <td>Autor</td>
-                    <td>Editora</td>
-                    <td>Genero</td>
-                    <td>Estado</td>
-                    <td>Data de Publicação</td>
-                    <td>Edição</td>
-                    <td>ISBD</td>
-                    <td>Qntd</td>
-                    <td>Disponivel</td>
-                    <td>Editar</td>
-                    <td>Deletar</td>
-                </tr>
-            </thead>
+        <div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+                                <th>Nome</th>
+                                <th>Autor</th>
+                                <th>Editora</th>
+                                <th>Genero</th>
+                                <th>Estado</th>
+                                <th>Data de Publicação</th>
+                                <th>Edição</th>
+                                <th>ISBD</th>
+                                <th>Qntd</th>
+                                <th>Disponivel</th>
+                                <th>Editar</th>
+                                <th>Deletar</th>
+                            </tr>
+                        </thead>
             <?php foreach($livroDAO->selectAll() as $key => $value):?>
                 <tbody>
                     <tr>
-                        <td><?php echo $value->liv_id;?></td>
                         <td><?php echo $value->liv_nome;?></td>
                         <td><?php echo $value->aut_nome;?></td>
                         <td><?php echo $value->edi_nome;?></td>
@@ -106,23 +78,23 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                         <td>
                             <form action="EditarLivro.php" method="POST">
                                 <input type="hidden" value=<?php echo $value->liv_id;?> name="id">
-                                <input type="submit" value="Editar">
+                                <input class="img" type="image" src="_img/editar.png"/>
                             </form>
                         </td>
                         <td>
                             <form action="../Control/delLivro.php" method="POST">
                                 <input type="hidden" value="<?php echo $value->liv_id;?>" name="id">
-                                <input type="submit" value="Deletar">
+                                <input class="img" type="image" src="_img/excluir.png"/>
                             </form>
                         </td>
                     </tr>
                 </tbody>
             <?php endforeach; ?>
         </table>
-             </div> 
-        <form action="CadastroLivro.php">
-            <input type="submit" value="Novo Cadastro">
-        </form>
+        </div> 
+        </div>
+        </div>
+        </div>
     </body>
 </html>
         
