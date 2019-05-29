@@ -31,9 +31,9 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     <div id="caixamenu"> 
         <div id="menu">
             <a href="MenuFuncionario.php">Ínicio</a>
-            <a href="CadastroLeitor.php">Leitores</a>
-            <a href="CadastroLivro.php">Livros</a>
-            <a href="Emprestimo.php">Empréstimos</a>
+            <a href="ListarLeitor.php">Leitores</a>
+            <a href="ListarLivro.php">Livros</a>
+            <a href="ListarEmprestimos.php">Empréstimos</a>
             <a href="RegistrarDevolucao.php">Devolução</a>
             <a href="CadastroFuncionario.php">Funcionários</a>
             <a href="CadastroEditora.php">Editoras</a>
