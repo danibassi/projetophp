@@ -18,7 +18,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilohome.css">
-        <link rel="stylesheet" type="text/css" href="_css/styletableleitor.css">
+        <link rel="stylesheet" type="text/css" href="_css/styletable.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Leitores</title>
     </head>
