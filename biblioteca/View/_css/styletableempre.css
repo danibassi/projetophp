@@ -108,7 +108,7 @@
 
 .novo{
     float: right;
-    margin-top:40px;
+    margin-top:60px;
     margin-right: 90px;
 }
 
@@ -122,9 +122,6 @@
   height: 30px;
   text-transform: uppercase;
   text-align: center;
-  float: left;
-  margin-left: 290px;
-  margin-top: 20px;
   transition:all 0.3s ease;
 }
 

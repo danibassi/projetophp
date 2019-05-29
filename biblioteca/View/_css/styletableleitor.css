@@ -1,0 +1,133 @@
+.limiter {
+    margin-top: 40px;
+    margin-left: 60px;
+  }
+  
+  .container-table100 {
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+  }
+  
+  .wrap-table100 {
+    width: 1170px;
+  }
+  
+  table {
+    border: 0.2px solid #e4e4e4;
+    border-radius: 5px;
+    background: white;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0px 0px 1em #F1DEFF;
+    -webkit-box-shadow: 0px 0px 1em #F1DEFF;
+    -moz-box-shadow: 0px 0px 1em #F1DEFF;
+  }
+  table * {
+    position: relative;
+  }
+
+  table td, table th {
+    padding-left: 8px;
+  }
+  table thead tr {
+    height: 60px;
+    box-shadow: 0.5px 0.5px 0.5em #e4e4e4;
+    -webkit-box-shadow: 05px 0.5px 0.5em #e4e4e4;
+    -moz-box-shadow: 0.5px 0.5px 0.5em #e4e4e4;
+  }
+  table tbody tr {
+    height: 50px;
+
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+  table td, table th {
+    text-align: center;
+  }
+  table td.l, table th.l {
+    text-align: right;
+  }
+  table td.c, table th.c {
+    text-align: center;
+  }
+  table td.r, table th.r {
+    text-align: center;
+  }
+  
+  .table100-head th{
+    font-family: 'Montserrat';
+    font-size: 14px;
+    color: #7B64FC;
+    font-weight: unset;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+
+  tbody tr {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+
+  .img{
+    width: 22px;
+    height: 22px;
+
+  }
+  #encima{
+      margin-top: 7px;
+  }
+
+  .titulo{
+    float: left;
+    margin-left: 600px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 29px;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    color: #7B0BF3;
+}
+
+.novo{
+    float: right;
+    margin-top:60px;
+    margin-right: 90px;
+}
+
+.new{
+  border: 0.5px solid #7B0BF3;
+  border-radius: 2px;
+  background-color: #7B0BF3;
+  color: #ffffff;
+  font-size: 14px;
+  width: 150px;
+  height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  transition:all 0.3s ease;
+}
+
+.new:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
