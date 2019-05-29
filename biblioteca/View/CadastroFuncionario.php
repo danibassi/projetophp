@@ -46,6 +46,9 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                 <label>Senha:</label>
                 <input class="campo" id="formatacaoForm" type="password" name="password" size="40" required><br>
 
+                <label>Confirmar Senha:</label>
+                <input class="campo" id="formatacaoForm" type="password" name="confirmPassword" size="40" required><br>
+
                 <button class="botao" type="submit" name="submit">Enviar</button>
 
             </form>

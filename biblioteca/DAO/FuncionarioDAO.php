@@ -44,8 +44,8 @@
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
-        public function getEmailAndPassword(){
-            $sql = "SELECT fun_id,fun_email,fun_password FROM $this->table WHERE fun_email = :email";
+        public function getNomeEmailAndPassword(){
+            $sql = "SELECT fun_id, fun_nome, fun_email,fun_password FROM $this->table WHERE fun_email = :email";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':email',$this->funcionario->getEmail());
             $stmt->execute();
