@@ -38,8 +38,8 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     </div>  
 
     <div class="titulo">LEITORES</div>
-        <form action="CadastroLeitor.php">
-            <input type="submit" value="Novo Cadastro">
+        <form class="novo" action="CadastroLeitor.php">
+            <input class="new" type="submit" value="Novo Cadastro">
         </form>
         <?php
             $leitorDAO = new LeitorDAO(new Leitor());
