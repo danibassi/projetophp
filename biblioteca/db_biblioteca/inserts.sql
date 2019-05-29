@@ -30,4 +30,4 @@ INSERT INTO tb_livro (liv_nome,liv_ano_publicacao, liv_edicao, tb_est_liv_id,tb_
 VALUES ('Eragon','2002-03-28','3',1,1,1,1,20,20);
 
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
-VALUES (1,2,1,'2019-05-02','2019-05-12')
+VALUES (1,1,1,'2019-05-02','2019-05-12');
