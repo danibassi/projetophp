@@ -28,10 +28,8 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
             <a href="ListarLeitor.php">Leitores</a>
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
-            <a href="RegistrarDevolucao.php">Devolução</a>
-            <a href="CadastroFuncionario.php">Funcionários</a>
-            <a href="CadastroEditora.php">Editoras</a>
-            <a href="CadastroAutor.php">Autores</a>             
+            <a href="CadastroFuncionario.php">Funcionários</a> 
+            <a href="Index.php">Sair</a>        
         </div>
     </div>  
 
