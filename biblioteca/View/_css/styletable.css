@@ -105,4 +105,32 @@
     font-family: 'Montserrat';
     color: #7B0BF3;
 }
+
+.novo{
+    float: right;
+    margin-top:40px;
+    margin-right: 90px;
+}
+
+.new{
+  border: 0.5px solid #7B0BF3;
+  border-radius: 2px;
+  background-color: #7B0BF3;
+  color: #ffffff;
+  font-size: 14px;
+  width: 150px;
+  height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  float: left;
+  margin-left: 290px;
+  margin-top: 20px;
+  transition:all 0.3s ease;
+}
+
+.new:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
   
