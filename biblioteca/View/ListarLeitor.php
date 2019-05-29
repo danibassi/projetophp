@@ -18,7 +18,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/estilohome.css">
-        <link rel="stylesheet" type="text/css" href="_css/styletable.css">
+        <link rel="stylesheet" type="text/css" href="_css/styletableleitor.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Leitores</title>
     </head>
@@ -39,7 +39,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 
     <div class="titulo">LEITORES</div>
         <form class="novo" action="CadastroLeitor.php">
-            <input class="new" type="submit" value="Novo Cadastro">
+            <input class="new" type="submit" value="Novo Leitor">
         </form>
         <?php
             $leitorDAO = new LeitorDAO(new Leitor());
