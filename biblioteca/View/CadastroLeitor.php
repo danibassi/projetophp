@@ -12,7 +12,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/styleleitor.css">
+        <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
         <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Leitores</title>
@@ -25,10 +25,8 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
             <a href="ListarLeitor.php">Leitores</a>
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
-            <a href="RegistrarDevolucao.php">Devolução</a>
-            <a href="CadastroFuncionario.php">Funcionários</a>
-            <a href="CadastroEditora.php">Editoras</a>
-            <a href="CadastroAutor.php">Autores</a>             
+            <a href="CadastroFuncionario.php">Funcionários</a> 
+            <a href="Index.php">Sair</a>        
         </div>
     </div>  
 

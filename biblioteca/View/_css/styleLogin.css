@@ -1,0 +1,264 @@
+body{
+    background-image: url("../_img/fundoentrar.png");
+    font-family: 'Montserrat';
+}
+
+.caixaLogin{
+    border: 0.2px solid #e4e4e4;
+    border-radius: 10px;
+    background: #f5f5f5;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 30px;
+    box-shadow: 0.5px 0.5px 1em #87828a;
+    /* -webkit-box-shadow: 0.5px 0.5px 0.5em #c8c8c8;
+    -moz-box-shadow: 0.5px 0.5px 0.5em #c8c8c8; 87828a */
+}
+
+.titulo{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    color: #7B0BF3;
+    margin-bottom: 25px;
+}
+
+.botao{
+    border: 0.5px solid #7B0BF3;
+    border-radius: 2px;
+    background-color: #7B0BF3;
+    color: #ffffff;
+    font-size: 14px;
+    width: 250px;
+    height: 30px;
+    margin-left:25px;
+    text-transform: uppercase;
+    text-align: center;
+    transition:all 0.3s ease;
+}
+
+.botao:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/*Configuração dos campos*/
+/*
+=====
+LEVEL 1. RESET STYLES
+=====
+*/
+
+.field{
+    --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
+  }
+  
+  .field__input{ 
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+  
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: 'Montserrat';
+    font-size: 12;
+  }
+  
+  .field__input:focus::-webkit-input-placeholder{
+    color: var(--uiFieldPlaceholderColor);
+  }
+  
+  .field__input:focus::-moz-placeholder{
+    color: var(--uiFieldPlaceholderColor);
+    opacity: 1;
+  }
+  
+  /*
+  =====
+  LEVEL 2. CORE STYLES
+  =====
+  */
+  
+  .a-field{
+    display: inline-block;
+  }
+  
+  .a-field__input{ 
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .a-field__input:focus{
+    outline: none;
+  }
+  
+  /*
+  =====
+  LEVEL 3. PRESENTATION STYLES
+  =====
+  */
+  
+  /* a-field */
+  
+  .a-field{
+    --uiFieldHeight: var(--fieldHeight, 40px);  
+    --uiFieldBorderWidth: var(--fieldBorderWidth, 1px);
+    --uiFieldBorderColor: var(--fieldBorderColor);
+  
+    --uiFieldFontSize: var(--fieldFontSize, 1em);
+    --uiFieldHintFontSize: var(--fieldHintFontSize, 1em);
+  
+    --uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
+    --uiFieldPaddingBottom: var(--fieldPaddingBottom, 15px);
+    --uiFieldPaddingLeft: var(--fieldPaddingLeft, 15px);   
+  
+    position: relative;
+    box-sizing: border-box;
+    font-size: var(--uiFieldFontSize);
+    padding-top: 1em;  
+  }
+  
+  .a-field .a-field__input{
+    height: var(--uiFieldHeight);
+    padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
+    border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColor);  
+  }
+  
+  .a-field .a-field__input::-webkit-input-placeholder{
+    opacity: 0;
+    transition: opacity .2s ease-out;
+  }
+  
+  .a-field .a-field__input::-moz-placeholder{
+    opacity: 0;
+    transition: opacity .2s ease-out;
+  }
+  
+  .a-field .a-field__input:not(:placeholder-shown) ~ .a-field__label-wrap .a-field__label{
+    opacity: 0;
+    bottom: var(--uiFieldPaddingBottom);
+  }
+  
+  .a-field .a-field__input:focus::-webkit-input-placeholder{
+    opacity: 1;
+    transition-delay: .2s;
+  }
+  
+  .a-field .a-field__input:focus::-moz-placeholder{
+    opacity: 1;
+    transition-delay: .2s;
+  }
+  
+  .a-field .a-field__label-wrap{
+    box-sizing: border-box;
+    width: 100%;
+    height: var(--uiFieldHeight);	
+  
+    pointer-events: none;
+    cursor: text;
+  
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+
+  .a-field .a-field__label{
+    position: absolute;
+    left: var(--uiFieldPaddingLeft);
+    bottom: calc(50% - .5em);
+    color: #673AB7;
+    line-height: 1;
+    font-size: 14px;
+  
+    pointer-events: none;
+    transition: bottom .2s cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity .2s ease-out;
+    will-change: bottom, opacity;
+  }
+  
+  .a-field .a-field__input:focus ~ .a-field__label-wrap .a-field__label{
+    opacity: 1;
+    bottom: var(--uiFieldHeight);
+  }
+  
+  /* a-field_a1 */
+  
+  .a-field_a1 .a-field__input{
+    transition: border-color .2s ease-out;
+    will-change: border-color;
+  }
+  
+  .a-field_a1 .a-field__input:focus{
+    border-color: var(--fieldBorderColorActive);
+  }
+  
+/*a-field_a2 
+  
+  .a-field_a2 .a-field__label-wrap:after{
+    content: "";
+    box-sizing: border-box;
+    width: 0;
+    height: var(--uiFieldBorderWidth);
+    border-color: var(--fieldBorderColorActive);
+  
+    position: absolute;
+    bottom: 0;
+    left: 0;  
+  
+    will-change: width;
+    transition: width .285s ease-out;
+  }
+  
+  .a-field_a2 .a-field__input:focus ~ .a-field__label-wrap:after{
+    width: 100%;
+  }/*
+  
+  /*a-field_a3 
+  
+  .a-field_a3{
+    padding-top: 1.5em;
+  }
+  
+  .a-field_a3 .a-field__label-wrap:after{
+    content: "";
+    box-sizing: border-box;
+    width: 100%;
+    height: 0;
+  
+    opacity: 0;
+    border: var(--uiFieldBorderWidth) solid var(--fieldBorderColorActive);
+  
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  
+    will-change: opacity, height;
+    transition: height .2s ease-out, opacity .2s ease-out;
+  }
+  
+  .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap:after{
+    height: 100%;
+    opacity: 0;
+  }
+  
+  .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap .a-field__label{
+    bottom: calc(var(--uiFieldHeight) + .5em);
+  }*/
+  
+  /*
+  =====
+  LEVEL 4. SETTINGS
+  =====
+  */
+  
+  .field{
+    --fieldBorderColor: #808080;
+    --fieldBorderColorActive: #673AB7;
+  }
+  
