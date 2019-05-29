@@ -44,7 +44,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                 <input class="campo" type="text" id="nome" name="nome" size="50" required>
 
                 <label style="margin-left:20px;">E-mail: </label>
-                <input class="campo" type="email" id="email" name="email0" size="50" required><br><br>
+                <input class="campo" type="email" id="email" name="email" size="50" required><br><br>
 
                 <label>Data de nascimento: </label>
                 <input class="campo" type="date" id="dtnasc" name="dtnasc" required>
