@@ -61,8 +61,9 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                 <input class="campo" type="text" name="rua" id="rua" size="45">
 
                 <label style="margin-left:20px;" for="numero">Número:</label>
-                <input class="campo" type="text" id="numero" name="numero" size="4"><br>
-                <br>
+                <input class="campo" type="text" id="numero" name="numero" size="4">
+            
+                <input class="campo" name="ibge" type="hidden" id="ibge" size="8"><br><br>
 
                 <label for="bairro">Bairro:</label>
                 <input class="campo" id="bairro" name="bairro" size="30" type="text">
