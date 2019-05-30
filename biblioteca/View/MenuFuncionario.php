@@ -24,7 +24,8 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
             <a href="CadastroFuncionario.php">Funcionários</a> 
-            <a href="Index.php">Sair</a>           
+            <a href="Index.php">Sair</a>    
+                 
         </div>
     </div>  
         <br>
