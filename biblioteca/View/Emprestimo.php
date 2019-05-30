@@ -18,7 +18,7 @@ $leitorDAO = new LeitorDAO(new Leitor());
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/styleemprestimo.css">
+        <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
         <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Emprestimo de Livro</title>        

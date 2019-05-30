@@ -23,6 +23,8 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
         <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
+        <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
+        <script src="_js/script.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Livros</title>        
     </head>
@@ -70,7 +72,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                         endforeach;
                     ?>
                 </select>
-
+                
                 <label style="margin-left: 20px;">Gênero: </label>
                 <select class="campo" name="cbGenero">
                     <option value="null">Selecione...</option>
@@ -103,8 +105,12 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                 <input class="campo" type="number" id="quantidade" name="quantidade" maxlength="2" required><br><br>
 
                 <button class="botao" type="submit" name="submit">Cadastrar</button>
+              
             </form>
-        </div>                 
+ 
+
+        </div> 
+             
     </body>
 </html>
         

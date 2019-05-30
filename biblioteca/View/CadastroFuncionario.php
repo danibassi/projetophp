@@ -32,17 +32,26 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
             <form action="../Control/cadFuncionario.php" method="post">
 
                 <label>Nome: </label>
-                <input class="campo" id="formatacaoForm" type="text" id="nome" name="nome" size="50" required><br><br>
-
-                <label>Sexo: </label>
-                <a>Feminino</a><input type="radio" name="sexo" value="Feminino">
-                <a>Masculino</a><input type="radio" name="sexo" value="Masculino"> <br><br>     
+                <input class="campo" id="formatacaoForm" type="text" id="nome" name="nome" size="50" required>
+                
+                <div class="group">
+                <label style="margin-right: 10px;">Sexo: </label>
+                    <input type="radio" name="sexo" value="F" id="rb1" />
+                    <label class="sexo" for="rb1">Feminino</label>
+                    <input type="radio" name="sexo" value="M" id="rb2" />
+                    <label class="sexo" for="rb2">Masculino</label>
+                </div><br>
+                <br>
+                                
+                <!-- <label><input type="radio" name="sexo" value="F"> Feminino </label>
+                <label><input type="radio" name="sexo" value="M"> Masculino</label><br><br>      -->
 
                 <label>E-mail: </label>
                 <input class="campo" id="formatacaoForm" type="text" id="email" name="email" size="50" required><br><br>
 
                 <label>Senha:</label>
-                <input class="campo" id="formatacaoForm" type="password" name="password" size="40" required><br>
+                <input class="campo" id="formatacaoForm" type="password" name="password" size="40" required><br><br>
+                <br><br><br>
 
                 <label>Confirmar Senha:</label>
                 <input class="campo" id="formatacaoForm" type="password" name="confirmPassword" size="40" required><br>

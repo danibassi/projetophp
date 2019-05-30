@@ -105,6 +105,17 @@
     font-family: 'Montserrat';
     color: #7B0BF3;
 }
+.campo{
+  border: 0.5px solid rgb(160, 149, 149);
+  border-radius: 5px;
+  height: 27px;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #393834;
+  margin-top: 10px;
+  margin-right: 3px;
+  font-family: 'Montserrat';
+}
 
 .novo{
     float: right;
@@ -129,5 +140,9 @@
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+}
+.excluir{
+  float: left;
+  margin-left: 3px;
 }
   
