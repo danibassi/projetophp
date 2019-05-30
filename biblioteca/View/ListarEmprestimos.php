@@ -65,7 +65,7 @@ $dao = new EmprestimoDAO(new Emprestimo());
                           <form action="../Control/devolucaoLivro.php" method="post">
                               <input type="hidden" name="idEntrega" value="<?php echo $value->emp_id?>">
                               <input type="hidden" name="livroEntregue" value="<?php echo $value->liv_nome?>">
-                              <input type="date" name="dataEntrega" required>
+                              <input class="campo" type="date" name="dataEntrega" required>
                               <input class="img" type="image" src="_img/excluir.png"/>
                           </form>
                       </td>
