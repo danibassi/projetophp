@@ -19,6 +19,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     </head>
 
     <body>
+    <h3><?php echo $_SESSION['nome']?></h3>
     <div id="caixamenu"> 
         <div id="menu">
             <a href="MenuFuncionario.php">Ínicio</a>

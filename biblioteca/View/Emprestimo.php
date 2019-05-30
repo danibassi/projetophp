@@ -25,7 +25,8 @@ $leitorDAO = new LeitorDAO(new Leitor());
     </head>
     
     <body> 
-    <div id="caixamenu"> 
+    <div id="caixamenu">
+        <h3><?php echo $_SESSION['nome']?></h3>
         <div id="menu">
             <a href="MenuFuncionario.php">Ínicio</a>
             <a href="ListarLeitor.php">Leitores</a>

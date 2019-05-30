@@ -6,6 +6,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     exit;
 }
 ?>
+
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
@@ -15,10 +16,9 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     </head>
     
     <body>
-    <div id="caixamenu"> 
-    <h3><?php echo $_SESSION['nome']?></h3>  
+    <div id="caixamenu">
+        <h3><?php echo $_SESSION['nome']?></h3>
         <div id="menu">
-            
             <a href="MenuFuncionario.php">Ínicio</a>
             <a href="ListarLeitor.php">Leitores</a>
             <a href="ListarLivro.php">Livros</a>
