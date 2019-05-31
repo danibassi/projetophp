@@ -31,9 +31,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     </div>  
         <br>
         <div class="caixa">
-            <input class="pesquisa" type="text" id="txtBusca" placeholder="Pesquise aqui..."/>
-            
-            <input id="btnbusca"type="image" src="_img/pesquisar.png"/>            
+            <div class="texto"> Bem vindo: <?php echo $_SESSION['nome']?></div>            
         </div>
     </body> 
 </html>
