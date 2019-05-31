@@ -1,0 +1,93 @@
+
+.window{
+	
+	display: none;
+	width: 600px;
+	height: 500px;
+	position: absolute;
+	background: #FFF ;
+	left: 0;
+	top:0;
+	z-index: 9900;
+	padding: 10px;
+	border-radius: 10px;
+
+}
+.img-logo-desk.modal1{
+    margin-left: 40%;
+    width: 15%;
+    margin-top: 0;
+  }
+  .h1-logo.modal2{
+	margin-top: 18%;
+    margin-left: 29%;
+    font-size: 15px;
+    color: #1e3482;
+    font-weight: 550;
+  }
+  .h3-logo.modal3{
+	margin-left: 43%;
+    margin-top: -4%;
+    color: #314796;
+    font-weight: 550;
+    font-size: 10px;
+}
+.form-text-text-muted modal5{
+	margin-left: 40%;
+}
+.form-text-text-muted.modal5{
+	margin-left: 40%;
+}
+.fechar.cadastrar{
+	background-color: #449c7f;
+    background-color: #449c7f;
+    padding: 8px;
+    margin-left: 10%;
+    font-size: 15px;
+    border: none;
+    width: 60%;
+}
+div#janela{
+	height: 500px;	
+}
+.grup-buttom.modal4{
+	margin-top: 0%;
+    margin-left: 30%;
+    width: 50%;
+}
+p#aviso{
+	font-size: 25px;
+	text-align: center;
+    margin-top: 5%;
+    color: #3b4240b0;
+    font-weight: bold;
+    text-shadow: 1px 1px 10px #33333326;
+    padding: 0 5%;
+}
+#mascara{
+	
+	display: none;
+	position: absolute;
+	background: #000 ;
+	left: 0;
+	top:0;
+	z-index: 9000;
+
+}
+
+.fechar{
+	color: white;
+    display: block;
+    text-align: center;
+    background-color: #374b92;
+    padding: 5px;
+    margin-left: 86.5%;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.fechar:hover{
+    background-color: #2b3b73;
+    font-size: 14px;
+    box-shadow: -3px 3px 8px -4px #4c4c4c, 3px -3px 8px -4px #4c4c4c;
+}

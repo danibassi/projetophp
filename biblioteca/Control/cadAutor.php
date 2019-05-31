@@ -18,7 +18,7 @@
     $autorDAO = new AutorDAO($autor);
 
     if($autorDAO->insert()){
-        header("Location:../View/MenuFuncionario.php");
+        header("Location:../View/CadastroLivro.php");
     }else{
         
     }
