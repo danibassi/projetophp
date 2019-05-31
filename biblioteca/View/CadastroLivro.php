@@ -22,7 +22,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
-        <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
+        <link rel="stylesheet" type="text/css" href="_css/Home.css">
         <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
         <script src="_js/script.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
