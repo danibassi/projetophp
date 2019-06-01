@@ -30,7 +30,7 @@ $leitorEncontradoNoBanco = $leitorDAO->select($_POST['idAlterar']);
             <a href="ListarLeitor.php">Leitores</a>
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
-            <a href="CadastroFuncionario.php">Funcionários</a> 
+            <a href="CadastroFuncionario.php">Funcionários</a>
             <a href="../index.php">Sair</a>
         </div>
     </div>  
