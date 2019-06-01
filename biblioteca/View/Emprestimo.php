@@ -2,18 +2,15 @@
 if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     unset($_SESSION['username']);
     unset($_SESSION['password']);
-    header("Location: Index.php");
+    header("Location: ../index.php");
     exit;
 }
-
 require_once "../Classes/Leitor.php";
 require_once "../DAO/LeitorDAO.php";
 require_once "../Classes/Livro.php";
 require_once "../DAO/LivroDAO.php";
-
 $livroDAO = new LivroDAO(new Livro());
 $leitorDAO = new LeitorDAO(new Leitor());
-
 ?>
 <html lang="pt-br">
     <head>
@@ -34,7 +31,7 @@ $leitorDAO = new LeitorDAO(new Leitor());
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
             <a href="CadastroFuncionario.php">Funcionários</a>
-            <a href="Index.php">Sair</a>           
+            <a href="../index.php">Sair</a>
         </div>
     </div>  
 

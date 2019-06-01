@@ -1,17 +1,13 @@
 <?php
-
 if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     unset($_SESSION['username']);
     unset($_SESSION['password']);
-    header("Location: Index.php");
+    header("Location: ../index.php");
     exit;
 }
-
 require_once '../Classes/Emprestimo.php';
 require_once '../DAO/EmprestimoDAO.php';
-
 $dao = new EmprestimoDAO(new Emprestimo());
-
 ?>
 <html lang="pt-br">    
     <head>
@@ -32,7 +28,7 @@ $dao = new EmprestimoDAO(new Emprestimo());
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
             <a href="CadastroFuncionario.php">Funcionários</a> 
-            <a href="Index.php">Sair</a>            
+            <a href="../index.php">Sair</a>
         </div>
     </div>  
 

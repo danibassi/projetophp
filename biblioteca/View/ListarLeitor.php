@@ -1,18 +1,14 @@
 <?php
-
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: ../index.php");
+    exit;
+}
 require_once '../Classes/Leitor.php';
 require_once '../Classes/Endereco.php';
 require_once '../Classes/Telefone.php';
 require_once '../DAO/LeitorDAO.php';
-
-
-if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
-    unset($_SESSION['username']);
-    unset($_SESSION['password']);
-    header("Location: Index.php");
-    exit;
-}
-
 ?>
 <html lang="pt-br">    
     <head>
@@ -33,7 +29,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
             <a href="CadastroFuncionario.php">Funcionários</a> 
-            <a href="Index.php">Sair</a>           
+            <a href="../index.php">Sair</a>
         </div>
     </div>  
 

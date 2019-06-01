@@ -1,5 +1,10 @@
 <?php
-
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: ../index.php");
+    exit;
+}
 require_once '../Classes/Autor.php';
 require_once '../Classes/Editora.php';
 require_once '../Classes/Genero.php';
@@ -8,15 +13,6 @@ require_once '../DAO/AutorDAO.php';
 require_once '../DAO/EditoraDAO.php';
 require_once '../DAO/GeneroDAO.php';
 require_once '../DAO/EstadoLivroDAO.php';
-
-
-if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
-    unset($_SESSION['username']);
-    unset($_SESSION['password']);
-    header("Location: Index.php");
-    exit;
-}
-
 ?>
 <html lang="pt-br">    
     <head>
@@ -69,7 +65,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
             <a href="CadastroFuncionario.php">Funcionários</a>
-            <a href="Index.php">Sair</a>             
+            <a href="../index.php">Sair</a>
         </div>
     </div>  
     <div class="titulo"> Cadastro de Livros </div>     

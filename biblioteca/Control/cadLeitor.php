@@ -1,55 +1,55 @@
 <?php
-    require_once '../Classes/Endereco.php';
-    require_once '../Classes/Leitor.php';
-    require_once '../Classes/Telefone.php';
-    require_once '../Classes/TipoTelefone.php';
-    require_once '../DAO/LeitorDAO.php';
+require_once '../Classes/Endereco.php';
+require_once '../Classes/Leitor.php';
+require_once '../Classes/Telefone.php';
+require_once '../Classes/TipoTelefone.php';
+require_once '../DAO/LeitorDAO.php';
 
-    if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
-        unset($_SESSION['username']);
-        unset($_SESSION['password']);
-        header("Location: ../View/Index.php");
-        exit;
-    }
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: ../index.php");
+    exit;
+}
 
 
-    $leitor = new Leitor();
+$leitor = new Leitor();
 
-    $leitor->setNome($_POST['nome']);
-    $leitor->setDtnasc($_POST['dtnasc']);
-    $leitor->setSexo($_POST['sexo']);
-    $leitor->setEmail($_POST['email']);
+$leitor->setNome($_POST['nome']);
+$leitor->setDtnasc($_POST['dtnasc']);
+$leitor->setSexo($_POST['sexo']);
+$leitor->setEmail($_POST['email']);
 
-    $telefone = new Telefone();
+$telefone = new Telefone();
 
-    $telefone->setNumero($_POST['telefone']);
-    
-    $tipoTelefone = new TipoTelefone();
+$telefone->setNumero($_POST['telefone']);
 
-    $tipoTelefone->setTipo($_POST['tipo']);
+$tipoTelefone = new TipoTelefone();
 
-    $telefone->setTipoTelefone($tipoTelefone);
+$tipoTelefone->setTipo($_POST['tipo']);
 
-    $endereco = new Endereco();
+$telefone->setTipoTelefone($tipoTelefone);
 
-    $endereco->setRua($_POST['rua']);
-    $endereco->setNumero($_POST['numero']);
-    $endereco->setBairro($_POST['bairro']);
-    $endereco->setCidade($_POST['cidade']);
-    $endereco->setEstado($_POST['uf']);
-    $endereco->setCep($_POST['cep']);
-    $endereco->setIbge($_POST['ibge']);
+$endereco = new Endereco();
 
-    $leitor->setTelefone($telefone);
-    $leitor->setEndereco($endereco);
-    
-    $leitorDAO = new LeitorDAO($leitor);
+$endereco->setRua($_POST['rua']);
+$endereco->setNumero($_POST['numero']);
+$endereco->setBairro($_POST['bairro']);
+$endereco->setCidade($_POST['cidade']);
+$endereco->setEstado($_POST['uf']);
+$endereco->setCep($_POST['cep']);
+$endereco->setIbge($_POST['ibge']);
 
-    
-    if($leitorDAO->insert()){
-        header("Location:../View/MenuFuncionario.php");
-    }else{
-        
-    }
+$leitor->setTelefone($telefone);
+$leitor->setEndereco($endereco);
+
+$leitorDAO = new LeitorDAO($leitor);
+
+
+if($leitorDAO->insert()){
+    header("Location:../View/MenuFuncionario.php");
+}else{
+
+}
     
 ?>

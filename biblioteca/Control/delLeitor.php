@@ -1,21 +1,21 @@
 <?php
 
-    require_once '../Classes/Leitor.php';
-    require_once '../DAO/LeitorDAO.php';
+require_once '../Classes/Leitor.php';
+require_once '../DAO/LeitorDAO.php';
 
-    if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
-        unset($_SESSION['username']);
-        unset($_SESSION['password']);
-        header("Location: ../View/Index.php");
-        exit;
-    }
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: ../index.php");
+    exit;
+}
 
-    $idRecebido = $_POST['idDeletar'];
+$idRecebido = $_POST['idDeletar'];
 
-    $leitor = new LeitorDAO(new Leitor);
+$leitor = new LeitorDAO(new Leitor);
 
-    if($leitor->deleteLeitorComEnderecoETelefone($idRecebido)){
-        header("Location:../View/ListarLeitor.php");
-    }
+if($leitor->deleteLeitorComEnderecoETelefone($idRecebido)){
+    header("Location:../View/ListarLeitor.php");
+}
 
 ?>
