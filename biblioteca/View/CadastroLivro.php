@@ -23,13 +23,43 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
         <link rel="stylesheet" type="text/css" href="_css/Home.css">
+        <link href="_css/janela.css" rel="stylesheet" type="text/css">	
         <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
         <script src="_js/script.js"></script>
+        <script type="text/javascript" src="_js/jquery-3.2.1.min.js"></script>
+	    <script type="text/javascript" src="_js/janela.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Livros</title>        
     </head>
     
     <body> 
+    <div class="window" id="janela">
+    <a href="#" class="fechar">X Fechar</a>
+        <hr>
+    
+        <img class="img-logo-desk modal1" src="img/logo.png">
+        <h1 class="h1-logo modal2">Cadastro de Autor</h1>  
+        <form action="../Control/cadAutor.php" method="post">
+
+                <label>Nome: </label>
+                <input type="text" id="nome" name="nome" required><br>
+
+                <label>Data de nascimento: </label>
+                <input type="date" id="dtnasc" name="dtnasc" required><br>
+
+                <div class="group">
+                <label style="margin-right: 10px;">Sexo: </label>
+                    <input type="radio" name="sexo" value="F" id="rb1" />
+                    <label class="sexo" for="rb1">Feminino</label>
+                    <input type="radio" name="sexo" value="M" id="rb2" />
+                    <label class="sexo" for="rb2">Masculino</label>
+                </div>  
+
+                <button type="submit" name="submit">Enviar</button>
+            </form>
+      </div>
+      <div id="mascara"></div>
+
     <div id="caixamenu">
     <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
         <div class="nome">Biblioteca</div>
@@ -42,7 +72,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
             <a href="Index.php">Sair</a>             
         </div>
     </div>  
-    <div class="titulo"> Cadastro de Leitor </div>     
+    <div class="titulo"> Cadastro de Livros </div>     
         <div class="caixaform">
             <form action="../Control/cadLivro.php" method="post">
 
@@ -64,7 +94,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                         endforeach;
                     ?>
                 </select>
-
+                <button type="text"><a href="#janela" rel="Modal">Novo</a></button>
                 <label style="margin-left: 20px;" >Editora:</label>
                 <select class="campo" name="cbEditora">
                     <option value="null">Selecione...</option>
