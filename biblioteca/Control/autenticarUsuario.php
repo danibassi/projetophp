@@ -26,7 +26,7 @@ if($funcionario->getPassword() == $dadosAutenticados['fun_password']){
     $_SESSION['password'] = $dadosAutenticados['fun_password'];
     header("Location: ../View/MenuFuncionario.php");
 }else{
-    header("Location: ../View/Index.php");
+    header("Location: ../View/index.php");
 }
 
 ?>

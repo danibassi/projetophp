@@ -1,25 +1,26 @@
 <?php
-    require_once '../Classes/Autor.php';
-    require_once '../DAO/AutorDAO.php';
 
-    if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
-        unset($_SESSION['username']);
-        unset($_SESSION['password']);
-        header("Location: ../View/Index.php");
-        exit;
-    }
+require_once '../Classes/Autor.php';
+require_once '../DAO/AutorDAO.php';
 
-    $autor = new Autor();
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: ../index.php");
+    exit;
+}
 
-    $autor->setNome($_POST['nome']);
-    $autor->setDtnasc($_POST['dtnasc']);
-    $autor->setSexo($_POST['sexo']);
-    
-    $autorDAO = new AutorDAO($autor);
+$autor = new Autor();
 
-    if($autorDAO->insert()){
-        header("Location:../View/MenuFuncionario.php");
-    }else{
-        
-    }
+$autor->setNome($_POST['nome']);
+$autor->setDtnasc($_POST['dtnasc']);
+$autor->setSexo($_POST['sexo']);
+
+$autorDAO = new AutorDAO($autor);
+
+if($autorDAO->insert()){
+    header("Location:../View/CadastroLivro.php");
+}else{
+
+}
 ?>

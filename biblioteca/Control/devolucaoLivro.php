@@ -1,5 +1,12 @@
 <?php
 
+if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    header("Location: ../index.php");
+    exit;
+}
+
 require_once '../Classes/Emprestimo.php';
 require_once '../DAO/EmprestimoDAO.php';
 

@@ -2,7 +2,7 @@
 if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
     unset($_SESSION['username']);
     unset($_SESSION['password']);
-    header("Location: Index.php");
+    header("Location: index.php");
     exit;
 }
 ?>
