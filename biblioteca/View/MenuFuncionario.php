@@ -14,7 +14,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Página Inicial</title>
     </head>
-    
+
     <body>
     <div id="caixamenu">
     <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
@@ -24,14 +24,14 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
             <a href="ListarLeitor.php">Leitores</a>
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
-            <a href="CadastroFuncionario.php">Funcionários</a> 
+            <a href="CadastroFuncionario.php">Funcionários</a>
             <a href="../index.php">Sair</a>
-                 
+
         </div>
-    </div>  
+    </div>
         <br>
         <div class="caixa">
-            <div class="texto"> Bem vindo: <?php echo $_SESSION['nome']?></div>            
+            <div class="texto"> Bem vindo(a): <?php echo $_SESSION['nome']?></div>
         </div>
-    </body> 
+    </body>
 </html>
