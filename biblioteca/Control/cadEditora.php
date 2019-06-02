@@ -18,7 +18,7 @@ $editora->setEditoraNome($_POST['nome']);
 $editoraDAO = new EditoraDAO($editora);
 
 if($editoraDAO->insert()){
-    header("Location:../View/MenuFuncionario.php");
+    header("Location:../View/CadastroLivro.php");
 }else{
 
 }
