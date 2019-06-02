@@ -10,7 +10,7 @@
 	top:0;
 	z-index: 9900;
 	padding: 10px;
-	border-radius: 10px;
+	border-radius: 2px;
 
 }
 .titulomodal{
@@ -21,15 +21,6 @@
 		margin-left: 165px;
 		font-family: 'Nunito';
   }
-.fechar.cadastrar{
-	background-color: #449c7f;
-    background-color: #449c7f;
-    padding: 8px;
-    margin-left: 10%;
-    font-size: 15px;
-    border: none;
-    width: 60%;
-}
 
 .formulario{
 		float: left;
@@ -40,7 +31,6 @@
 }
 
 #mascara{
-
 	display: none;
 	position: absolute;
 	background: #000 ;
