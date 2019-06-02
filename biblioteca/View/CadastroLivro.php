@@ -19,7 +19,7 @@ require_once '../DAO/EstadoLivroDAO.php';
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
         <link rel="stylesheet" type="text/css" href="_css/Home.css">
-        <link href="_css/janela.css" rel="stylesheet" type="text/css">
+        <link href="_css/popUp.css" rel="stylesheet" type="text/css">
         <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
         <script src="_js/script.js"></script>
         <script type="text/javascript" src="_js/jquery-3.2.1.min.js"></script>
@@ -31,17 +31,15 @@ require_once '../DAO/EstadoLivroDAO.php';
     <body>
     <div class="window" id="autor">
     <a href="#" class="fechar">Fechar</a>
-        <hr>
-
-        <img class="img-logo-desk modal1" src="img/logo.png">
-        <h1 class="h1-logo modal2">Cadastro de Autor</h1>
+        <div class="titulomodal">Cadastro de Autor</div><br><br><br>
+        <div class="formulario">
         <form action="../Control/cadAutor.php" method="post">
 
-                <label>Nome: </label>
-                <input type="text" id="nome" name="nome" required><br>
+                <label style="margin-left: 25px;">Nome: </label>
+                <input class="campo" type="text" size="25" id="nome" name="nome" required>
 
-                <label>Data de nascimento: </label>
-                <input type="date" id="dtnasc" name="dtnasc" required><br>
+                <label style="margin-left: 20px;">Data de Nascimento: </label>
+                <input class="campo" type="date" id="dtnasc" name="dtnasc"  required><br><br>
 
                 <div class="group">
                 <label style="margin-right: 10px;">Sexo: </label>
@@ -51,16 +49,15 @@ require_once '../DAO/EstadoLivroDAO.php';
                     <label class="sexo" for="rb2">Masculino</label>
                 </div>
 
-                <button type="submit" name="submit">Enviar</button>
+                <button class="botao" type="submit" name="submit">Enviar</button>
             </form>
       </div>
+    </div>
       <div id="mascara"></div>
 
       <div class="window" id="editora">
       <a href="#" class="fechar">Fechar</a>
           <hr>
-
-          <img class="img-logo-desk modal1" src="img/logo.png">
           <h1 class="h1-logo modal2">Cadastro de Editora</h1>
           <form action="../Control/cadEditora.php" method="post">
               <label>Nome: </label>
