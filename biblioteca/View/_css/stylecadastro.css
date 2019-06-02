@@ -69,8 +69,8 @@ label{
 .group {
   display: flex;
   align-items: center;
-  float: right;
-  margin-right: 140px;
+  float: left;
+  margin-left: 40px;
 }
 input[type="radio"] {
   position: absolute;
