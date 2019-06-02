@@ -41,7 +41,7 @@ $livro->setAutor($autor);
 $livroDAO = new LivroDAO($livro);
 
 if($livroDAO->insert()){
-    header("Location:../View/MenuFuncionario.php");
+    header("Location:../View/ListarLivro.php");
 }else{
 
 }
