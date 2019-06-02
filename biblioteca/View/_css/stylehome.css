@@ -79,13 +79,23 @@ a:hover{
 }
 
 .caixa{
-    float: left;
     margin-left: 400px;
     margin-top: 20px;
+    height: 100px;
+    width: 400px;
 }
 
 .texto{
     font-family:'Raleway';
     font-size: 25px;
     color: #6e6d67;
+}
+
+.estatisticas{
+  font-family: 'Nunito';
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #7B0BF3;
+  margin-left: 150px;
+  margin-bottom: 20px;
 }

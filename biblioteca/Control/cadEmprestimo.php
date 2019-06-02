@@ -21,7 +21,7 @@ $emprestimo->setDataDevolucao($_POST['dataDevolucao']);
 $dao = new EmprestimoDAO($emprestimo);
 
 if($dao->insert()){
-    header("Location: ../View/ListarLivro.php");
+    header("Location: ../View/ListarEmprestimos.php");
 }else{
     $_SESSION['erro'] = "Livro não encontrado";
     header("Location: ../View/PaginaErro.php");

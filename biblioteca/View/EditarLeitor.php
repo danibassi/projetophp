@@ -16,7 +16,7 @@ $leitorEncontradoNoBanco = $leitorDAO->select($_POST['idAlterar']);
     <head>
     <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
-        <link rel="stylesheet" type="text/css" href="_css/Home.css">
+        <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Leitores</title>
     </head>

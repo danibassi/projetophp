@@ -10,7 +10,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/Home.css">
+        <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Página Inicial</title>
     </head>
@@ -33,5 +33,6 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
         <div class="caixa">
             <div class="texto"> Bem vindo(a): <?php echo $_SESSION['nome']?></div>
         </div>
+        <div class="estatisticas">Empréstimos atrasados: </div>
     </body>
 </html>
