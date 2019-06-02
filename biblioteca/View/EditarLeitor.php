@@ -15,14 +15,14 @@ $leitorEncontradoNoBanco = $leitorDAO->select($_POST['idAlterar']);
 
     <head>
     <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
         <link rel="stylesheet" type="text/css" href="_css/Home.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Leitores</title>
     </head>
 
     <body>
-    <div id="caixamenu"> 
+    <div id="caixamenu">
     <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
         <div class="nome">Biblioteca</div>
         <div id="menu">
@@ -33,9 +33,9 @@ $leitorEncontradoNoBanco = $leitorDAO->select($_POST['idAlterar']);
             <a href="CadastroFuncionario.php">Funcionários</a>
             <a href="../index.php">Sair</a>
         </div>
-    </div>  
+    </div>
 
-        <div class="titulo"> Cadastro de Leitor </div>        
+        <div class="titulo"> Cadastro de Leitor </div>
         <div class="caixaform">
             <form action="../Control/altLeitor.php" method="post">
                 <label>Nome: </label>
@@ -90,11 +90,11 @@ $leitorEncontradoNoBanco = $leitorDAO->select($_POST['idAlterar']);
                 <tr>
                     <td>
                         <label>Tipo de telefone:</label>
-                        <select class="campo" name="tipo" id="tipo" required> 
+                        <select class="campo" name="tipo" id="tipo" required>
                             <option value="null"></option>
                             <option value=1>Residencial</option>
-                            <option value=2>Celular</option>  
-                            <option value=3>Comercial</option> 
+                            <option value=2>Celular</option>
+                            <option value=3>Comercial</option>
                         </select>
                     </td>
                 </tr>

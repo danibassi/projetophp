@@ -21,18 +21,18 @@ $dao = new LivroDAO(new Livro());
 $livroPegoPeloId = $dao->select($_POST['id']);
 
 ?>
-<html lang="pt-br">    
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
         <link rel="stylesheet" type="text/css" href="_css/Home.css">
         <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
         <script src="_js/script.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
-        <title>Livros</title>        
+        <title>Livros</title>
     </head>
-    
-    <body> 
+
+    <body>
     <div id="caixamenu">
     <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
         <div class="nome">Biblioteca</div>
@@ -44,8 +44,8 @@ $livroPegoPeloId = $dao->select($_POST['id']);
             <a href="CadastroFuncionario.php">Funcionários</a>
             <a href="../index.php">Sair</a>
         </div>
-    </div>  
-    <div class="titulo"> Cadastro de Leitor </div> 
+    </div>
+    <div class="titulo"> Cadastro de Leitor </div>
 
 
     <div class="caixaform">
@@ -121,7 +121,7 @@ $livroPegoPeloId = $dao->select($_POST['id']);
                         endforeach;
                     ?>
                 </select>
-                
+
                 <label style="margin-left: 10px;">Edição: </label>
                 <input class="campo" type="number" id="edicao" name="edicao" min="1" value="<?php echo $livroPegoPeloId['liv_edicao']?>" required><br><br>
 
@@ -135,7 +135,6 @@ $livroPegoPeloId = $dao->select($_POST['id']);
                 <button class="botao" type="submit" name="submit">Enviar</button>
 
             </form>
-        </div>                 
+        </div>
     </body>
 </html>
-        

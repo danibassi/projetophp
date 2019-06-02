@@ -15,13 +15,13 @@ $leitorDAO = new LeitorDAO(new Leitor());
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
         <link rel="stylesheet" type="text/css" href="_css/Home.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
-        <title>Emprestimo de Livro</title>        
+        <title>Emprestimo de Livro</title>
     </head>
-    
-    <body> 
+
+    <body>
     <div id="caixamenu">
     <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
         <div class="nome">Biblioteca</div>
@@ -33,9 +33,9 @@ $leitorDAO = new LeitorDAO(new Leitor());
             <a href="CadastroFuncionario.php">Funcionários</a>
             <a href="../index.php">Sair</a>
         </div>
-    </div>  
+    </div>
 
-    <div class="titulo"> EMPRÉSTIMO </div>        
+    <div class="titulo"> EMPRÉSTIMO </div>
         <div class="caixaform">
         <form action="../Control/cadEmprestimo.php" method="post">
 
@@ -50,7 +50,7 @@ $leitorDAO = new LeitorDAO(new Leitor());
                 endforeach;
                 ?>
             </datalist>
-            
+
             <label style="margin-left: 20px;" >Livro: </label>
             <input class="campo" list="livroEscolhido" id="formatacaoForm" name="livroEscolhido" size="40" autocomplete="off" required>
             <datalist id="livroEscolhido">
@@ -60,15 +60,15 @@ $leitorDAO = new LeitorDAO(new Leitor());
                 endforeach;
                 ?>
             </datalist><br><br>
-            
+
             <label>Data de empréstimo: </label>
             <input class="campo" id="formatacaoForm" type="date" id="dataRetirada" name="dataRetirada" required>
-            
+
             <label style="margin-left: 20px;">Data limite de devolução: </label>
             <input class="campo" id="formatacaoForm" type="date" id="dataDevolucao" name="dataDevolucao" required><br><br>
-            
+
             <button class="botao" type="submit" name="submit">Efetuar Empréstimo</button>
         </form>
-    </div>    
+    </div>
     </body>
 </html>

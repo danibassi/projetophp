@@ -10,14 +10,14 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
         <link rel="stylesheet" type="text/css" href="_css/Home.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Leitores</title>
     </head>
 
     <body>
-    <div id="caixamenu"> 
+    <div id="caixamenu">
     <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
         <div class="nome">Biblioteca</div>
         <div id="menu">
@@ -25,12 +25,12 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
             <a href="ListarLeitor.php">Leitores</a>
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
-            <a href="CadastroFuncionario.php">Funcionários</a> 
+            <a href="CadastroFuncionario.php">Funcionários</a>
             <a href="../index.php">Sair</a>
         </div>
-    </div>  
+    </div>
 
-        <div class="titulo"> Cadastro de Leitor </div>        
+        <div class="titulo"> Cadastro de Leitor </div>
         <div class="caixaform">
 
             <form action="../Control/cadLeitor.php" method="post">
@@ -41,7 +41,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                 <label style="margin-left:20px;">E-mail: </label>
                 <input class="campo" type="email" id="email" name="email" size="50" required><br><br>
 
-                <label >Data de nascimento: </label>
+                <label>Data de nascimento: </label>
                 <input class="campo" type="date" id="dtnasc" size="35" name="dtnasc" required>
 
                 <div class="group">
@@ -51,7 +51,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                     <input type="radio" name="sexo" value="M" id="rb2" />
                     <label class="sexo" for="rb2">Masculino</label>
                 </div><br><br>
-                
+
 
                 <label for="cep">Cep: </label>
                 <input class="campo" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
@@ -61,7 +61,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 
                 <label style="margin-left:20px;" for="numero">Número:</label>
                 <input class="campo" type="text" id="numero" name="numero" size="4">
-            
+
                 <input class="campo" name="ibge" type="hidden" id="ibge" size="8"><br><br>
 
                 <label for="bairro">Bairro:</label>
@@ -71,16 +71,16 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                 <input class="campo" type="text" name="cidade" id="cidade" size="20">
 
                 <label style="margin-left:20px;" for="estado">Estado:</label>
-                <input class="campo" name="uf" type="text" id="uf" size="2" ><br><br>              
+                <input class="campo" name="uf" type="text" id="uf" size="2" ><br><br>
 
                 <tr>
                     <td>
                         <label>Tipo de telefone:</label>
-                        <select class="campo" name="tipo" id="tipo" required> 
+                        <select class="campo" name="tipo" id="tipo" required>
                             <option value="null"></option>
                             <option value=1>Residencial</option>
-                            <option value=2>Celular</option>  
-                            <option value=3>Comercial</option> 
+                            <option value=2>Celular</option>
+                            <option value=3>Comercial</option>
                         </select>
                     </td>
                 </tr>

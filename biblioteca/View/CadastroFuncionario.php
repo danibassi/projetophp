@@ -9,7 +9,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 <html lang="pt-br">
     <head>
     <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
         <link rel="stylesheet" type="text/css" href="_css/Home.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Funcionários</title>
@@ -34,8 +34,8 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
         <div class="caixaform">
             <form action="../Control/cadFuncionario.php" method="post">
 
-                <label>Nome: </label>
-                <input class="campo" id="formatacaoForm" type="text" id="nome" name="nome" size="40" required>
+                <label style="float: left; margin-top: 5px; margin-right: 5px;">Nome: </label>
+                <input style="float: left; margin-right: 25px;"class="campo" id="formatacaoForm" type="text" id="nome" name="nome" size="40" required>
 
                 <div class="group">
                 <label style="margin-right: 10px;">Sexo: </label>
@@ -43,8 +43,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
                     <label class="sexo" for="rb1">Feminino</label>
                     <input type="radio" name="sexo" value="M" id="rb2" />
                     <label class="sexo" for="rb2">Masculino</label>
-                </div><br>
-                <br>
+                </div><br><br>
 
                 <!-- <label><input type="radio" name="sexo" value="F"> Feminino </label>
                 <label><input type="radio" name="sexo" value="M"> Masculino</label><br><br>      -->

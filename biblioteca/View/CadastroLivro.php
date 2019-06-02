@@ -17,7 +17,7 @@ require_once '../DAO/EstadoLivroDAO.php';
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/stylecadastro.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
         <link rel="stylesheet" type="text/css" href="_css/Home.css">
         <link href="_css/popUp.css" rel="stylesheet" type="text/css">
         <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
@@ -41,7 +41,7 @@ require_once '../DAO/EstadoLivroDAO.php';
                 <label style="margin-left: 20px;">Data de Nascimento: </label>
                 <input class="campo" type="date" id="dtnasc" name="dtnasc"  required><br><br>
 
-                <div class="group">
+                <div class="group" style="margin-left: 25px;">
                 <label style="margin-right: 10px;">Sexo: </label>
                     <input type="radio" name="sexo" value="F" id="rb1" />
                     <label class="sexo" for="rb1">Feminino</label>
@@ -55,20 +55,22 @@ require_once '../DAO/EstadoLivroDAO.php';
     </div>
       <div id="mascara"></div>
 
-      <div class="window" id="editora">
+      <div style="height: 250px;"class="window" id="editora">
       <a href="#" class="fechar">Fechar</a>
-          <hr>
-          <h1 class="h1-logo modal2">Cadastro de Editora</h1>
+          <div class="titulomodal">Cadastro de Editora</div><br><br><br><br>
+          <div class="formulario">
           <form action="../Control/cadEditora.php" method="post">
-              <label>Nome: </label>
-              <input type="text" id="nome" name="nome" required><br>
-              <button type="submit" name="submit">Enviar</button>
+              <label style="margin-left: 80px; margin-right: 5px;">Nome da Editora:</label>
+              <input class="campo" type="text" size="40" id="nome" name="nome" required><br><br>
+              <button style="margin-left: 220px;" class="botao" type="submit" name="submit">Cadastrar</button>
           </form>
         </div>
+      </div>
         <div id="mascara"></div>
 
     <div id="caixamenu">
     <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
+
         <div class="nome">Biblioteca</div>
         <div id="menu">
             <a href="MenuFuncionario.php">Ínicio</a>
@@ -97,7 +99,7 @@ require_once '../DAO/EstadoLivroDAO.php';
                         endforeach;
                     ?>
                 </select>
-                <a style="border: none;" href="#autor" rel="Modal"><button class="pop" type="text">Novo</button></a>
+                <a style="border:none;" href="#autor" rel="Modal"><button class="pop" type="text">Novo</button></a>
                 <label style="margin-left: 20px;" >Editora:</label>
                 <select class="campo" name="cbEditora">
                     <option value="null">Selecione...</option>
