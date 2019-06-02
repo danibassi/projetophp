@@ -48,8 +48,8 @@ require_once '../DAO/EstadoLivroDAO.php';
                     <input type="radio" name="sexo" value="M" id="rb2" />
                     <label class="sexo" for="rb2">Masculino</label>
                 </div>
-
-                <button class="botao" type="submit" name="submit">Enviar</button>
+                <br><br><br>
+            <button style="margin-left: 200px;"class="botao" type="submit" name="submit">Cadastrar</button>
             </form>
       </div>
     </div>
@@ -97,7 +97,7 @@ require_once '../DAO/EstadoLivroDAO.php';
                         endforeach;
                     ?>
                 </select>
-                <a href="#autor" rel="Modal"><button type="text">Novo</button></a>
+                <a style="border: none;" href="#autor" rel="Modal"><button class="pop" type="text">Novo</button></a>
                 <label style="margin-left: 20px;" >Editora:</label>
                 <select class="campo" name="cbEditora">
                     <option value="null">Selecione...</option>
@@ -107,7 +107,7 @@ require_once '../DAO/EstadoLivroDAO.php';
                         endforeach;
                     ?>
                 </select>
-                <a href="#editora" rel="Modal"><button type="text">Novo</button></a><br><br>
+                <a style="border: none;" href="#editora" rel="Modal"><button class="pop" type="text">Novo</button></a><br><br>
                 <label>Livro: </label>
                 <input class="campo" type="text" id="nomeLivro" name="nomeLivro" size="50" required>
                 <label style="margin-left: 20px;">Gênero: </label>
