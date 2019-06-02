@@ -9,16 +9,16 @@ require_once '../Classes/Emprestimo.php';
 require_once '../DAO/EmprestimoDAO.php';
 $dao = new EmprestimoDAO(new Emprestimo());
 ?>
-<html lang="pt-br">    
+<html lang="pt-br">
     <head>
     <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/Home.css">
+        <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
         <link rel="stylesheet" type="text/css" href="_css/styletable.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Empréstimos</title>
     </head>
-    
-        <body> 
+
+        <body>
         <div id="caixamenu">
         <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
         <div class="nome">Biblioteca</div>
@@ -27,15 +27,15 @@ $dao = new EmprestimoDAO(new Emprestimo());
             <a href="ListarLeitor.php">Leitores</a>
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
-            <a href="CadastroFuncionario.php">Funcionários</a> 
+            <a href="CadastroFuncionario.php">Funcionários</a>
             <a href="../index.php">Sair</a>
         </div>
-    </div>  
+    </div>
 
-    <div class="titulo">EMPRÉSTIMOS</div>  
+    <div class="titulo">EMPRÉSTIMOS</div>
     <form class="novo" action="Emprestimo.php">
             <input class="new" type="submit" value="Novo Empréstimo">
-        </form>    
+        </form>
     <div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -45,7 +45,7 @@ $dao = new EmprestimoDAO(new Emprestimo());
 							<tr class="table100-head">
                                 <th>Leitor</th>
                                 <th>Livro</th>
-                                <th>FuncionÁrio</th>
+                                <th>Funcionário</th>
                                 <th>Data de SaÍda</th>
                                 <th>Data Limite</th>
                                 <th>Devolução</th>
@@ -74,8 +74,7 @@ $dao = new EmprestimoDAO(new Emprestimo());
         </table>
         </div>
         </div>
-        </div>  
+        </div>
         </div>
     </body>
 </html>
-        

@@ -25,16 +25,56 @@ $livroPegoPeloId = $dao->select($_POST['id']);
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
-        <link rel="stylesheet" type="text/css" href="_css/Home.css">
+        <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
+        <link href="_css/popUp.css" rel="stylesheet" type="text/css">
         <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
         <script src="_js/script.js"></script>
+        <script type="text/javascript" src="_js/jquery-3.2.1.min.js"></script>
+	       <script type="text/javascript" src="_js/janela.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Livros</title>
     </head>
 
     <body>
+    <div class="window" id="autor">
+    <a href="#" class="fechar">Fechar</a>
+        <div class="titulomodal">Cadastro de Autor</div><br><br><br>
+        <div class="formulario">
+        <form action="../Control/cadAutor.php" method="post">
+                <label style="margin-left: 25px;">Nome: </label>
+                <input class="campo" type="text" size="25" id="nome" name="nome" required>
+                <label style="margin-left: 20px;">Data de Nascimento: </label>
+                <input class="campo" type="date" id="dtnasc" name="dtnasc"  required><br><br>
+                <div class="group" style="margin-left: 25px;">
+                <label style="margin-right: 10px;">Sexo: </label>
+                    <input type="radio" name="sexo" value="F" id="rb1" />
+                    <label class="sexo" for="rb1">Feminino</label>
+                    <input type="radio" name="sexo" value="M" id="rb2" />
+                    <label class="sexo" for="rb2">Masculino</label>
+                </div>
+                <br><br><br>
+            <button style="margin-left: 200px;"class="botao" type="submit" name="submit">Cadastrar</button>
+            </form>
+      </div>
+    </div>
+      <div id="mascara"></div>
+
+      <div style="height: 250px;"class="window" id="editora">
+      <a href="#" class="fechar">Fechar</a>
+          <div class="titulomodal">Cadastro de Editora</div><br><br><br><br>
+          <div class="formulario">
+          <form action="../Control/cadEditora.php" method="post">
+              <label style="margin-left: 80px; margin-right: 5px;">Nome da Editora:</label>
+              <input class="campo" type="text" size="40" id="nome" name="nome" required><br><br>
+              <button style="margin-left: 220px;" class="botao" type="submit" name="submit">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+        <div id="mascara"></div>
+
     <div id="caixamenu">
     <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
+
         <div class="nome">Biblioteca</div>
         <div id="menu">
             <a href="MenuFuncionario.php">Ínicio</a>
@@ -45,21 +85,16 @@ $livroPegoPeloId = $dao->select($_POST['id']);
             <a href="../index.php">Sair</a>
         </div>
     </div>
-    <div class="titulo"> Cadastro de Leitor </div>
-
-
-    <div class="caixaform">
+    <div class="titulo"> Cadastro de Livros </div>
+        <div class="caixaform">
             <form action="../Control/ediLivro.php" method="post">
-
-                <input type="hidden" name="id" value="<?php echo $_POST['id'];?>">
-                <label>Livro: </label>
-                <input class="campo" type="text" size="60" name="nomeLivro" value="<?php echo $livroPegoPeloId['liv_nome']?>" required><br><br>
-                <?php
-                    $autorDAO = new autorDAO(new Autor());
-                    $editoraDAO = new EditoraDAO(new Editora());
-                    $generoDAO = new GeneroDAO(new Genero());
-                    $estadoLivroDAO = new EstadoLivroDAO(new EstadoLivro());
-                ?>
+              <input type="hidden" name="id" value="<?php echo $_POST['id'];?>">
+              <?php
+                  $autorDAO = new autorDAO(new Autor());
+                  $editoraDAO = new EditoraDAO(new Editora());
+                  $generoDAO = new GeneroDAO(new Genero());
+                  $estadoLivroDAO = new EstadoLivroDAO(new EstadoLivro());
+              ?>
                 <label>Autor: </label>
                 <select class="campo" name="cbAutor">
                     <option value="null">Selecione...</option>
@@ -73,8 +108,8 @@ $livroPegoPeloId = $dao->select($_POST['id']);
                         endforeach;
                     ?>
                 </select>
-
-                <label style="margin-left: 20px;">Editora:</label>
+                <a style="border:none;" href="#autor" rel="Modal"><button class="pop" type="text">Novo</button></a>
+                <label style="margin-left: 20px;" >Editora:</label>
                 <select class="campo" name="cbEditora">
                     <option value="null">Selecione...</option>
                     <?php
@@ -88,8 +123,10 @@ $livroPegoPeloId = $dao->select($_POST['id']);
                         endforeach;
                     ?>
                 </select>
-
-                <label style="margin-left: 20px;">Genero: </label>
+                <a style="border: none;" href="#editora" rel="Modal"><button class="pop" type="text">Novo</button></a><br><br>
+                <label>Livro: </label>
+                <input class="campo" type="text" size="50" name="nomeLivro" value="<?php echo $livroPegoPeloId['liv_nome']?>" required>
+                <label style="margin-left: 20px;">Gênero: </label>
                 <select class="campo" name="cbGenero">
                     <option value="null">Selecione...</option>
                     <?php
@@ -106,7 +143,6 @@ $livroPegoPeloId = $dao->select($_POST['id']);
                 <label>Ano de Publicação: </label>
                 <input class="campo" type="date" id="AnoPublicacao" name="AnoPublicacao"
                        value="<?php echo $livroPegoPeloId['liv_ano_publicacao']?>">
-
                 <label style="margin-left: 15px;">Estado do livro: </label>
                 <select class="campo" name="cbEstadoLivro">
                     <option value="null">Selecione...</option>
@@ -121,7 +157,6 @@ $livroPegoPeloId = $dao->select($_POST['id']);
                         endforeach;
                     ?>
                 </select>
-
                 <label style="margin-left: 10px;">Edição: </label>
                 <input class="campo" type="number" id="edicao" name="edicao" min="1" value="<?php echo $livroPegoPeloId['liv_edicao']?>" required><br><br>
 
@@ -131,10 +166,12 @@ $livroPegoPeloId = $dao->select($_POST['id']);
                 <label style="margin-left: 20px;" for="quantidade">Quantidade de livros: </label>
                 <input class="campo" type="number" id="quantidade" name="quantidade" maxlength="2"
                        value="<?php echo $livroPegoPeloId['liv_quantidade']?>" required><br><br>
-
-                <button class="botao" type="submit" name="submit">Enviar</button>
+                <button class="botao" type="submit" name="submit">Editar</button>
 
             </form>
+
+
         </div>
+
     </body>
 </html>

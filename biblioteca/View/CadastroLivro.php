@@ -18,12 +18,12 @@ require_once '../DAO/EstadoLivroDAO.php';
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
-        <link rel="stylesheet" type="text/css" href="_css/Home.css">
+        <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
         <link href="_css/popUp.css" rel="stylesheet" type="text/css">
         <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
         <script src="_js/script.js"></script>
         <script type="text/javascript" src="_js/jquery-3.2.1.min.js"></script>
-	    <script type="text/javascript" src="_js/janela.js"></script>
+	       <script type="text/javascript" src="_js/janela.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Livros</title>
     </head>
@@ -34,13 +34,10 @@ require_once '../DAO/EstadoLivroDAO.php';
         <div class="titulomodal">Cadastro de Autor</div><br><br><br>
         <div class="formulario">
         <form action="../Control/cadAutor.php" method="post">
-
                 <label style="margin-left: 25px;">Nome: </label>
                 <input class="campo" type="text" size="25" id="nome" name="nome" required>
-
                 <label style="margin-left: 20px;">Data de Nascimento: </label>
                 <input class="campo" type="date" id="dtnasc" name="dtnasc"  required><br><br>
-
                 <div class="group" style="margin-left: 25px;">
                 <label style="margin-right: 10px;">Sexo: </label>
                     <input type="radio" name="sexo" value="F" id="rb1" />
