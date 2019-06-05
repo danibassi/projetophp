@@ -49,7 +49,7 @@ $emprestimoDAO = new EmprestimoDAO(new Emprestimo());
             <div class="texto"> Bem vindo(a): <?php echo $_SESSION['nome']?></div>
         </div>
         <div class="estatisticas">Leitores Cadastrados: <?php echo $leitorDAO->getQuantidadeLeitores()['conta']?></div>
-        <div class="estatisticas">Livros Cadastrados: <?php echo $livroDAO->getQuantidadeLeitores()['conta']?></div>
+        <div class="estatisticas">Livros Cadastrados: <?php echo $livroDAO->getQuantidadeLivros()['conta']?></div>
         <div class="estatisticas">Empréstimos atrasados: <?php echo $emprestimoDAO->getQuantidadeAtrasodo()['conta']?></div>
         <div class="estatisticas">Empréstimos entregues: <?php echo $emprestimoDAO->getQuantidadeNaoAtrasados()['conta']?></div>
         <div class="estatisticas">Total de empréstimos realizados:
@@ -57,5 +57,6 @@ $emprestimoDAO = new EmprestimoDAO(new Emprestimo());
                 echo $emprestimoDAO->getQuantidadeNaoAtrasados()['conta'] + $emprestimoDAO->getQuantidadeAtrasodo()['conta'];
             ?>
         </div>
+        <div class="estatisticas">Quantidade de exemplares: <?php echo $livroDAO->getQuantidadeExemplares()['conta']?></div>
     </body>
 </html>

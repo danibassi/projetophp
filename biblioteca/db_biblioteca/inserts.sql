@@ -193,47 +193,79 @@ VALUES ('As Cronicas de Gelo e Fogo: A Guerra dos Tronos','2002-03-28','3',1,4,6
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (2,2,1,'2019-05-02','2019-05-12');
 
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 2;
+
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (3,3,1,'2019-05-02','2019-05-12');
+
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 3;
 
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (4,4,1,'2019-05-02','2019-05-12');
 
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 4;
+
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (5,5,1,'2019-05-02','2019-05-12');
+
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 5;
 
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (6,6,1,'2019-05-02','2019-05-12');
 
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 6;
+
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (7,7,1,'2019-05-02','2019-05-12');
+
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 7;
 
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (6,8,1,'2019-05-02','2019-05-12');
 
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 8;
+
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (5,9,1,'2019-05-02','2019-05-12');
+
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 9;
 
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (4,10,1,'2019-05-02','2019-05-12');
 
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 10;
+
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (3,11,1,'2019-05-02','2019-05-12');
+
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 11;
 
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (2,12,1,'2019-05-02','2019-05-12');
 
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 12;
+
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (1,13,1,'2019-05-02','2019-05-12');
+
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 13;
 
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (2,14,1,'2019-05-02','2019-05-12');
 
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 14;
+
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (3,1,1,'2019-05-02','2019-05-12');
+
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 1;
 
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (4,2,1,'2019-05-02','2019-05-12');
 
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 2;
+
 INSERT INTO tb_emprestimo (tb_lei_id, tb_liv_id, tb_fun_id, emp_data, emp_data_devolucao)
 VALUES (5,10,1,'2019-05-02','2019-05-12');
+
+UPDATE tb_livro SET liv_qntd_disponivel = liv_qntd_disponivel - 1 WHERE liv_id = 10;
