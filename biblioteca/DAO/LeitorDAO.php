@@ -118,5 +118,12 @@
             $stmt->bindParam(":id",$id);
             return $stmt->execute();
         }
+
+        public function getQuantidadeLeitores(){
+            $sql = "SELECT count(lei_id) as conta from tb_leitor;";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
     }
 ?>
