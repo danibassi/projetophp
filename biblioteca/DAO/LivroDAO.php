@@ -91,5 +91,11 @@
             $stmt->bindParam(':id', $id);
             return $stmt->execute();
         }
+        public function getQuantidadeLeitores(){
+            $sql = "SELECT count(liv_id) as conta from tb_livro;";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
     }
 ?>

@@ -103,5 +103,19 @@
             $stmt->bindParam(':id', $id);
             return $stmt->execute();
         }
+
+        public function getQuantidadeAtrasodo(){
+            $sql = "SELECT count(e.emp_id) as conta from tb_emprestimo as e where e.emp_data_entregue is NULL;";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        public function getQuantidadeNaoAtrasados(){
+            $sql = "SELECT count(e.emp_id) as conta from tb_emprestimo as e where e.emp_data_entregue is not NULL;";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
     }
 ?>
