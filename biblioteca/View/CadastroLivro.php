@@ -18,7 +18,7 @@ require_once '../DAO/EstadoLivroDAO.php';
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
-        <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleinicio.css">
         <link href="_css/popUp.css" rel="stylesheet" type="text/css">
         <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
         <script src="_js/script.js"></script>
@@ -66,7 +66,7 @@ require_once '../DAO/EstadoLivroDAO.php';
         <div id="mascara"></div>
 
     <div id="caixamenu">
-    <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
+    <div id="logo"><img src="_img/logo-branco.png" width="50px" height="50px"></div>
 
         <div class="nome">Biblioteca</div>
         <div id="menu">
