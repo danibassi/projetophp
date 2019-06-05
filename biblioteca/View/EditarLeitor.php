@@ -16,14 +16,17 @@ $leitorEncontradoNoBanco = $leitorDAO->select($_POST['idAlterar']);
     <head>
     <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
-        <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleinicio.css">
+        <script src="_js/script.js"></script>
+        <script type="text/javascript" src="_js/jquery-3.2.1.min.js"></script>
+	      <script type="text/javascript" src="_js/janela.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Leitores</title>
     </head>
 
     <body>
     <div id="caixamenu">
-    <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
+    <div id="logo"><img src="_img/logo-branco.png" width="50px" height="50px"></div>
         <div class="nome">Biblioteca</div>
         <div id="menu">
             <a href="MenuFuncionario.php">Ínicio</a>
@@ -35,7 +38,7 @@ $leitorEncontradoNoBanco = $leitorDAO->select($_POST['idAlterar']);
         </div>
     </div>
 
-        <div class="titulo"> Cadastro de Leitor </div>
+        <div class="titulo"> Edição de Leitor </div>
         <div class="caixaform">
             <form action="../Control/altLeitor.php" method="post">
                 <label>Nome: </label>

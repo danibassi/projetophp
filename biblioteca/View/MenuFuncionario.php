@@ -22,14 +22,17 @@ $emprestimoDAO = new EmprestimoDAO(new Emprestimo());
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="_css/stylehome.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleinicio.css">
+        <script src="_js/script.js"></script>
+        <script type="text/javascript" src="_js/jquery-3.2.1.min.js"></script>
+	       <script type="text/javascript" src="_js/janela.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:300&display=swap" rel="stylesheet">
         <title>Página Inicial</title>
     </head>
 
     <body>
     <div id="caixamenu">
-    <div id="logo"><img src="_img/logobranco.png" width="50px" height="50px"></div>
+    <div id="logo"><img src="_img/logo-branco.png" width="50px" height="50px"></div>
         <div class="nome">Biblioteca</div>
         <div id="menu">
             <a href="MenuFuncionario.php">Ínicio</a>
@@ -48,8 +51,8 @@ $emprestimoDAO = new EmprestimoDAO(new Emprestimo());
         <div class="estatisticas">Leitores Cadastrados: <?php echo $leitorDAO->getQuantidadeLeitores()['conta']?></div>
         <div class="estatisticas">Livros Cadastrados: <?php echo $livroDAO->getQuantidadeLeitores()['conta']?></div>
         <div class="estatisticas">Empréstimos atrasados: <?php echo $emprestimoDAO->getQuantidadeAtrasodo()['conta']?></div>
-        <div class="estatisticas">Empréstimos entreges: <?php echo $emprestimoDAO->getQuantidadeNaoAtrasados()['conta']?></div>
-        <div class="estatisticas">Total de emprestimos realizados:
+        <div class="estatisticas">Empréstimos entregues: <?php echo $emprestimoDAO->getQuantidadeNaoAtrasados()['conta']?></div>
+        <div class="estatisticas">Total de empréstimos realizados:
             <?php
                 echo $emprestimoDAO->getQuantidadeNaoAtrasados()['conta'] + $emprestimoDAO->getQuantidadeAtrasodo()['conta'];
             ?>
