@@ -57,3 +57,24 @@
 	-ms-transform: scale(1.1);
 	transform: scale(1.1);
 }
+
+.botaao{
+	border: 0.5px solid #7B0BF3;
+	border-radius: 2px;
+	background-color: #7B0BF3;
+	color: white;
+	font-size: 14px;
+	width: 200px;
+	height: 30px;
+	text-transform: uppercase;
+	text-align: center;
+	float: left;
+	margin-top: 20px;
+	transition:all 0.3s ease;
+}
+
+.botaao:hover{
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}

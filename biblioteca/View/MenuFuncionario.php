@@ -23,6 +23,8 @@ $emprestimoDAO = new EmprestimoDAO(new Emprestimo());
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/styleinicio.css">
+        <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
+        <link href="_css/modal.css" rel="stylesheet" type="text/css">
         <script src="_js/script.js"></script>
         <script type="text/javascript" src="_js/jquery-3.2.1.min.js"></script>
 	       <script type="text/javascript" src="_js/janela.js"></script>
@@ -31,6 +33,16 @@ $emprestimoDAO = new EmprestimoDAO(new Emprestimo());
     </head>
 
     <body>
+      <div style="height: 250px; width: 600px;"class="window" id="fechar">
+          <div style="margin-left: 220px; margin-top: 40px;"class="titulomodal">Corfimação</div><br><br><br>
+          <div class="formulario">
+              <div style="margin-left:130px; margin-top: 10px;"class="confirma">Tem certeza que deseja sair da biblioteca?</div><br><br>
+              <a style="border: none;" href="MenuFuncionario.php" ><button style="float: left; margin-left: 80px;" class="botao">Cancelar</button></a>
+              <a style="border: none;" href="../index.php"><button style="margin-left: 300px; margin-top: -30px;" class="botao">Confirmar</button></a>
+        </div>
+      </div>
+        <div id="mascara"></div>
+
     <div id="caixamenu">
     <div id="logo"><img src="_img/logo-branco.png" width="50px" height="50px"></div>
         <div class="nome">Biblioteca</div>
@@ -40,7 +52,7 @@ $emprestimoDAO = new EmprestimoDAO(new Emprestimo());
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
             <a href="CadastroFuncionario.php">Funcionários</a>
-            <a href="../index.php">Sair</a>
+            <a href="#fechar" rel="Modal">Sair</a>
 
         </div>
     </div>
