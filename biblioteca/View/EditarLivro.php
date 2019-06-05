@@ -26,7 +26,7 @@ $livroPegoPeloId = $dao->select($_POST['id']);
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="_css/styleforms.css">
         <link rel="stylesheet" type="text/css" href="_css/styleinicio.css">
-        <link href="_css/popUp.css" rel="stylesheet" type="text/css">
+        <link href="_css/modal.css" rel="stylesheet" type="text/css">
         <!-- <link rel="stylesheet" type="text/css" href="_css/elements.css"> -->
         <script src="_js/script.js"></script>
         <script type="text/javascript" src="_js/jquery-3.2.1.min.js"></script>
@@ -36,6 +36,15 @@ $livroPegoPeloId = $dao->select($_POST['id']);
     </head>
 
     <body>
+      <div style="height: 250px; width: 600px;"class="window" id="fechar">
+          <div style="margin-left: 220px; margin-top: 40px;"class="titulomodal">Corfimação</div><br><br><br>
+          <div class="formulario">
+              <div style="margin-left:130px; margin-top: 10px;"class="confirma">Tem certeza que deseja sair da biblioteca?</div><br><br>
+              <a style="border: none;" href="EditarLivro.php" ><button style="float: left; margin-left: 80px;" class="botao">Cancelar</button></a>
+              <a style="border: none;" href="../index.php"><button style="margin-left: 300px; margin-top: -30px;" class="botao">Confirmar</button></a>
+        </div>
+      </div>
+        <div id="mascara"></div>
     <div class="window" id="autor">
     <a href="#" class="fechar">Fechar</a>
         <div class="titulomodal">Cadastro de Autor</div><br><br><br>
@@ -82,7 +91,7 @@ $livroPegoPeloId = $dao->select($_POST['id']);
             <a href="ListarLivro.php">Livros</a>
             <a href="ListarEmprestimos.php">Empréstimos</a>
             <a href="CadastroFuncionario.php">Funcionários</a>
-            <a href="../index.php">Sair</a>
+            <a href="#fechar" rel="Modal">Sair</a>
         </div>
     </div>
     <div class="titulo"> Cadastro de Livros </div>
